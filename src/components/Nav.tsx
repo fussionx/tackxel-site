@@ -7,25 +7,6 @@ import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import Logo from "./Logo";
 
 const serviceMenu = {
-  "Engineering & Development": [
-    { name: "Software Development", href: "/services/software-development" },
-    { name: "Web App Development", href: "/services" },
-    { name: "Ruby on Rails Development", href: "/services" },
-    { name: "MERN Stack Development", href: "/services" },
-    { name: "Golang Development", href: "/services" },
-    { name: "Mobile App Development", href: "/services" },
-    { name: "Frontend Development", href: "/services" },
-    { name: "Backend Development", href: "/services" },
-    { name: "Blockchain", href: "/services" },
-    { name: "Internet of Things", href: "/services" },
-  ],
-  "Product & Startup Services": [
-    { name: "Product Strategy", href: "/services" },
-    { name: "Product Design", href: "/services" },
-    { name: "UI/UX Design", href: "/services" },
-    { name: "Discovery Workshop", href: "/services" },
-    { name: "POC/MVP Development", href: "/services" },
-  ],
   "Artificial Intelligence": [
     { name: "AI Consulting", href: "/services" },
     { name: "AI and ML", href: "/services" },
@@ -34,6 +15,19 @@ const serviceMenu = {
     { name: "Generative AI", href: "/services" },
     { name: "AI Agents", href: "/services" },
     { name: "Agentic AI", href: "/services" },
+  ],
+  "Product & Startup Services": [
+    { name: "Product Strategy", href: "/services" },
+    { name: "Product Design", href: "/services" },
+    { name: "UI/UX Design", href: "/services" },
+    { name: "Discovery Workshop", href: "/services" },
+    { name: "POC/MVP Development", href: "/services" },
+  ],
+  "Development": [
+    { name: "Software Development", href: "/services/software-development" },
+    { name: "Web App Development", href: "/services/web-app-development" },
+    { name: "Mobile App Development", href: "/services" },
+    { name: "Blockchain", href: "/services" },
   ],
   "Strategic Services": [
     { name: "Digital Transformation", href: "/services" },
@@ -60,7 +54,7 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   // Pages with dark hero (white text on dark)
-  const isDarkHero = pathname === "/" || pathname === "/about" || pathname === "/services" || pathname === "/services/software-development";
+  const isDarkHero = pathname === "/" || pathname === "/about" || pathname === "/services" || pathname === "/services/software-development" || pathname === "/services/web-app-development";
   // When not scrolled and on dark hero, use light text/logo. Otherwise dark.
   const onDark = isDarkHero && !scrolled;
 
