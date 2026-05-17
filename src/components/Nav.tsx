@@ -8,7 +8,7 @@ import Logo from "./Logo";
 
 const serviceMenu = {
   "Artificial Intelligence": [
-    { name: "AI Consulting", href: "/services" },
+    { name: "AI Consulting", href: "/services/ai-consulting" },
     { name: "AI and ML", href: "/services" },
     { name: "AI Apps", href: "/services" },
     { name: "Chatbots", href: "/services" },
@@ -54,7 +54,7 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   // Pages with dark hero (white text on dark)
-  const isDarkHero = pathname === "/" || pathname === "/about" || pathname === "/services" || pathname === "/services/software-development" || pathname === "/services/web-app-development";
+  const isDarkHero = pathname === "/" || pathname === "/about" || pathname === "/services" || pathname === "/services/software-development" || pathname === "/services/web-app-development" || pathname === "/services/ai-consulting";
   // When not scrolled and on dark hero, use light text/logo. Otherwise dark.
   const onDark = isDarkHero && !scrolled;
 
