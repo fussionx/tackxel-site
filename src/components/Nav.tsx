@@ -17,11 +17,10 @@ const serviceMenu = {
     { name: "Agentic AI", href: "/services/agentic-ai" },
   ],
   "Product & Startup Services": [
-    { name: "Product Strategy", href: "/services" },
-    { name: "Product Design", href: "/services" },
-    { name: "UI/UX Design", href: "/services" },
-    { name: "Discovery Workshop", href: "/services" },
-    { name: "POC/MVP Development", href: "/services" },
+    { name: "Product Strategy", href: "/services/product-strategy" },
+    { name: "Product Design", href: "/services/product-design" },
+    { name: "UI/UX Design", href: "/services/ui-ux-design" },
+    { name: "POC/MVP Development", href: "/services/poc-mvp-development" },
   ],
   "Development": [
     { name: "Software Development", href: "/services/software-development" },
@@ -54,7 +53,7 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   // Pages with dark hero (white text on dark)
-  const isDarkHero = pathname === "/" || pathname === "/about" || pathname === "/services" || pathname === "/services/software-development" || pathname === "/services/web-app-development" || pathname === "/services/ai-consulting" || pathname === "/services/ai-and-ml" || pathname === "/services/ai-apps" || pathname === "/services/ai-agents" || pathname === "/services/generative-ai" || pathname === "/services/chatbots" || pathname === "/services/agentic-ai" || pathname === "/services/digital-transformation" || pathname === "/services/legacy-modernization" || pathname === "/services/qa-testing";
+  const isDarkHero = pathname === "/" || pathname === "/about" || pathname === "/services" || pathname === "/services/software-development" || pathname === "/services/web-app-development" || pathname === "/services/ai-consulting" || pathname === "/services/ai-and-ml" || pathname === "/services/ai-apps" || pathname === "/services/ai-agents" || pathname === "/services/generative-ai" || pathname === "/services/chatbots" || pathname === "/services/agentic-ai" || pathname === "/services/digital-transformation" || pathname === "/services/legacy-modernization" || pathname === "/services/qa-testing" || pathname === "/services/product-strategy" || pathname === "/services/product-design" || pathname === "/services/ui-ux-design" || pathname === "/services/poc-mvp-development";
   // When not scrolled and on dark hero, use light text/logo. Otherwise dark.
   const onDark = isDarkHero && !scrolled;
 
