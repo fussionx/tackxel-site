@@ -16,36 +16,36 @@ const services = [
   {
     Icon: Bot,
     name: "Custom AI Agent Development",
-    tagline: "AI agents built to your business needs.",
-    desc: "Custom AI agents engineered to automate customer interactions, handle routine tasks, and integrate with your existing tools — enhancing engagement and operational efficiency.",
+    tagline: "Autonomous AI agents built to your business needs.",
+    desc: "Custom AI agents engineered to handle multi-step reasoning, use tools, and integrate with your existing systems — beyond simple chatbot interactions.",
     bullets: [
       "AI agent development services customized to your business needs.",
-      "Enhanced automation, customer engagement, and operational efficiency.",
-      "Built on top of GPT, Claude, and other foundation models.",
       "Multi-step reasoning, tool use, and memory built in by default.",
+      "Built on top of GPT, Claude, and other foundation models.",
+      "Autonomous workflow execution across enterprise systems.",
       "Full ownership of agent logic, prompts, and integrations.",
     ],
     metric: { value: "45%", label: "Operational cost reduction" },
   },
   {
-    Icon: MessageSquare,
-    name: "Conversational Agent UX & Design",
-    tagline: "Agents that feel natural to talk with.",
-    desc: "Conversational UX and interface design that makes AI agents intuitive, on-brand, and effective — designed by senior product designers who specialize in conversational flows.",
+    Icon: Activity,
+    name: "Agentic Workflow Automation",
+    tagline: "Agents that complete entire workflows autonomously.",
+    desc: "AI agents that don't just answer questions — they execute multi-step workflows across your systems, escalating only when human judgment is genuinely needed.",
     bullets: [
-      "Expert AI agent UX/UI design and development services.",
-      "Intuitive, visually appealing, and highly functional agents.",
-      "Seamless user experiences across web, mobile, and messaging.",
-      "Tone, voice, and response styling matched to your brand.",
-      "User testing built into the design process from day one.",
+      "Multi-step task automation with autonomous decision-making.",
+      "Tool use across CRM, ERP, ticketing, and custom systems.",
+      "Self-correction loops with verification and retry logic.",
+      "Audit trails for every agent action and decision.",
+      "Human-in-the-loop escalation for edge cases.",
     ],
-    metric: { value: "3×", label: "Engagement uplift" },
+    metric: { value: "70%", label: "Workflow automation" },
   },
   {
     Icon: Globe,
     name: "Multi-Language AI Agents",
-    tagline: "Engage customers in any language.",
-    desc: "Multilingual AI agents that engage customers globally — delivering personalized, efficient conversations across different markets with native-quality understanding.",
+    tagline: "Agents that operate in any language.",
+    desc: "Multilingual AI agents that operate globally — delivering personalized, efficient interactions across different markets with native-quality understanding.",
     bullets: [
       "Multilingual AI agents supporting 50+ languages.",
       "Native-quality understanding, not literal translation.",
@@ -58,30 +58,30 @@ const services = [
   {
     Icon: Wrench,
     name: "AI Agent Integration",
-    tagline: "Connect agents to your existing stack.",
-    desc: "Seamless integration of AI agents into your websites, apps, CRMs, ERPs, and messaging platforms — automating workflows and improving business efficiency end-to-end.",
+    tagline: "Connect agents to your enterprise stack.",
+    desc: "Seamless integration of AI agents into your CRMs, ERPs, ticketing systems, and custom enterprise tools — automating workflows end-to-end.",
     bullets: [
-      "Seamlessly connect AI agents with websites, apps, and CRMs.",
-      "Enhanced workflow automation and business efficiency.",
-      "Integrations with WhatsApp, Messenger, Slack, Teams, and email.",
-      "Webhook and API support for custom enterprise systems.",
-      "Single-sign-on and role-based access control built in.",
+      "Native integrations with Salesforce, HubSpot, Zendesk, SAP.",
+      "Webhook and API support for any custom enterprise system.",
+      "Single sign-on and role-based access control built in.",
+      "Audit trails and compliance reporting for every agent action.",
+      "Real-time data sync across all integrated platforms.",
     ],
     metric: { value: "10+", label: "Platforms integrated" },
   },
   {
-    Icon: Activity,
-    name: "NLP & Conversational Intelligence",
-    tagline: "Agents that understand context and intent.",
-    desc: "NLP-driven AI agents that understand and process human language naturally — delivering intelligent, context-aware conversations that improve customer experiences.",
+    Icon: MessageSquare,
+    name: "Conversational Agent UX & Design",
+    tagline: "Agents that feel natural to work with.",
+    desc: "UX design for AI agents that goes beyond chat windows — voice interfaces, embedded copilots, and agent-driven dashboards designed for real-world workflows.",
     bullets: [
-      "NLP-driven AI agents understanding human language.",
-      "Intelligent, context-aware, and natural conversations.",
-      "Intent detection, entity extraction, and sentiment analysis.",
-      "Multi-turn conversations with memory and personalization.",
-      "Continuous learning from feedback and conversation logs.",
+      "Conversational UX design for chat, voice, and embedded agents.",
+      "Persona development matched to your brand and use case.",
+      "Multi-modal interfaces combining chat, voice, and UI controls.",
+      "Embedded agent design for productivity apps and dashboards.",
+      "User testing built into the design process from day one.",
     ],
-    metric: { value: "90%", label: "Intent recognition" },
+    metric: { value: "3×", label: "User adoption" },
   },
   {
     Icon: ShieldCheck,
@@ -100,85 +100,85 @@ const services = [
 ];
 
 const process = [
-  { no: "01", title: "Requirements Analysis", duration: "1 week", desc: "Discovery call and stakeholder workshops to understand your business goals, user personas, and conversation flows. We listen before we design." },
+  { no: "01", title: "Requirements Analysis", duration: "1 week", desc: "Discovery call and stakeholder workshops to understand your business goals, workflows, and decision points. We listen before we design." },
   { no: "02", title: "Project Proposal",       duration: "1 week", desc: "Detailed proposal with scope, tech stack, team composition, timeline, and pricing. Clear ownership, no hidden surprises." },
-  { no: "03", title: "Design & Estimating",    duration: "1–2 weeks", desc: "Conversation flow design, persona development, and integration architecture. Final estimates with milestone-based delivery commitments." },
+  { no: "03", title: "Design & Estimating",    duration: "1–2 weeks", desc: "Agent capability design, integration architecture, and tool inventory. Final estimates with milestone-based delivery commitments." },
   { no: "04", title: "Development",            duration: "4–10 weeks", desc: "Two-week sprints with working AI agent at every demo. Senior engineers own end-to-end features with daily standups in your time zone." },
-  { no: "05", title: "Supporting",             duration: "Ongoing", desc: "Launch with QA, performance tuning, and a 24/7 on-call rotation. Continuous improvement based on real user conversations and feedback." },
+  { no: "05", title: "Supporting",             duration: "Ongoing", desc: "Launch with QA, performance tuning, and a 24/7 on-call rotation. Continuous improvement based on real agent behavior and feedback." },
 ];
 
 const emergingTech = [
   {
     Icon: Globe,
     title: "Multi-Platform Integration",
-    desc: "Seamlessly integrate your AI agents with WhatsApp, Messenger, websites, CRM, ERP systems, and more — for consistent engagement across every customer touchpoint.",
+    desc: "Seamlessly integrate your AI agents with Salesforce, SAP, Slack, Teams, and any custom enterprise system — for autonomous operation across every business touchpoint.",
   },
   {
     Icon: Mic,
     title: "Voice-Enabled AI Agents",
-    desc: "Enable hands-free interactions with voice-powered AI agents — allowing users to communicate naturally using spoken commands across IVR, smart speakers, and voice apps.",
+    desc: "Voice-powered AI agents for IVR, smart speakers, and voice apps — enabling hands-free interactions with natural spoken commands.",
   },
   {
     Icon: MessageSquare,
-    title: "Customizable Personality & Responses",
-    desc: "Customize AI agent tone, language, and responses to match your brand voice and boost user engagement — with persona controls baked into the agent framework.",
+    title: "Tool Use & Reasoning",
+    desc: "AI agents that use external tools, query databases, run code, and chain reasoning steps — completing complex multi-step tasks autonomously.",
   },
 ];
 
 const challenges = [
-  { title: "Agents That Don't Understand Context", solution: "Multi-turn conversation memory, intent disambiguation, and entity extraction. Agents remember the conversation, not just the last message." },
-  { title: "Hallucination and Wrong Answers", solution: "RAG architecture grounding agents in your verified knowledge base. Citations, confidence scoring, and human escalation when the agent isn't sure." },
-  { title: "Integration With Existing Tools", solution: "API-first design with native integrations for Salesforce, HubSpot, Zendesk, Slack, and WhatsApp. Webhooks for any custom enterprise system." },
-  { title: "Inconsistent Brand Voice", solution: "Persona controls, tone calibration, and style guides applied at the prompt layer. Your agent sounds like your brand — not generic GPT." },
-  { title: "Language and Localization Issues", solution: "Native multilingual training with regional dialect support. We test with native speakers in each target market — not just Google Translate." },
-  { title: "Slow Response Times", solution: "Caching, prompt optimization, and streaming responses. Sub-2-second first-token latency at scale across all interactions." },
-  { title: "Difficulty Handling Edge Cases", solution: "Human-in-the-loop escalation with seamless handoff to live agents. Edge cases are flagged for training data improvement automatically." },
-  { title: "Compliance and Data Privacy", solution: "PII redaction, audit trails, role-based access, and conversation retention controls. GDPR, HIPAA, SOC 2 compliance built in." },
-  { title: "Measuring Agent Effectiveness", solution: "Real-time analytics dashboard tracking CSAT, resolution rate, escalation rate, and conversation length — tied to business KPIs." },
-  { title: "Scaling to Millions of Users", solution: "Stateless serving infrastructure, autoscaling on cloud platforms, and rate-limit protection. From 100 conversations a day to 10 million — no architecture rewrite." },
+  { title: "Agents That Don't Complete Tasks", solution: "Tool-use frameworks with verification, retry loops, and self-correction. Agents that finish the job — not abandon halfway with a 'here's what I found' summary." },
+  { title: "Hallucination and Wrong Decisions", solution: "RAG architecture grounding agents in your verified data, confidence scoring, and human escalation when the agent isn't sure. Every decision is auditable." },
+  { title: "Integration With Existing Tools", solution: "Native integrations for Salesforce, HubSpot, Zendesk, SAP, and custom enterprise systems via webhooks and APIs. Agents that work where your business runs." },
+  { title: "Lack of Audit Trails for Agent Actions", solution: "Every agent action logged with reasoning, tool calls, and outcomes. Full audit trails ready for compliance review and post-incident debugging." },
+  { title: "Difficulty Handling Edge Cases", solution: "Human-in-the-loop escalation with seamless handoff to live operators. Edge cases are flagged for training data improvement automatically." },
+  { title: "Slow Response Times", solution: "Caching, prompt optimization, and parallel tool execution. Sub-2-second decision latency at scale across all interactions." },
+  { title: "Compliance and Data Privacy", solution: "PII redaction, audit trails, role-based access, and on-premise deployment options. GDPR, HIPAA, SOC 2 compliance built in." },
+  { title: "Measuring Agent Effectiveness", solution: "Real-time analytics dashboard tracking task completion rate, escalation rate, accuracy, and time saved — tied to business KPIs." },
+  { title: "Scaling to Enterprise Workloads", solution: "Stateless serving infrastructure, autoscaling on cloud platforms, and rate-limit protection. From 100 tasks a day to 10 million — no architecture rewrite." },
+  { title: "Keeping Up With Foundation Model Changes", solution: "Model-agnostic architecture supporting GPT, Claude, Llama, and Gemini. Swap models without rewriting agents — quarterly model reviews built in." },
 ];
 
 const industries = [
-  { Icon: Heart, name: "Healthtech", desc: "HIPAA-compliant AI agents for patient triage, appointment scheduling, prescription reminders, and clinical support — built for hospitals and digital health platforms.", examples: ["Patient triage", "Appointment scheduling", "Prescription reminders", "Clinical support"] },
-  { Icon: Building2, name: "Fintech", desc: "AI agents for banking support, loan applications, fraud queries, and financial advice — built with PCI compliance, KYC integration, and audit trails.", examples: ["Banking support", "Loan applications", "Fraud queries", "Financial advice"] },
-  { Icon: ShoppingBag, name: "Retail & eCommerce", desc: "AI agents for product discovery, order tracking, returns, and personalized recommendations — boosting conversion 3× and reducing support workload 50%.", examples: ["Product discovery", "Order tracking", "Returns support", "Personal shoppers"] },
-  { Icon: GraduationCap, name: "EdTech", desc: "AI tutoring agents, course recommendation systems, and student support — adaptive learning experiences serving schools, universities, and corporate training.", examples: ["AI tutoring", "Course recommendations", "Student support", "Assessment helpers"] },
-  { Icon: Leaf, name: "GreenTech", desc: "AI agents for sustainability reporting, ESG inquiries, carbon tracking, and renewable energy customer service — supporting climate-focused businesses.", examples: ["ESG reporting", "Carbon tracking", "Energy advice", "Sustainability Q&A"] },
-  { Icon: UtensilsCrossed, name: "Food & Delivery Services", desc: "AI agents for menu queries, order placement, dietary advice, and customer service — boosting AOV and reducing operational overhead for restaurants and delivery platforms.", examples: ["Order placement", "Menu queries", "Dietary advice", "Loyalty programs"] },
+  { Icon: Heart, name: "Healthtech", desc: "HIPAA-compliant AI agents for patient triage, prior authorization, clinical documentation, and care coordination — built for hospitals and digital health platforms.", examples: ["Patient triage", "Prior authorization", "Clinical documentation", "Care coordination"] },
+  { Icon: Building2, name: "Fintech", desc: "AI agents for KYC processing, fraud investigation, loan underwriting, and compliance reporting — built with PCI compliance and full audit trails.", examples: ["KYC automation", "Fraud investigation", "Loan underwriting", "Compliance reporting"] },
+  { Icon: ShoppingBag, name: "Retail & eCommerce", desc: "AI agents for inventory management, order operations, supplier coordination, and customer issue resolution — boosting operational efficiency 3× across the back office.", examples: ["Inventory ops", "Order management", "Supplier coordination", "Issue resolution"] },
+  { Icon: GraduationCap, name: "EdTech", desc: "AI tutoring agents, course progress monitoring, and student success workflows — adaptive learning experiences serving schools, universities, and corporate training.", examples: ["AI tutoring", "Progress monitoring", "Student success", "Course recommendations"] },
+  { Icon: Leaf, name: "GreenTech", desc: "AI agents for ESG reporting workflows, carbon tracking automation, and sustainability data aggregation — supporting climate-focused businesses with audit-ready output.", examples: ["ESG workflows", "Carbon tracking", "Sustainability data", "Compliance reporting"] },
+  { Icon: UtensilsCrossed, name: "Food & Delivery Services", desc: "AI agents for order operations, delivery coordination, supplier management, and customer support — boosting AOV and reducing operational overhead.", examples: ["Order operations", "Delivery coordination", "Supplier management", "Loyalty programs"] },
 ];
 
 const advantages = [
-  { no: "01", title: "Top AI Talent & Certified Developers", desc: "Senior AI engineers with 8+ years building production conversational AI — no graduate handoffs or learning curves billed to you." },
+  { no: "01", title: "Top AI Talent & Certified Developers", desc: "Senior AI engineers with 8+ years building production agentic AI — no graduate handoffs or learning curves billed to you." },
   { no: "02", title: "10+ Years of Proven Track Record",     desc: "Over a decade of AI development experience — delivering intelligent agents that scale and drive measurable business outcomes." },
   { no: "03", title: "CRM, ERP & API Integration",           desc: "Native integrations with Salesforce, HubSpot, Zendesk, SAP, and any custom enterprise system via webhooks and APIs." },
-  { no: "04", title: "Voice & Multi-Language Support",       desc: "Voice-enabled agents with 50+ languages, native dialect support, and seamless switching mid-conversation." },
-  { no: "05", title: "Advanced NLP & Machine Learning",      desc: "State-of-the-art NLP models, custom fine-tuning, and continuous learning from real conversation data." },
+  { no: "04", title: "Voice & Multi-Language Support",       desc: "Voice-enabled agents with 50+ languages, native dialect support, and seamless switching mid-interaction." },
+  { no: "05", title: "Advanced Reasoning & Tool Use",        desc: "State-of-the-art agentic frameworks with multi-step reasoning, tool use, and self-correction loops built in." },
   { no: "06", title: "Production Ownership & Support",       desc: "We don't ship and disappear. 24/7 monitoring, quarterly reviews, and continuous improvement built into every engagement." },
 ];
 
 const techStackTabs = [
-  { category: "LLMs & Agent Frameworks", techs: ["OpenAI GPT-5", "Anthropic Claude", "Llama 4", "Gemini", "LangChain", "LangGraph", "AutoGen", "CrewAI", "Semantic Kernel"] },
-  { category: "NLP & Conversation",      techs: ["spaCy", "NLTK", "Hugging Face", "BERT", "Whisper", "Rasa", "DialogFlow", "Watson Assistant", "Botpress"] },
-  { category: "Voice & Audio",           techs: ["Whisper", "Amazon Polly", "Google Speech-to-Text", "ElevenLabs", "Azure Speech", "Deepgram", "AssemblyAI", "PlayHT"] },
-  { category: "Messaging Platforms",     techs: ["WhatsApp Business API", "Messenger", "Slack", "Microsoft Teams", "Telegram", "Twilio", "Discord", "Web Widget"] },
-  { category: "Cloud AI Platforms",      techs: ["AWS Bedrock", "Azure OpenAI", "Google Vertex AI", "AWS Lex", "Azure Bot Service", "Dialogflow CX", "Kore.ai"] },
-  { category: "Analytics & Monitoring",  techs: ["LangSmith", "Helicone", "Phoenix", "Weights & Biases", "Datadog", "Sentry", "Mixpanel", "Amplitude"] },
+  { category: "Agent Frameworks", techs: ["LangChain", "LangGraph", "AutoGen", "CrewAI", "Semantic Kernel", "Haystack", "LlamaIndex", "AutoGPT", "BabyAGI"] },
+  { category: "LLMs & Foundation Models", techs: ["OpenAI GPT-5", "Anthropic Claude", "Llama 4", "Gemini", "Mistral", "Cohere Command", "Hugging Face", "Anyscale"] },
+  { category: "Tool Use & Orchestration", techs: ["Function Calling", "MCP", "OpenAPI", "GraphQL", "Webhooks", "Apache Airflow", "Temporal", "n8n"] },
+  { category: "Voice & Audio",           techs: ["Whisper", "ElevenLabs", "Amazon Polly", "Google Speech-to-Text", "Azure Speech", "Deepgram", "PlayHT"] },
+  { category: "Enterprise Integrations", techs: ["Salesforce", "HubSpot", "Zendesk", "SAP", "Microsoft Dynamics", "Slack", "Teams", "Twilio", "WhatsApp Business API"] },
+  { category: "Analytics & Monitoring",  techs: ["LangSmith", "Helicone", "Phoenix", "Weights & Biases", "Datadog", "Sentry", "OpenTelemetry"] },
 ];
 
 const faqs = [
+  { q: "What's the difference between an AI agent and a chatbot?", a: "A chatbot answers questions; an AI agent completes tasks. Agents reason across multiple steps, use external tools (CRM, ERP, databases), and execute autonomous workflows. We build both, but agents go further when the goal is operational automation rather than customer support." },
   { q: "How quickly can you build an AI agent for our business?", a: "Most engagements deliver a working AI agent prototype in 4–6 weeks and a production-ready agent in 8–12 weeks. We start with a PoC sprint to validate the use case before committing to full production scope." },
   { q: "Can we integrate the agent with our existing CRM or ERP?", a: "Yes — we have native integrations for Salesforce, HubSpot, Zendesk, SAP, Microsoft Dynamics, and most major platforms. For custom systems, we integrate via webhooks, REST APIs, or message queues." },
-  { q: "Will the agent understand our industry-specific language?", a: "Yes. We fine-tune on your domain-specific terminology, product names, and customer language. Most clients see 95%+ intent recognition accuracy on their industry-specific queries after fine-tuning." },
-  { q: "Who owns the agent, prompts, conversation data, and IP?", a: "You do — from day one. All prompts, fine-tuning data, agent logic, and conversation logs belong to you. We deliberately avoid lock-in: you can take everything in-house at engagement end with zero migration cost." },
-  { q: "What does an AI agent project typically cost?", a: "PoC agents typically range from USD 25K to USD 60K for an 8-week build. Production AI agents range from USD 75K to USD 250K depending on integrations, languages, and complexity. Ongoing operations start at USD 8K/month." },
-  { q: "How do you handle privacy, compliance, and PII?", a: "Every agent includes PII redaction, audit trails, conversation retention controls, and role-based access. We align with GDPR, HIPAA, SOC 2, and PCI DSS — providing documentation suitable for auditor review in regulated industries." },
+  { q: "Who owns the agent, prompts, conversation data, and IP?", a: "You do — from day one. All prompts, agent logic, integrations, and conversation logs belong to you. We deliberately avoid lock-in: you can take everything in-house at engagement end with zero migration cost." },
+  { q: "What does an AI agent project typically cost?", a: "PoC agents typically range from USD 30K to USD 80K for a 6–8 week build. Production AI agents range from USD 100K to USD 300K depending on integrations, languages, and complexity. Ongoing operations start at USD 10K/month." },
+  { q: "How do you handle audit trails and compliance for agent actions?", a: "Every agent decision is logged with reasoning, tool calls, and outcomes — fully auditable and aligned with GDPR, HIPAA, SOC 2, and EU AI Act. We provide documentation suitable for auditor review in regulated industries." },
 ];
 
 const awards = [
   { platform: "Clutch",        title: "Top AI Agent Developers",   year: "2024" },
-  { platform: "GoodFirms",     title: "Top Conversational AI",     year: "2024" },
-  { platform: "TopDevelopers", title: "Top Chatbot Company",       year: "2024" },
-  { platform: "SoftwareWorld", title: "Top AI Agent Builder",      year: "2024" },
+  { platform: "GoodFirms",     title: "Top Agentic AI Co.",        year: "2024" },
+  { platform: "TopDevelopers", title: "Top AI Automation",         year: "2024" },
+  { platform: "SoftwareWorld", title: "Top Agent Builders",        year: "2024" },
   { platform: "AppFuturo",     title: "AI Innovation Leader",      year: "2024" },
   { platform: "TrueFirms",     title: "Top AI Companies",          year: "2024" },
 ];
@@ -233,9 +233,9 @@ export default function AIAgentsPage() {
           <div className="grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
             <div>
               <Reveal><span className="badge-dark mb-6"><span className="dot-pulse" />Custom AI Agent Development</span></Reveal>
-              <Reveal delay={80}><div className="text-eyebrow text-brand-300 uppercase font-semibold tracking-widest mb-4">Automate · Engage · Scale</div></Reveal>
-              <Reveal delay={140}><h1 className="font-display text-h1 lg:text-h1-lg text-white tracking-display-tight">AI Agents That Enhance Customer Engagement.</h1></Reveal>
-              <Reveal delay={220}><p className="text-lg text-neutral-300 mt-6 max-w-2xl leading-relaxed">As a leading AI agents company, we build advanced AI agents that automate customer interactions. Our solutions provide 24/7 support, resolve queries faster, improve efficiency, and cut operational costs by up to 45%.</p></Reveal>
+              <Reveal delay={80}><div className="text-eyebrow text-brand-300 uppercase font-semibold tracking-widest mb-4">Automate · Reason · Scale</div></Reveal>
+              <Reveal delay={140}><h1 className="font-display text-h1 lg:text-h1-lg text-white tracking-display-tight">AI Agents That Get Work Done — Not Just Chat.</h1></Reveal>
+              <Reveal delay={220}><p className="text-lg text-neutral-300 mt-6 max-w-2xl leading-relaxed">We build advanced AI agents that automate multi-step workflows, use enterprise tools, and complete entire tasks autonomously — cutting operational costs by up to 45% while delivering measurable productivity gains.</p></Reveal>
               <Reveal delay={300}>
                 <form onSubmit={(e) => { e.preventDefault(); window.location.href = `/contact?email=${encodeURIComponent(email)}`; }} className="flex flex-col sm:flex-row gap-3 mt-8 max-w-xl">
                   <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" className="flex-1 px-5 py-3 rounded-md border border-neutral-700 bg-neutral-900/60 text-white text-sm placeholder:text-neutral-500 focus:border-brand-500 focus:bg-neutral-900 outline-none transition-all" />
@@ -259,8 +259,8 @@ export default function AIAgentsPage() {
       <section className="py-14 lg:py-16 bg-white border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-6">
-            <Reveal><div className="bg-brand-50 border border-brand-100 rounded-lg p-7 h-full card-lift"><div className="w-11 h-11 rounded-md bg-brand-500/15 border border-brand-200 flex items-center justify-center mb-4"><Zap className="w-5 h-5 text-brand-600" /></div><h3 className="font-display text-h3 text-neutral-950 mb-2">Cut Response Time by 50%</h3><p className="text-sm text-neutral-700 leading-relaxed">AI agents respond in under 2 seconds — boosting customer engagement by 3× and reducing manual workload across support teams.</p></div></Reveal>
-            <Reveal delay={100}><div className="bg-brand-50 border border-brand-100 rounded-lg p-7 h-full card-lift"><div className="w-11 h-11 rounded-md bg-brand-500/15 border border-brand-200 flex items-center justify-center mb-4"><Globe className="w-5 h-5 text-brand-600" /></div><h3 className="font-display text-h3 text-neutral-950 mb-2">50+ Languages, One Agent</h3><p className="text-sm text-neutral-700 leading-relaxed">Native multilingual AI agents engage customers globally with localized tone, dialect support, and cultural context — not literal translation.</p></div></Reveal>
+            <Reveal><div className="bg-brand-50 border border-brand-100 rounded-lg p-7 h-full card-lift"><div className="w-11 h-11 rounded-md bg-brand-500/15 border border-brand-200 flex items-center justify-center mb-4"><Zap className="w-5 h-5 text-brand-600" /></div><h3 className="font-display text-h3 text-neutral-950 mb-2">Cut Operations Cost by 45%</h3><p className="text-sm text-neutral-700 leading-relaxed">AI agents handle entire workflows autonomously — reducing manual workload across operations, support, and back-office functions.</p></div></Reveal>
+            <Reveal delay={100}><div className="bg-brand-50 border border-brand-100 rounded-lg p-7 h-full card-lift"><div className="w-11 h-11 rounded-md bg-brand-500/15 border border-brand-200 flex items-center justify-center mb-4"><Globe className="w-5 h-5 text-brand-600" /></div><h3 className="font-display text-h3 text-neutral-950 mb-2">50+ Languages, One Agent</h3><p className="text-sm text-neutral-700 leading-relaxed">Native multilingual AI agents engage and operate globally with localized tone, dialect support, and cultural context — not literal translation.</p></div></Reveal>
             <Reveal delay={200}>
               <div className="bg-white border border-neutral-200 rounded-lg p-7 h-full">
                 <div className="text-xs font-mono uppercase tracking-wider text-brand-600 font-semibold mb-2">Your Trusted</div>
@@ -268,7 +268,7 @@ export default function AIAgentsPage() {
                 <div className="grid grid-cols-2 gap-px bg-neutral-200 border border-neutral-200 rounded-md overflow-hidden">
                   <div className="bg-white p-3.5"><div className="font-display text-xl font-bold text-neutral-950"><Counter to={100} suffix="+" /></div><div className="text-[10px] text-neutral-500 leading-snug mt-0.5">Agents Deployed</div></div>
                   <div className="bg-white p-3.5"><div className="font-display text-xl font-bold text-neutral-950"><Counter to={45} suffix="%" /></div><div className="text-[10px] text-neutral-500 leading-snug mt-0.5">Operational Cost Cut</div></div>
-                  <div className="bg-white p-3.5"><div className="font-display text-xl font-bold text-neutral-950"><Counter to={3} suffix="×" /></div><div className="text-[10px] text-neutral-500 leading-snug mt-0.5">Engagement Boost</div></div>
+                  <div className="bg-white p-3.5"><div className="font-display text-xl font-bold text-neutral-950"><Counter to={70} suffix="%" /></div><div className="text-[10px] text-neutral-500 leading-snug mt-0.5">Workflow Automation</div></div>
                   <div className="bg-white p-3.5"><div className="font-display text-xl font-bold text-neutral-950">24/7</div><div className="text-[10px] text-neutral-500 leading-snug mt-0.5">Availability</div></div>
                 </div>
               </div>
@@ -289,7 +289,7 @@ export default function AIAgentsPage() {
       {/* SERVICES TABS */}
       <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <Reveal><div className="text-center mb-14"><div className="text-eyebrow text-brand-600 uppercase mb-3 font-semibold tracking-widest">Our AI Agent Development Services</div><h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 max-w-3xl mx-auto">Intelligent Agents Built For <span className="text-brand-600">Real Business Impact</span></h2><p className="text-base text-neutral-600 leading-relaxed max-w-2xl mx-auto mt-4">Click any service below to explore the engineering depth, integrations, and measurable outcomes we deliver.</p></div></Reveal>
+          <Reveal><div className="text-center mb-14"><div className="text-eyebrow text-brand-600 uppercase mb-3 font-semibold tracking-widest">Our AI Agent Development Services</div><h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 max-w-3xl mx-auto">Autonomous Agents Built For <span className="text-brand-600">Real Business Impact</span></h2><p className="text-base text-neutral-600 leading-relaxed max-w-2xl mx-auto mt-4">Click any service below to explore the engineering depth, integrations, and measurable outcomes we deliver.</p></div></Reveal>
           <Reveal>
             <div className="bg-white border border-neutral-200 rounded-lg overflow-hidden">
               <div className="grid grid-cols-2 lg:grid-cols-6 border-b border-neutral-200 bg-neutral-50">{services.map((s, i) => (<button key={s.name} onClick={() => setActiveService(i)} className={`px-4 py-4 text-left transition-all border-r border-neutral-200 last:border-r-0 ${activeService === i ? "bg-white border-b-2 border-b-brand-500 -mb-px" : "hover:bg-white/60 border-b-2 border-b-transparent"}`}><div className="flex items-center gap-2 mb-1.5"><s.Icon className={`w-7 h-7 transition-opacity ${activeService === i ? "opacity-100 text-brand-600" : "opacity-50 text-neutral-600"}`} /></div><div className={`text-xs font-semibold leading-tight ${activeService === i ? "text-brand-700" : "text-neutral-600"}`}>{s.name}</div></button>))}</div>
@@ -332,7 +332,7 @@ export default function AIAgentsPage() {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <Reveal><h2 className="font-display text-h2 lg:text-h2-lg text-white mb-4">Innovative AI Agents With <span className="text-brand-300">Advanced Features</span></h2><p className="text-base text-neutral-300 leading-relaxed mb-8 max-w-lg">Built-in capabilities that turn AI agents from simple chatbots into intelligent business operators.</p></Reveal>
+              <Reveal><h2 className="font-display text-h2 lg:text-h2-lg text-white mb-4">Innovative AI Agents With <span className="text-brand-300">Advanced Capabilities</span></h2><p className="text-base text-neutral-300 leading-relaxed mb-8 max-w-lg">Built-in capabilities that turn AI agents from simple chatbots into intelligent business operators.</p></Reveal>
               <div className="space-y-4">{emergingTech.map((t, i) => (<Reveal key={t.title} delay={i * 100}><div className="bg-neutral-900/70 backdrop-blur border border-neutral-800 rounded-lg p-6 card-lift"><div className="flex items-start gap-4"><div className="w-11 h-11 rounded-md bg-brand-500/15 border border-brand-500/30 flex items-center justify-center flex-shrink-0"><t.Icon className="w-6 h-6 text-brand-300" /></div><div><h3 className="text-base font-semibold text-white mb-1.5">{t.title}</h3><p className="text-sm text-neutral-400 leading-relaxed">{t.desc}</p></div></div></div></Reveal>))}</div>
               <Reveal delay={400}><Link href="/contact" className="btn-brand mt-8">Book a Call With Our Experts<ArrowRight className="w-4 h-4" /></Link></Reveal>
             </div>
@@ -367,13 +367,13 @@ export default function AIAgentsPage() {
             </Reveal>
             <Reveal delay={200} direction="left">
               <div className="lg:sticky lg:top-28 lg:self-start space-y-4">
-                <div className="bg-neutral-950 text-white rounded-lg p-7"><div className="text-xs text-brand-300 uppercase tracking-wider font-semibold mb-3">The Pattern</div><p className="text-base text-neutral-200 leading-relaxed">Most AI agents hallucinate, miss context, or fail to integrate — leaving customers frustrated and teams disappointed.</p></div>
+                <div className="bg-neutral-950 text-white rounded-lg p-7"><div className="text-xs text-brand-300 uppercase tracking-wider font-semibold mb-3">The Pattern</div><p className="text-base text-neutral-200 leading-relaxed">Most AI agents abandon tasks midway, hallucinate decisions, or fail to integrate with real enterprise systems.</p></div>
                 <div className="bg-white border border-neutral-200 rounded-lg p-7">
                   <div className="text-xs text-brand-600 uppercase tracking-wider font-semibold mb-3">Our Approach</div>
-                  <p className="text-sm text-neutral-700 leading-relaxed mb-6">Grounded in your data, integrated with your tools, and monitored 24/7 — agents that actually work in production.</p>
+                  <p className="text-sm text-neutral-700 leading-relaxed mb-6">Verified tool use, RAG-grounded decisions, full audit trails — agents that actually complete tasks in production.</p>
                   <div className="grid grid-cols-2 gap-px bg-neutral-200 border border-neutral-200 rounded-md overflow-hidden">
-                    <div className="bg-white p-5"><div className="w-9 h-9 rounded-md bg-brand-50 border border-brand-100 flex items-center justify-center mb-3"><Zap className="w-4 h-4 text-brand-600" /></div><div className="font-display text-3xl font-bold text-neutral-950 tracking-display">50%</div><div className="text-xs text-neutral-500 mt-0.5">Faster Response Time</div></div>
-                    <div className="bg-white p-5"><div className="w-9 h-9 rounded-md bg-brand-50 border border-brand-100 flex items-center justify-center mb-3"><TrendingUp className="w-4 h-4 text-brand-600" /></div><div className="font-display text-3xl font-bold text-neutral-950 tracking-display">3×</div><div className="text-xs text-neutral-500 mt-0.5">Engagement Lift</div></div>
+                    <div className="bg-white p-5"><div className="w-9 h-9 rounded-md bg-brand-50 border border-brand-100 flex items-center justify-center mb-3"><Zap className="w-4 h-4 text-brand-600" /></div><div className="font-display text-3xl font-bold text-neutral-950 tracking-display">70%</div><div className="text-xs text-neutral-500 mt-0.5">Workflow Automation</div></div>
+                    <div className="bg-white p-5"><div className="w-9 h-9 rounded-md bg-brand-50 border border-brand-100 flex items-center justify-center mb-3"><TrendingUp className="w-4 h-4 text-brand-600" /></div><div className="font-display text-3xl font-bold text-neutral-950 tracking-display">3×</div><div className="text-xs text-neutral-500 mt-0.5">Productivity Lift</div></div>
                   </div>
                 </div>
               </div>
@@ -401,7 +401,7 @@ export default function AIAgentsPage() {
       {/* INDUSTRIES */}
       <section className="py-20 lg:py-24 bg-neutral-50 border-y border-neutral-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <Reveal><div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 items-end mb-14"><div><div className="text-eyebrow text-brand-600 uppercase mb-4">Industries We Serve</div><h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950">Custom AI Agent Solutions <span className="text-brand-600">For Industry Needs</span></h2></div><p className="text-base text-neutral-600 leading-relaxed lg:justify-self-end max-w-lg">We offer AI agent development services for all industries — cutting response time by 50% and boosting engagement by 3× to enhance efficiency and customer experience.</p></div></Reveal>
+          <Reveal><div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 items-end mb-14"><div><div className="text-eyebrow text-brand-600 uppercase mb-4">Industries We Serve</div><h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950">Custom AI Agent Solutions <span className="text-brand-600">For Industry Needs</span></h2></div><p className="text-base text-neutral-600 leading-relaxed lg:justify-self-end max-w-lg">We offer AI agent development services for all industries — automating multi-step workflows, reducing manual workload, and boosting operational efficiency by 3×.</p></div></Reveal>
           <Reveal delay={150}>
             <div className="grid lg:grid-cols-[1fr_1.5fr] gap-6 lg:gap-10">
               <ul className="bg-white border border-neutral-200 rounded-lg overflow-hidden divide-y divide-neutral-100 h-fit">
@@ -423,7 +423,7 @@ export default function AIAgentsPage() {
         <div className="absolute inset-0 bg-gradient-to-tr from-brand-700/30 via-neutral-950 to-neutral-950" />
         <Parallax speed={0.15} className="absolute bottom-0 right-0 hidden lg:block pointer-events-none"><div className="w-96 h-96 rounded-full bg-brand-500/15 blur-3xl" /></Parallax>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <Reveal><div className="grid lg:grid-cols-[1fr_1.5fr] gap-10 mb-12 items-end"><div><div className="text-eyebrow text-brand-300 uppercase mb-4">Why Choose Tackxel</div><h2 className="font-display text-h2 lg:text-h2-lg text-white">Why Choose Tackxel For <span className="text-brand-300">AI Agent Development?</span></h2></div><p className="text-base text-neutral-300 leading-relaxed lg:justify-self-end max-w-xl">Get modern AI agent solutions specific to your business needs that automate interactions, improve engagement, and streamline business operations.</p></div></Reveal>
+          <Reveal><div className="grid lg:grid-cols-[1fr_1.5fr] gap-10 mb-12 items-end"><div><div className="text-eyebrow text-brand-300 uppercase mb-4">Why Choose Tackxel</div><h2 className="font-display text-h2 lg:text-h2-lg text-white">Why Choose Tackxel For <span className="text-brand-300">AI Agent Development?</span></h2></div><p className="text-base text-neutral-300 leading-relaxed lg:justify-self-end max-w-xl">Get modern AI agent solutions specific to your business needs that automate workflows, improve productivity, and streamline business operations.</p></div></Reveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-800 border border-neutral-800 rounded-lg overflow-hidden">
             {advantages.map((a, i) => (<Reveal key={a.no} delay={i * 80}><div className="bg-neutral-950 p-7 hover:bg-neutral-900/60 transition-colors h-full card-lift"><div className="flex items-start gap-4 mb-3"><div className="w-10 h-10 rounded-md bg-brand-500/15 border border-brand-500/25 flex items-center justify-center flex-shrink-0"><span className="font-mono text-xs font-bold text-brand-300">{a.no}</span></div><h3 className="text-base font-semibold text-white pt-2 leading-snug">{a.title}</h3></div><p className="text-sm text-neutral-400 leading-relaxed pl-14">{a.desc}</p></div></Reveal>))}
           </div>
@@ -444,7 +444,7 @@ export default function AIAgentsPage() {
       <section className="py-20 lg:py-24 bg-neutral-950 text-white relative overflow-hidden">
         <Parallax speed={0.2} className="absolute top-0 right-0 hidden lg:block pointer-events-none"><div className="w-96 h-96 rounded-full bg-brand-500/10 blur-3xl" /></Parallax>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <Reveal><div className="grid lg:grid-cols-[1fr_2fr] gap-12 mb-12 items-end"><div><div className="text-eyebrow text-brand-300 uppercase mb-4">Tech Stack</div><h2 className="font-display text-h2 lg:text-h2-lg text-white">Technologies Powering Our AI Agents</h2></div><p className="text-base text-neutral-400 leading-relaxed max-w-xl lg:justify-self-end">Production-grade frameworks, foundation models, and integration platforms — chosen for reliability and operational maturity at enterprise scale.</p></div></Reveal>
+          <Reveal><div className="grid lg:grid-cols-[1fr_2fr] gap-12 mb-12 items-end"><div><div className="text-eyebrow text-brand-300 uppercase mb-4">Tech Stack</div><h2 className="font-display text-h2 lg:text-h2-lg text-white">Technologies Powering Our AI Agents</h2></div><p className="text-base text-neutral-400 leading-relaxed max-w-xl lg:justify-self-end">Production-grade agentic frameworks, foundation models, and integration platforms — chosen for reliability and operational maturity at enterprise scale.</p></div></Reveal>
           <Reveal delay={100}>
             <div className="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden">
               <div className="flex flex-wrap gap-px bg-neutral-800 border-b border-neutral-800">{techStackTabs.map((t, i) => (<button key={t.category} onClick={() => setActiveStack(i)} className={`flex-1 min-w-[120px] px-4 lg:px-6 py-4 text-sm font-medium transition-all ${activeStack === i ? "bg-brand-600 text-white border-b-2 border-b-brand-300" : "bg-neutral-900 text-neutral-400 hover:bg-neutral-800/60 hover:text-white"}`}><div className="text-xs font-mono mb-1 opacity-70">{String(i + 1).padStart(2, "0")}</div>{t.category}</button>))}</div>

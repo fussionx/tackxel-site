@@ -11,7 +11,7 @@ const serviceMenu = {
     { name: "AI Consulting", href: "/services/ai-consulting" },
     { name: "AI and ML", href: "/services/ai-and-ml" },
     { name: "AI Apps", href: "/services/ai-apps" },
-    { name: "Chatbots", href: "/services" },
+    { name: "Chatbots", href: "/services/chatbots" },
     { name: "Generative AI", href: "/services/generative-ai" },
     { name: "AI Agents", href: "/services/ai-agents" },
     { name: "Agentic AI", href: "/services" },
@@ -54,7 +54,7 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   // Pages with dark hero (white text on dark)
-  const isDarkHero = pathname === "/" || pathname === "/about" || pathname === "/services" || pathname === "/services/software-development" || pathname === "/services/web-app-development" || pathname === "/services/ai-consulting" || pathname === "/services/ai-and-ml" || pathname === "/services/ai-apps" || pathname === "/services/ai-agents" || pathname === "/services/generative-ai";
+  const isDarkHero = pathname === "/" || pathname === "/about" || pathname === "/services" || pathname === "/services/software-development" || pathname === "/services/web-app-development" || pathname === "/services/ai-consulting" || pathname === "/services/ai-and-ml" || pathname === "/services/ai-apps" || pathname === "/services/ai-agents" || pathname === "/services/generative-ai" || pathname === "/services/chatbots";
   // When not scrolled and on dark hero, use light text/logo. Otherwise dark.
   const onDark = isDarkHero && !scrolled;
 
