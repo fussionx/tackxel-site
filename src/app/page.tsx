@@ -6,11 +6,14 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight, ArrowUpRight, Sparkles,
-  Lightbulb, Hammer, TrendingUp, Check,
+  Lightbulb, Hammer, TrendingUp, Check, Users,
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import Counter from "@/components/Counter";
+import {
+  IconAI, IconMobileApp, IconWebApp, IconDesign, IconIoT,
+} from "@/components/Icons";
 
 const capabilities = [
   {
@@ -61,6 +64,39 @@ const startingPaths: Record<StartingPath, { no: string; title: string; desc: str
     { no: "04", title: "Hand back when stable", desc: "Knowledge transfer documented. Notice-period flexibility. We don't outstay our welcome — that's the point." },
   ],
 };
+
+const otherServices = [
+  {
+    Icon: IconMobileApp,
+    name: "Mobile App Development",
+    href: "/services/mobile-app-development",
+    desc: "Native iOS, Android, React Native, and Flutter. App Store-ready pipelines. 90 days of post-launch support.",
+  },
+  {
+    Icon: IconWebApp,
+    name: "Web & Product Engineering",
+    href: "/services/web-app-development",
+    desc: "Production web platforms on Next.js, React, Node, and Rails. Built for the team that owns it next year.",
+  },
+  {
+    Icon: IconDesign,
+    name: "Product Design",
+    href: "/services/product-design",
+    desc: "UX research, design systems, production UI, developer handover. Design that ships, not deck art.",
+  },
+  {
+    Icon: Users,
+    name: "Staff Augmentation",
+    href: "/services/staff-augmentation",
+    desc: "Senior engineers embedded in your team. Match in days, not months. No agency middle layer.",
+  },
+  {
+    Icon: IconIoT,
+    name: "IoT & Connected Devices",
+    href: "/services/iot-and-connected-devices",
+    desc: "BLE, NFC, wearables, smart hardware. Plus the mobile companion app and AWS telemetry. One team.",
+  },
+];
 
 const caseStudyTiles = [
   { title: "Co-manufacturer ERP", subtitle: "Manufacturing · ERP · Flagship", href: "/case-studies/co-manufacturer-erp", img: "/images/case-studies/erp.jpg" },
@@ -254,6 +290,88 @@ export default function HomePage() {
               ))}
             </motion.div>
           </AnimatePresence>
+        </div>
+      </section>
+
+      {/* SERVICES — AI featured + 5-card grid */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <Reveal>
+            <div className="grid lg:grid-cols-[1fr_2fr] gap-12 mb-12 items-end">
+              <div>
+                <div className="text-eyebrow text-brand-600 uppercase mb-4">What we build</div>
+                <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 tracking-display-tight leading-tight">
+                  Six services. <span className="text-neutral-500">One senior team.</span>
+                </h2>
+              </div>
+              <p className="text-base text-neutral-600 leading-relaxed max-w-xl lg:justify-self-end">
+                Pick one or combine them. Most projects pull in two or three &mdash; AI plus mobile, web plus design, ERP plus a shop-floor app.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* Featured AI card */}
+          <Reveal>
+            <Link href="/services/ai-integration" className="group block mb-5 lg:mb-6">
+              <article className="relative bg-gradient-to-br from-orange-50 via-white to-brand-50 border border-neutral-200 rounded-3xl overflow-hidden card-lift">
+                <span className="absolute top-5 right-5 z-10 bg-neutral-950 text-white text-[10px] font-mono uppercase tracking-widest font-semibold px-3 py-1 rounded-full">
+                  Most in demand
+                </span>
+                <div className="grid lg:grid-cols-[1.4fr_1fr] gap-0 items-stretch">
+                  <div className="p-8 lg:p-12">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-12 h-12 rounded-xl bg-white border border-neutral-200 flex items-center justify-center shadow-subtle">
+                        <IconAI className="w-7 h-7" />
+                      </div>
+                      <h3 className="font-display text-h3 text-neutral-950">AI Integration</h3>
+                    </div>
+                    <p className="text-base lg:text-lg text-neutral-700 leading-relaxed mb-6 max-w-xl">
+                      Ship AI features that hold up in production. GPT, LLMs, RAG, agents, and the eval pipelines that keep quality measurable.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-7">
+                      {["GPT", "LLMs", "RAG", "Agents", "Eval pipelines"].map((t) => (
+                        <span key={t} className="inline-flex items-center px-2.5 py-1 rounded-full bg-white border border-neutral-200 text-[11px] font-medium text-neutral-700">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-950 group-hover:text-brand-600 transition-colors">
+                      Learn more
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                    </span>
+                  </div>
+                  <div className="hidden lg:block relative border-l border-neutral-200/50">
+                    <Image
+                      src="/images/services/ai.jpg"
+                      alt="AI integration visualisation"
+                      width={1200}
+                      height={800}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </article>
+            </Link>
+          </Reveal>
+
+          {/* 5 other services */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+            {otherServices.map((s, i) => (
+              <Reveal key={s.name} delay={i * 60}>
+                <Link href={s.href} className="group block bg-white border border-neutral-200 rounded-3xl p-7 card-lift h-full">
+                  <div className="w-12 h-12 rounded-xl bg-neutral-50 border border-neutral-200 flex items-center justify-center mb-5">
+                    <s.Icon className="w-7 h-7 text-neutral-700" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-neutral-950 mb-2 leading-snug">{s.name}</h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed mb-5">{s.desc}</p>
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-neutral-900 group-hover:text-brand-600 transition-colors">
+                    Learn more
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
