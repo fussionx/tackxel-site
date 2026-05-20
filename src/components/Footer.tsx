@@ -12,6 +12,7 @@ const columns = [
       { label: "Product Design", href: "/services/product-design" },
       { label: "IoT & Connected Devices", href: "/services/iot-and-connected-devices" },
       { label: "Enterprise Platforms & ERP", href: "/services/enterprise-platforms-and-erp" },
+      { label: "Staff Augmentation", href: "/services/staff-augmentation" },
     ],
   },
   {

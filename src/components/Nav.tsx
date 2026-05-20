@@ -13,6 +13,7 @@ const services = [
   { name: "Product Design",              href: "/services/product-design",               desc: "UX research, design systems, handover" },
   { name: "IoT & Connected Devices",     href: "/services/iot-and-connected-devices",    desc: "BLE, NFC, wearables, smart hardware" },
   { name: "Enterprise Platforms & ERP",  href: "/services/enterprise-platforms-and-erp", desc: "Custom SaaS, ERP, internal tools" },
+  { name: "Staff Augmentation",          href: "/services/staff-augmentation",           desc: "Senior engineers embedded in your team" },
 ];
 
 // Pages whose hero is dark (white text on dark background). Header switches
@@ -28,6 +29,7 @@ const DARK_HERO_PAGES = new Set<string>([
   "/services/product-design",
   "/services/iot-and-connected-devices",
   "/services/enterprise-platforms-and-erp",
+  "/services/staff-augmentation",
   "/case-studies",
   "/case-studies/co-manufacturer-erp",
   "/case-studies/storage-iot",

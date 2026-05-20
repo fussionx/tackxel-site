@@ -49,12 +49,12 @@ const team = [
   { src: "/images/team/marketing.jpg", role: "Growth",          area: "Marketing" },
 ];
 
-const priorSectors = [
-  "Saudi fintech",
-  "Food tech",
-  "Healthcare",
-  "Real estate",
-  "Wearables & BLE hardware",
+const priorProducts = [
+  "Lexa",
+  "My Friend",
+  "Saudi fintech investment app",
+  "BLE-connected wearables",
+  "iOS 3D scanning SDK",
 ];
 
 export default function AboutPage() {
@@ -81,7 +81,7 @@ export default function AboutPage() {
                 A small team of senior builders.
               </h1>
               <p className="text-lg text-neutral-300 mt-6 max-w-2xl leading-relaxed">
-                Tackxel is a boutique product engineering studio. We exist because founders and product teams need real builders — not agency overhead, not junior bench, not slideware.
+                UK boutique product engineering studio. We ship product for founders and product leaders who need senior hands fast &mdash; not agency overhead, junior bench, or slideware.
               </p>
               <div className="flex flex-wrap gap-3 mt-8">
                 <Link href="/contact" className="btn-brand">
@@ -133,10 +133,10 @@ export default function AboutPage() {
 
                 <div className="space-y-5 text-base text-neutral-700 leading-relaxed max-w-xl">
                   <p>
-                    Tackxel was founded in 2024. Before it, I spent seven years building production mobile and web systems — leading mobile engineering on shipped products across {priorSectors.slice(0, -1).join(", ")}, and {priorSectors.at(-1)?.toLowerCase()}.
+                    Tackxel was founded in 2024. Before it, I spent seven years shipping production mobile and web systems &mdash; Lexa, My Friend, a Saudi fintech investment app, BLE-connected wearables, an iOS 3D scanning SDK. Across fintech, food tech, healthcare, real estate, and wearables.
                   </p>
                   <p>
-                    I started Tackxel because the founders and product leaders I respected kept hitting the same wall: they needed senior engineering hands fast, but the only options were agencies with junior bench, or full-time hires that took six months to land. Neither matches how product teams actually need to move.
+                    I started Tackxel because the founders and product leaders I respected kept hitting the same wall. They needed senior engineering hands fast. The only options were agencies running a junior bench, or full-time hires that took six months to land. Neither matches how product teams actually move.
                   </p>
                   <p>
                     So we built the team I wished I could hire. Small. Senior. No sales layer. The person you talk to on the first call is the person on the project.
@@ -244,7 +244,7 @@ export default function AboutPage() {
               <div>
                 <div className="text-eyebrow text-brand-600 uppercase mb-4">Before Tackxel</div>
                 <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950">
-                  Seven years of shipping, in five sectors
+                  Seven years. Five products. Real shipped work.
                 </h2>
               </div>
             </Reveal>
@@ -252,11 +252,11 @@ export default function AboutPage() {
             <Reveal delay={150}>
               <div>
                 <p className="text-base text-neutral-700 leading-relaxed mb-6 max-w-2xl">
-                  Before founding Tackxel, Uzair led mobile engineering on shipped products at Clustox across these sectors. This is the production background that informs how we build today — but the projects below are <span className="font-semibold text-neutral-900">not Tackxel case studies</span>. For Tackxel's own work, see the case studies page.
+                  Before founding Tackxel, Uzair shipped these as lead mobile engineer at Clustox. Production work across fintech, food tech, healthcare, real estate, and wearables &mdash; the background that informs how we build today. But <span className="font-semibold text-neutral-900">not Tackxel case studies</span>. For Tackxel&apos;s own work, see the case studies page.
                 </p>
 
                 <ul className="grid sm:grid-cols-2 gap-px bg-neutral-200 border border-neutral-200 rounded-lg overflow-hidden mb-6">
-                  {priorSectors.map((s) => (
+                  {priorProducts.map((s) => (
                     <li key={s} className="bg-white px-5 py-4 text-sm text-neutral-800 font-medium">
                       {s}
                     </li>
@@ -316,10 +316,10 @@ export default function AboutPage() {
           <Reveal>
             <div className="text-eyebrow text-brand-300 uppercase mb-4">Get in touch</div>
             <h2 className="font-display text-h2 lg:text-h2-lg text-white mb-4 max-w-2xl mx-auto">
-              Got something to build? Book a discovery call.
+              Got something to ship? Let&apos;s scope it.
             </h2>
             <p className="text-base text-neutral-400 leading-relaxed mb-8 max-w-xl mx-auto">
-              A 30-minute call with the founder. No slide decks, no sales reps — just an engineer thinking through your problem with you.
+              30 minutes with the founder. No deck, no sales rep. Just a senior engineer thinking through your problem with you.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link href="/contact" className="btn-brand">

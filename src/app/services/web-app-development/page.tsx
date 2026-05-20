@@ -25,9 +25,9 @@ const services = [
     desc: "Custom web applications engineered around your unique business logic, integrations, and compliance — not off-the-shelf platforms forced into workarounds.",
     bullets: [
       "Customized web apps built for your business model and workflows.",
-      "99.9% uptime, enterprise-grade scalability, and flexible architecture.",
+      "Production-grade reliability and flexible architecture, not enterprise theatre.",
       "Built using React, Node.js, Laravel, and cloud-native frameworks.",
-      "Agile sprints ensure 40% faster time-to-market and adaptability.",
+      "Two-week sprints, written status, demos every Friday. Ship faster without surprises.",
       "Full ownership of source code, infrastructure, and IP from day one.",
     ],
     metric: { value: "40%", label: "Faster time-to-market" },
@@ -121,7 +121,7 @@ const emergingTech = [
   {
     Icon: IconAWS,
     title: "Cloud-Enabled Performance",
-    desc: "Employ cloud-native frameworks to scale applications globally, cut infrastructure costs by 30%, and maintain 99.9% uptime for enterprise-grade reliability.",
+    desc: "Cloud-native architecture sized to your unit economics. Scale globally without the runaway AWS bill that surprises everyone in month three.",
   },
   {
     Icon: IconDevOps,
@@ -137,7 +137,7 @@ const challenges = [
   { title: "Slow Response Speeds Under Load", solution: "Load testing with k6 and Locust against realistic production traffic. Performance budgets enforced in CI catch regressions before they reach users." },
   { title: "Legacy Systems Slowing Innovation", solution: "Incremental modernization with strangler-fig patterns — we modernize alongside your existing system without a high-risk big-bang rewrite." },
   { title: "Integration Issues Across Platforms", solution: "Contract-first API design, schema validation, and integration test suites for every external system. Vendor reliability scored before commitment." },
-  { title: "High Development and Maintenance Costs", solution: "Senior-only engineering pool means fewer rewrites, fewer bugs in production, and faster onboarding. TCO drops 30–50% versus large outsourced teams." },
+  { title: "High development and maintenance costs", solution: "Senior-only engineering means fewer rewrites, fewer bugs in production, and faster onboarding. Total cost drops because the work doesn&apos;t have to be redone." },
   { title: "Inconsistent Cross-Platform Performance", solution: "Responsive design system, device labs for QA, and performance testing across browsers and devices. Same UX on Chrome desktop, Safari iPhone, and Edge tablet." },
   { title: "Slow Bug Resolution and Testing Gaps", solution: "Test pyramids in CI from sprint one — automated unit, integration, and E2E coverage. Bugs caught in PR review, not customer-reported." },
   { title: "Difficulty Scaling SaaS Products Globally", solution: "Multi-region deployment, tenant isolation, and CDN routing. Compliance frameworks (SOC 2, GDPR, HIPAA) applied per market without code branches." },
@@ -273,7 +273,7 @@ export default function WebAppDevelopmentPage() {
 
               <Reveal delay={220}>
                 <p className="text-lg text-neutral-300 mt-6 max-w-2xl leading-relaxed">
-                  Tackxel builds high-performing web apps that reduce time-to-market by 35% and improve scalability by 50% — helping businesses deliver faster, smoother, and more secure digital experiences.
+                  Tackxel ships production web apps on Next.js, React, Node, and Rails. Built for the team that owns it next year, not just the launch on Friday.
                 </p>
               </Reveal>
 
@@ -747,7 +747,7 @@ export default function WebAppDevelopmentPage() {
                     Our Approach
                   </div>
                   <p className="text-sm text-neutral-700 leading-relaxed mb-6">
-                    Tackxel&apos;s agile methodology and CI/CD pipelines cut release times by 50% and improve delivery consistency.
+                    Two-week sprints, CI/CD on every commit. Releases ship faster and land cleaner because we don&apos;t skip the boring engineering work.
                   </p>
 
                   <div className="grid grid-cols-2 gap-px bg-neutral-200 border border-neutral-200 rounded-md overflow-hidden">

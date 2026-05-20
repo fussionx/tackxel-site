@@ -27,10 +27,10 @@ export default function ContactPage() {
                   Start a conversation
                 </span>
                 <h1 className="font-display text-h1 lg:text-h1-lg text-neutral-950 tracking-display-tight">
-                  Talk to the founder about your project.
+                  Talk to the founder.
                 </h1>
                 <p className="text-lg text-neutral-600 mt-6 max-w-xl leading-relaxed">
-                  Tell us what you&apos;re building. The founder responds within one business day — no sales reps, no slide decks.
+                  Tell us what you&apos;re building. The founder replies within one business day. No sales reps. No slide decks.
                 </p>
 
                 <div className="mt-10 space-y-3">

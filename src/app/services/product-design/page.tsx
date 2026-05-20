@@ -99,8 +99,8 @@ const advantages = [
   { no: "02", title: "Wide Range Of Services",    desc: "Get end-to-end services that let you stay ahead of competitors — tackling every step of product design, from initial idea to final product release." },
   { no: "03", title: "Transparency",              desc: "Keep track of your product design and development cycle with frequent, transparent updates on all the details of your project — no surprises." },
   { no: "04", title: "Client-Centered Approach",  desc: "Experience flexibility and scalability in our product design services — specifically tailored to your custom business needs for a true client-first approach." },
-  { no: "05", title: "Top 1% of Tech Talent",     desc: "Our designers come from the top 1% of global design talent — vetted across portfolio, craft, problem-solving, and collaboration skills." },
-  { no: "06", title: "10+ Years of Experience",   desc: "Over a decade of delivering production-quality product design across SaaS, eCommerce, fintech, healthcare, and enterprise platforms." },
+  { no: "05", title: "Senior-only design",        desc: "Every designer placed has shipped to production for 5+ years. Vetted on portfolio, craft, problem-solving, and collaboration. No junior bench." },
+  { no: "06", title: "Production-tested craft",   desc: "Shipped product design across SaaS, eCommerce, fintech, healthcare, and enterprise platforms. The founder's seven-year mobile background is the floor, not the ceiling." },
 ];
 
 const industries = [
@@ -188,7 +188,7 @@ export default function ProductDesignPage() {
             </div>
             <Reveal delay={300} direction="left">
               <div className="space-y-3">
-                <div className="bg-neutral-900/80 backdrop-blur border border-neutral-800 rounded-lg p-5 flex items-center gap-4 card-lift"><div className="w-12 h-12 rounded-md bg-brand-500/10 border border-brand-500/20 flex items-center justify-center flex-shrink-0"><Award className="w-6 h-6 text-brand-300" /></div><div><div className="font-display text-base font-bold text-white">Top 1%</div><div className="text-xs text-neutral-400">Of Tech Talent · Vetted Designers</div></div></div>
+                <div className="bg-neutral-900/80 backdrop-blur border border-neutral-800 rounded-lg p-5 flex items-center gap-4 card-lift"><div className="w-12 h-12 rounded-md bg-brand-500/10 border border-brand-500/20 flex items-center justify-center flex-shrink-0"><Award className="w-6 h-6 text-brand-300" /></div><div><div className="font-display text-base font-bold text-white">Senior-only</div><div className="text-xs text-neutral-400">5+ years production · No junior bench</div></div></div>
                 <div className="bg-neutral-900/80 backdrop-blur border border-neutral-800 rounded-lg p-5 flex items-center gap-4 card-lift"><div className="w-12 h-12 rounded-md bg-brand-500/10 border border-brand-500/20 flex items-center justify-center flex-shrink-0"><Clock className="w-6 h-6 text-brand-300" /></div><div><div className="font-display text-base font-bold text-white">10+ Years</div><div className="text-xs text-neutral-400">Of Design Experience</div></div></div>
                 <div className="bg-neutral-900/80 backdrop-blur border border-neutral-800 rounded-lg p-5 flex items-center gap-4 card-lift"><div className="w-12 h-12 rounded-md bg-brand-500/10 border border-brand-500/20 flex items-center justify-center flex-shrink-0"><Sparkles className="w-6 h-6 text-brand-300" /></div><div><div className="font-display text-base font-bold text-white">Fast Track</div><div className="text-xs text-neutral-400">Delivery · Transparent updates</div></div></div>
               </div>

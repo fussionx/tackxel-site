@@ -20,76 +20,76 @@ const services = [
     Icon: IconAI,
     name: "AI Integration",
     href: "/services/ai-integration",
-    desc: "GPT, LLMs, and generative AI integrated into products. RAG, custom workflows, agents, and evaluation pipelines that don't break.",
+    desc: "Ship AI features that hold up in production. GPT, LLMs, RAG, agents, and the eval pipelines that keep quality measurable.",
     featured: true,
   },
   {
     Icon: IconMobileApp,
     name: "Mobile App Development",
     href: "/services/mobile-app-development",
-    desc: "Native iOS and Android, or cross-platform React Native and Flutter. App Store-ready pipelines and 90-day post-launch support baked in.",
+    desc: "Native iOS, Android, React Native, and Flutter. App Store-ready pipelines. 90 days of post-launch support included.",
   },
   {
     Icon: IconWebApp,
     name: "Web Application Development",
     href: "/services/web-app-development",
-    desc: "Production web platforms on Next.js, React, Node, and Rails — engineered for speed today and the team that maintains them next year.",
+    desc: "Web platforms on Next.js, React, Node, and Rails. Built for the team that owns it next year, not just today.",
   },
   {
     Icon: IconDesign,
     name: "Product Design",
     href: "/services/product-design",
-    desc: "UX research, wireframes, design systems, high-fidelity UI, and developer handover. Design that ships, not just deck art.",
+    desc: "UX research, design systems, production UI, developer handover. Design that ships, not deck art.",
   },
   {
     Icon: IconIoT,
     name: "IoT & Connected Devices",
     href: "/services/iot-and-connected-devices",
-    desc: "BLE, NFC, wearables, and smart hardware paired with mobile companion apps and cloud telemetry — one team, end to end.",
+    desc: "BLE, NFC, wearables, smart hardware. Plus the mobile companion app and AWS telemetry. One team, end to end.",
   },
   {
     Icon: IconCustomSoftware,
     name: "Enterprise Platforms & ERP",
     href: "/services/enterprise-platforms-and-erp",
-    desc: "Custom SaaS, ERP systems, and internal tools built end to end — role-based portals, EDI integrations, and operations-grade reliability.",
+    desc: "Custom ERPs, role-based portals, internal SaaS, EDI integrations. Built end to end on AWS for operations-grade reliability.",
   },
 ];
 
 const audiences = [
   {
     Icon: IconStartup,
-    label: "Founders & early-stage startups",
-    desc: "A senior team that can take you from idea to a credible v1 in users' hands. We start with discovery, ship a focused MVP, and instrument it so your next decision is evidence-based.",
+    label: "Founders shipping v1",
+    desc: "From idea to live product in weeks, not quarters. We scope discovery sharply, ship a focused MVP, and instrument it so the next decision runs on data.",
   },
   {
     Icon: IconScaleup,
     label: "Scaleups adding capacity",
-    desc: "Extra senior engineering and product hands that plug into your existing standards, codebase, and cadence. No agency overhead, no junior bench — just builders who match your bar.",
+    desc: "Senior engineering and product hands that drop into your stack, codebase, and sprint cadence. No agency middle layer, no junior bench &mdash; just builders who match your bar.",
   },
   {
     Icon: IconEnterprise,
-    label: "Operations & enterprise teams",
-    desc: "Custom platforms, ERPs, and internal tools for businesses that have outgrown spreadsheets and SaaS templates. We build the system, then hand over clean.",
+    label: "Ops teams outgrowing spreadsheets",
+    desc: "Custom platforms, ERPs, and internal tools for businesses that have outgrown SaaS templates. We build it, document it, hand over clean.",
   },
 ];
 
 const engagements = [
   {
     name: "Fixed-Cost Projects",
-    desc: "Defined deliverables, milestones, and price. Best for bounded product launches and time-sensitive initiatives where requirements are well-understood.",
+    desc: "Locked scope, locked price, locked timeline. Best when requirements are clear and you need a launch on a date.",
     cta: "Scope a project",
     Illus: IllusFixedCost,
   },
   {
     name: "Dedicated Teams",
-    desc: "A small senior pod that ships against your roadmap. Best for ongoing product development with predictable monthly capacity.",
+    desc: "A small senior pod shipping against your roadmap. Predictable monthly capacity. Best for ongoing product development.",
     cta: "Build your team",
     featured: true,
     Illus: IllusDedicatedTeam,
   },
   {
     name: "Staff Augmentation",
-    desc: "Senior engineers embedded directly in your existing team. Best for filling specific skill gaps short-term — no agency overhead, no long onboarding cycles.",
+    desc: "Senior engineers embedded directly in your team. Skill gaps filled fast, no agency middle layer, no long onboarding.",
     cta: "Augment your team",
     Illus: IllusStaffAug,
   },
@@ -207,7 +207,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                 className="text-lg text-neutral-300 mt-6 max-w-2xl leading-relaxed"
               >
-                Tackxel is a UK-based boutique product studio building AI integrations, mobile apps, web platforms, IoT systems, and custom ERPs for founders and product teams globally.
+                We engineer AI integrations, mobile apps, web platforms, IoT systems, and custom ERPs &mdash; for founders and product teams who need senior hands, fast.
               </motion.p>
 
               <motion.div
@@ -350,10 +350,10 @@ export default function HomePage() {
                   <span className="text-eyebrow text-brand-600 uppercase font-bold tracking-widest">About Tackxel</span>
                 </div>
                 <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 mb-6 leading-tight max-w-xl">
-                  A small senior team that builds, not pitches.
+                  Small senior team. Builds, not pitches.
                 </h2>
                 <p className="text-base lg:text-lg text-neutral-600 leading-relaxed mb-5 max-w-xl">
-                  Tackxel is a UK-registered boutique product engineering studio founded in 2024. A small senior team — designer, engineers, and growth — built to give founders and product teams real engineering hands without agency overhead.
+                  Tackxel is a UK-registered boutique product engineering studio, founded 2024. Designer, engineers, growth &mdash; senior across the board. Built to give founders and product teams real engineering hands without agency overhead.
                 </p>
                 <p className="text-base text-neutral-600 leading-relaxed mb-8 max-w-xl">
                   No bench, no sales team, no juniors hidden behind senior interviews. The people you meet on the discovery call are the ones doing the work.
@@ -433,7 +433,7 @@ export default function HomePage() {
             <div className="max-w-2xl mb-12">
               <div className="text-eyebrow text-brand-600 uppercase mb-4">Who we partner with</div>
               <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950">
-                Teams that need real builders, not an agency
+                Real builders. Not an agency.
               </h2>
             </div>
           </Reveal>
@@ -471,11 +471,11 @@ export default function HomePage() {
               <div>
                 <div className="text-eyebrow text-brand-600 uppercase mb-4">Engagement models</div>
                 <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950">
-                  Three ways to engage
+                  Three ways to engage.
                 </h2>
               </div>
               <p className="text-base text-neutral-600 leading-relaxed max-w-xl lg:justify-self-end">
-                Pick the shape that matches what you&apos;re building. All three put senior builders on your project from day one — no agency middle layer, no junior bench.
+                Pick the shape that fits the project. All three put senior builders on your work on day one. No agency middle layer. No junior bench.
               </p>
             </div>
           </Reveal>
@@ -519,7 +519,7 @@ export default function HomePage() {
                 </h2>
               </div>
               <p className="text-base text-neutral-600 leading-relaxed max-w-xl lg:justify-self-end">
-                Every engagement follows the same four-phase model. Predictable cadence, written deliverables at each phase, no theatre.
+                Same four-phase model on every engagement. Predictable cadence, written deliverables at each gate, no theatre.
               </p>
             </div>
           </Reveal>
@@ -575,7 +575,7 @@ export default function HomePage() {
               <div>
                 <div className="text-eyebrow text-brand-600 uppercase mb-4">Selected work</div>
                 <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950">
-                  Real systems, shipped
+                  Real systems. Shipped.
                 </h2>
               </div>
               <p className="text-base text-neutral-600 leading-relaxed max-w-xl lg:justify-self-end">
@@ -662,10 +662,10 @@ export default function HomePage() {
           <Reveal>
             <div className="text-eyebrow text-brand-300 uppercase mb-4">Get in touch</div>
             <h2 className="font-display text-h2 lg:text-h2-lg text-white mb-4 max-w-2xl mx-auto">
-              Ready to ship something? Book a discovery call.
+              Got something to ship? Let&apos;s scope it.
             </h2>
             <p className="text-base text-neutral-400 leading-relaxed mb-8 max-w-xl mx-auto">
-              A 30-minute call with the founder. No slide decks, no sales reps — just a senior engineer thinking through your problem with you.
+              30 minutes with the founder. No deck, no sales rep. Just a senior engineer thinking through your problem with you.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link href="/contact" className="btn-brand">
