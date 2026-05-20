@@ -6,45 +6,32 @@ import { useState, useEffect } from "react";
 import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import Logo from "./Logo";
 
-const serviceMenu = {
-  "Artificial Intelligence": [
-    { name: "AI Consulting", href: "/services/ai-consulting" },
-    { name: "AI and ML", href: "/services/ai-and-ml" },
-    { name: "AI Apps", href: "/services/ai-apps" },
-    { name: "Chatbots", href: "/services/chatbots" },
-    { name: "Generative AI", href: "/services/generative-ai" },
-    { name: "AI Agents", href: "/services/ai-agents" },
-    { name: "Agentic AI", href: "/services/agentic-ai" },
-  ],
-  "Product & Startup Services": [
-    { name: "Product Strategy", href: "/services/product-strategy" },
-    { name: "Product Design", href: "/services/product-design" },
-    { name: "UI/UX Design", href: "/services/ui-ux-design" },
-    { name: "POC/MVP Development", href: "/services/poc-mvp-development" },
-  ],
-  "Development": [
-    { name: "Software Development", href: "/services/software-development" },
-    { name: "Web App Development", href: "/services/web-app-development" },
-    { name: "Mobile App Development", href: "/services" },
-    { name: "Blockchain", href: "/services" },
-  ],
-  "Strategic Services": [
-    { name: "Digital Transformation", href: "/services/digital-transformation" },
-    { name: "Legacy Software Modernization", href: "/services/legacy-modernization" },
-    { name: "QA and Testing", href: "/services/qa-testing" },
-  ],
-  "Cloud & DevOps": [
-    { name: "Cloud Migration", href: "/services" },
-    { name: "Cloud Engineering", href: "/services" },
-    { name: "DevOps", href: "/services" },
-    { name: "AWS", href: "/services" },
-  ],
-  "Engagement Models": [
-    { name: "Fixed Price", href: "/services" },
-    { name: "Staff Augmentation", href: "/services" },
-    { name: "Dedicated Teams", href: "/services" },
-  ],
-};
+const services = [
+  { name: "Mobile App Development",      href: "/services/mobile-app-development",       desc: "iOS, Android, React Native, Flutter" },
+  { name: "Web Application Development", href: "/services/web-app-development",          desc: "Next.js, React, Node, Rails" },
+  { name: "IoT & Connected Devices",     href: "/services/iot-and-connected-devices",    desc: "BLE, NFC, wearables, smart hardware" },
+  { name: "AI Integration",              href: "/services/ai-integration",               desc: "GPT, LLMs, generative AI in products" },
+  { name: "Enterprise Platforms & ERP",  href: "/services/enterprise-platforms-and-erp", desc: "Custom SaaS, ERP, internal tools" },
+];
+
+// Pages whose hero is dark (white text on dark background). Header switches
+// the logo + link colors based on this. Lookup-by-Set so adding a page is
+// just one line, and the check is O(1).
+const DARK_HERO_PAGES = new Set<string>([
+  "/",
+  "/about",
+  "/services",
+  "/services/mobile-app-development",
+  "/services/web-app-development",
+  "/services/iot-and-connected-devices",
+  "/services/ai-integration",
+  "/services/enterprise-platforms-and-erp",
+  "/case-studies",
+  "/case-studies/co-manufacturer-erp",
+  "/case-studies/storage-iot",
+  "/case-studies/investor-saas",
+  "/case-studies/real-estate-syndication",
+]);
 
 export default function Nav() {
   const pathname = usePathname();
@@ -52,10 +39,7 @@ export default function Nav() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Pages with dark hero (white text on dark)
-  const isDarkHero = pathname === "/" || pathname === "/about" || pathname === "/services" || pathname === "/services/software-development" || pathname === "/services/web-app-development" || pathname === "/services/ai-consulting" || pathname === "/services/ai-and-ml" || pathname === "/services/ai-apps" || pathname === "/services/ai-agents" || pathname === "/services/generative-ai" || pathname === "/services/chatbots" || pathname === "/services/agentic-ai" || pathname === "/services/digital-transformation" || pathname === "/services/legacy-modernization" || pathname === "/services/qa-testing" || pathname === "/services/product-strategy" || pathname === "/services/product-design" || pathname === "/services/ui-ux-design" || pathname === "/services/poc-mvp-development";
-  // When not scrolled and on dark hero, use light text/logo. Otherwise dark.
-  const onDark = isDarkHero && !scrolled;
+  const onDark = DARK_HERO_PAGES.has(pathname) && !scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -63,6 +47,10 @@ export default function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const linkClass = onDark
+    ? "text-neutral-200 hover:text-white"
+    : "text-neutral-700 hover:text-neutral-950";
 
   return (
     <>
@@ -84,13 +72,7 @@ export default function Nav() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button
-                className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors ${
-                  onDark
-                    ? "text-neutral-200 hover:text-white"
-                    : "text-neutral-700 hover:text-neutral-950"
-                }`}
-              >
+              <button className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors ${linkClass}`}>
                 Services
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
               </button>
@@ -98,59 +80,41 @@ export default function Nav() {
               {servicesOpen && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3">
                   <div
-                    className="bg-white border border-neutral-200 rounded-xl shadow-2xl p-8 grid grid-cols-3 gap-x-10 gap-y-6"
-                    style={{ width: "880px" }}
+                    className="bg-white border border-neutral-200 rounded-xl shadow-2xl p-3"
+                    style={{ width: "400px" }}
                   >
-                    {Object.entries(serviceMenu).map(([category, items]) => (
-                      <div key={category}>
-                        <div className="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-3 pb-2 border-b border-neutral-100">
-                          {category}
-                        </div>
-                        <ul className="space-y-1.5">
-                          {items.map((item) => (
-                            <li key={item.name}>
-                              <Link
-                                href={item.href}
-                                className="block text-sm text-neutral-700 hover:text-brand-600 transition-colors py-0.5"
-                              >
-                                {item.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
+                    <ul className="divide-y divide-neutral-100">
+                      {services.map((s) => (
+                        <li key={s.name}>
+                          <Link
+                            href={s.href}
+                            className="block px-4 py-3 rounded-lg hover:bg-neutral-50 transition-colors group"
+                          >
+                            <div className="text-sm font-semibold text-neutral-950 group-hover:text-brand-600 transition-colors">
+                              {s.name}
+                            </div>
+                            <div className="text-xs text-neutral-500 mt-0.5">{s.desc}</div>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               )}
             </div>
 
-            <Link
-              href="/about"
-              className={`px-4 py-2 text-sm font-medium transition-colors ${
-                onDark
-                  ? "text-neutral-200 hover:text-white"
-                  : "text-neutral-700 hover:text-neutral-950"
-              }`}
-            >
-              Company
+            <Link href="/case-studies" className={`px-4 py-2 text-sm font-medium transition-colors ${linkClass}`}>
+              Case studies
             </Link>
 
-            <Link
-              href="/contact"
-              className={`px-4 py-2 text-sm font-medium transition-colors ${
-                onDark
-                  ? "text-neutral-200 hover:text-white"
-                  : "text-neutral-700 hover:text-neutral-950"
-              }`}
-            >
-              Resources
+            <Link href="/about" className={`px-4 py-2 text-sm font-medium transition-colors ${linkClass}`}>
+              About
             </Link>
           </nav>
 
           <div className="hidden lg:flex items-center">
             <Link href="/contact" className="btn-get-in-touch group">
-              <span>Get in Touch</span>
+              <span>Get in touch</span>
               <span className="btn-arrow-wrap">
                 <ArrowRight className="w-3.5 h-3.5 btn-arrow-1" />
                 <ArrowRight className="w-3.5 h-3.5 btn-arrow-2" />
@@ -171,32 +135,40 @@ export default function Nav() {
       {mobileOpen && (
         <div className="fixed inset-0 z-40 bg-white lg:hidden pt-20">
           <div className="px-6 py-8 overflow-y-auto h-full">
-            <div className="space-y-6">
-              {Object.entries(serviceMenu).map(([category, items]) => (
-                <div key={category}>
-                  <div className="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-3">
-                    {category}
-                  </div>
-                  <ul className="space-y-2 pl-2">
-                    {items.map((item) => (
-                      <li key={item.name}>
-                        <Link
-                          href={item.href}
-                          onClick={() => setMobileOpen(false)}
-                          className="block text-sm text-neutral-700 py-1"
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+            <div className="space-y-8">
+              <div>
+                <div className="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-3">
+                  Services
                 </div>
-              ))}
-              <div className="pt-6 border-t border-neutral-200 space-y-3">
-                <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-base font-medium text-neutral-900">Company</Link>
-                <Link href="/contact" onClick={() => setMobileOpen(false)} className="block text-base font-medium text-neutral-900">Resources</Link>
-                <Link href="/contact" onClick={() => setMobileOpen(false)} className="btn-get-in-touch w-full justify-center mt-4">
-                  <span>Get in Touch</span>
+                <ul className="space-y-1">
+                  {services.map((s) => (
+                    <li key={s.name}>
+                      <Link
+                        href={s.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="block py-2.5 border-b border-neutral-100"
+                      >
+                        <div className="text-base font-semibold text-neutral-900">{s.name}</div>
+                        <div className="text-xs text-neutral-500 mt-0.5">{s.desc}</div>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="space-y-3">
+                <Link href="/case-studies" onClick={() => setMobileOpen(false)} className="block text-base font-medium text-neutral-900">
+                  Case studies
+                </Link>
+                <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-base font-medium text-neutral-900">
+                  About
+                </Link>
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="btn-get-in-touch w-full justify-center mt-4"
+                >
+                  <span>Get in touch</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

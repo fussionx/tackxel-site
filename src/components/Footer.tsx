@@ -4,43 +4,30 @@ import { ArrowRight, Linkedin, Twitter, Github } from "lucide-react";
 
 const columns = [
   {
-    title: "Platform",
+    title: "Services",
     links: [
-      { label: "Custom Software", href: "/services" },
-      { label: "Mobile & Web Apps", href: "/services" },
-      { label: "Cloud Infrastructure", href: "/services" },
-      { label: "AI & Machine Learning", href: "/services" },
-      { label: "DevOps Automation", href: "/services" },
-      { label: "Quality Engineering", href: "/services" },
+      { label: "Mobile App Development", href: "/services/mobile-app-development" },
+      { label: "Web App Development", href: "/services/web-app-development" },
+      { label: "IoT & Connected Devices", href: "/services/iot-and-connected-devices" },
+      { label: "AI Integration", href: "/services/ai-integration" },
+      { label: "Enterprise Platforms & ERP", href: "/services/enterprise-platforms-and-erp" },
     ],
   },
   {
-    title: "Solutions",
+    title: "Case studies",
     links: [
-      { label: "For Startups", href: "/services" },
-      { label: "For Scaleups", href: "/services" },
-      { label: "For Enterprise", href: "/services" },
-      { label: "Digital Transformation", href: "/services" },
-      { label: "Legacy Modernization", href: "/services" },
-    ],
-  },
-  {
-    title: "Engagement",
-    links: [
-      { label: "Fixed-Scope Projects", href: "/services" },
-      { label: "Dedicated Teams", href: "/services" },
-      { label: "Staff Augmentation", href: "/services" },
-      { label: "Technology Audit", href: "/contact" },
+      { label: "Co-manufacturer ERP", href: "/case-studies/co-manufacturer-erp" },
+      { label: "Storage IoT", href: "/case-studies/storage-iot" },
+      { label: "Investor SaaS", href: "/case-studies/investor-saas" },
+      { label: "Real-estate syndication", href: "/case-studies/real-estate-syndication" },
+      { label: "All case studies", href: "/case-studies" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "Leadership", href: "/about" },
-      { label: "Careers", href: "/contact" },
       { label: "Contact", href: "/contact" },
-      { label: "Press", href: "/contact" },
     ],
   },
 ];
@@ -85,11 +72,11 @@ export default function Footer() {
 
       {/* Sitemap */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-[1.4fr_repeat(4,1fr)] gap-12">
+        <div className="grid lg:grid-cols-[1.4fr_repeat(3,1fr)] gap-12">
           <div>
             <Logo variant="light" className="h-7 w-auto mb-6" />
             <p className="text-sm text-neutral-400 leading-relaxed max-w-xs mb-8">
-              Senior engineering teams for companies building the software that runs modern business.
+              Engineering teams that ship product. UK-based, globally remote.
             </p>
             <div className="flex gap-2">
               <a
