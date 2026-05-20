@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { motion, type Variants } from "framer-motion";
+import { type ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
@@ -11,63 +12,56 @@ type RevealProps = {
   duration?: number;
 };
 
+// Scroll-triggered reveal. Uses Framer Motion's whileInView so the animation
+// fires once when the element enters the viewport and never re-runs.
+// API preserved from the prior IntersectionObserver-based version so all
+// consumers keep working without changes — delay and duration are in ms.
 export default function Reveal({
   children,
   className = "",
   delay = 0,
   direction = "up",
   distance = 24,
-  duration = 800,
+  duration = 500,
 }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  const getTransform = () => {
-    if (visible) return "translate3d(0, 0, 0)";
-    switch (direction) {
-      case "up":
-        return `translate3d(0, ${distance}px, 0)`;
-      case "down":
-        return `translate3d(0, -${distance}px, 0)`;
-      case "left":
-        return `translate3d(${distance}px, 0, 0)`;
-      case "right":
-        return `translate3d(-${distance}px, 0, 0)`;
-      default:
-        return "translate3d(0, 0, 0)";
-    }
-  };
+  const initial: { opacity: number; x?: number; y?: number } = { opacity: 0 };
+  switch (direction) {
+    case "up":    initial.y = distance;  break;
+    case "down":  initial.y = -distance; break;
+    case "left":  initial.x = distance;  break;
+    case "right": initial.x = -distance; break;
+  }
 
   return (
-    <div
-      ref={ref}
+    <motion.div
       className={className}
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: getTransform(),
-        transition: `opacity ${duration}ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform ${duration}ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
-        willChange: "opacity, transform",
+      initial={initial}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true, amount: 0.12, margin: "0px 0px -40px 0px" }}
+      transition={{
+        duration: duration / 1000,
+        delay: delay / 1000,
+        ease: [0.16, 1, 0.3, 1],
       }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
+
+// Stagger variant for grids — wrap a list of children and they reveal in sequence.
+export const staggerContainer: Variants = {
+  hidden: { opacity: 1 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08, delayChildren: 0.05 },
+  },
+};
+export const staggerItem: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+  },
+};

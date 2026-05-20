@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Web Application Development Company — Tackxel",
+  title: "Next.js Development Agency UK — Web App Engineering",
   description:
-    "Tackxel builds high-performing web applications that reduce time-to-market by 35% and improve scalability by 50%. Custom web apps, SaaS, PWAs, SPAs, and eCommerce platforms — engineered by senior full-stack teams.",
+    "UK Next.js development agency. Production web platforms on Next.js, React, Node and Rails by a senior boutique studio. Custom web apps and SaaS engineered to last.",
+  keywords: [
+    "Next.js development agency",
+    "web app development UK",
+    "React development UK",
+    "Node.js development UK",
+    "Rails development UK",
+    "SaaS development UK",
+  ],
   alternates: { canonical: "/services/web-app-development" },
   openGraph: {
-    title: "Web Application Development — Tackxel",
+    title: "Next.js Development Agency UK — Tackxel",
     description:
-      "Custom web apps, SaaS platforms, PWAs, and SPAs built by senior engineering teams. 99.9% uptime, enterprise-grade scalability.",
+      "Production web platforms on Next.js, React, Node and Rails. Engineered by a senior UK boutique studio.",
     url: "/services/web-app-development",
   },
 };

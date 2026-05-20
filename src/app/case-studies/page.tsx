@@ -8,14 +8,22 @@ import {
 } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Case studies — Real systems Tackxel has shipped",
+  title: "Case Studies — UK Boutique Engineering Work",
   description:
-    "Four anchor case studies: a US storage operator's mobile + IoT platform, a flagship co-manufacturer ERP, a real estate investor SaaS, and a multi-unit syndication marketplace.",
+    "Tackxel case studies: a flagship co-manufacturer ERP, a US storage mobile + IoT platform, an investor SaaS and a real estate syndication marketplace. Real systems, shipped.",
+  keywords: [
+    "Tackxel case studies",
+    "UK software studio case studies",
+    "ERP case study",
+    "IoT case study",
+    "SaaS case study",
+    "real estate proptech case study",
+  ],
   alternates: { canonical: "/case-studies" },
   openGraph: {
-    title: "Case studies — Tackxel",
+    title: "Case Studies — Tackxel UK",
     description:
-      "Real systems, shipped. Mobile + IoT, custom ERP, investor SaaS, and a syndication marketplace.",
+      "Real systems, shipped: ERP, mobile + IoT, investor SaaS and a syndication marketplace by a UK boutique studio.",
     url: "/case-studies",
     type: "website",
   },

@@ -49,6 +49,10 @@ body {
   0%, 100% { opacity: 0.85; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.05); }
 }
+@keyframes glow-drift {
+  0%, 100% { background-position: 0% 50%; opacity: 0.5; }
+  50% { background-position: 100% 50%; opacity: 0.8; }
+}
 .hero-glow {
   position: relative;
   background: #09090B;
@@ -62,6 +66,17 @@ body {
     radial-gradient(ellipse 50% 40% at 100% 100%, rgba(49, 89, 165, 0.12), transparent 60%);
   animation: glow-pulse 8s ease-in-out infinite;
   pointer-events: none;
+}
+/* Subtle drifting gradient overlay — adds slow lateral motion on top of the pulse */
+.hero-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 0%, rgba(49, 89, 165, 0.06) 40%, transparent 80%);
+  background-size: 220% 100%;
+  animation: glow-drift 14s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Floating accent for hero elements */

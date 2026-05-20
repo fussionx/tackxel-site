@@ -6,14 +6,14 @@ import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 
 export const metadata: Metadata = {
-  title: "About Tackxel — A boutique product engineering studio",
+  title: "About Tackxel — UK boutique software studio founded 2024",
   description:
-    "Tackxel is a small senior team founded in 2024 by Uzair Sufi after seven years leading mobile engineering on production systems across fintech, food tech, healthcare, real estate, and wearables.",
+    "Tackxel Ltd is a UK-registered boutique software studio founded 2024 by Uzair Sufi. A senior team building mobile, web, AI, IoT and custom ERP products globally.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Tackxel — A boutique product engineering studio",
+    title: "About Tackxel — UK boutique software studio",
     description:
-      "Founded in 2024 by Uzair Sufi. A small senior team building mobile, web, IoT, and AI products for founders and product teams.",
+      "Founded in 2024 by Uzair Sufi after 7 years leading mobile engineering. A senior boutique team — designer, engineers, marketing — building product end to end.",
     url: "/about",
     type: "website",
   },

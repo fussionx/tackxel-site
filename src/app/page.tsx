@@ -1,30 +1,27 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
+import Counter from "@/components/Counter";
 import {
   IconAI, IconMobileApp, IconWebApp, IconDesign, IconIoT, IconCustomSoftware,
   IconStartup, IconScaleup, IconEnterprise,
 } from "@/components/Icons";
 import {
-  IllusFixedCost, IllusDedicatedTeam,
+  IllusFixedCost, IllusDedicatedTeam, IllusStaffAug,
 } from "@/components/EngagementArt";
 
-const featuredService = {
-  Icon: IconAI,
-  name: "AI Integration",
-  href: "/services/ai-integration",
-  desc: "GPT, LLMs, and generative AI integrated into products that already ship. RAG, custom workflows, and evaluation pipelines built by engineers who understand both the models and the systems they live in.",
-  useCases: [
-    "Add AI to existing products",
-    "Build AI-first products",
-    "Custom agents and workflows",
-  ],
-};
-
 const services = [
+  {
+    Icon: IconAI,
+    name: "AI Integration",
+    href: "/services/ai-integration",
+    desc: "GPT, LLMs, and generative AI integrated into products. RAG, custom workflows, agents, and evaluation pipelines that don't break.",
+    featured: true,
+  },
   {
     Icon: IconMobileApp,
     name: "Mobile App Development",
@@ -88,6 +85,12 @@ const engagements = [
     cta: "Build your team",
     featured: true,
     Illus: IllusDedicatedTeam,
+  },
+  {
+    name: "Staff Augmentation",
+    desc: "Senior engineers embedded directly in your existing team. Best for filling specific skill gaps short-term — no agency overhead, no long onboarding cycles.",
+    cta: "Augment your team",
+    Illus: IllusStaffAug,
   },
 ];
 
@@ -160,12 +163,6 @@ const selectedClients = [
   "Australian freight platform",
 ];
 
-const stats = [
-  { value: "11+", label: "Production systems shipped" },
-  { value: "4", label: "Industries served" },
-  { value: "5", label: "Core services" },
-];
-
 export default function HomePage() {
   return (
     <>
@@ -233,7 +230,83 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES — AI featured + 5-card grid */}
+      {/* ABOUT — moved up to section #2 right after hero */}
+      <section className="py-20 lg:py-28 bg-white border-b border-neutral-200 relative overflow-hidden">
+        <Parallax speed={0.08} className="absolute -top-20 -right-20 hidden lg:block pointer-events-none">
+          <div className="w-[28rem] h-[28rem] rounded-full bg-brand-500/8 blur-3xl" />
+        </Parallax>
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20 items-center">
+            <Reveal>
+              <div className="relative">
+                {/* PLACEHOLDER - swap with real founder photo at /public/images/team/uzair.jpg */}
+                <div className="relative rounded-2xl overflow-hidden border border-neutral-200 shadow-elevated">
+                  <Image
+                    src="/images/team/uzair.jpg"
+                    alt="Uzair Sufi, founder of Tackxel"
+                    width={600}
+                    height={600}
+                    className="w-full h-auto block"
+                  />
+                </div>
+                {/* Floating founder plaque */}
+                <div className="absolute -bottom-5 -right-5 bg-neutral-950 text-white rounded-xl shadow-elevated border-4 border-white px-5 py-3 card-lift">
+                  <div className="text-[10px] font-mono text-brand-300 uppercase tracking-widest font-semibold">Founder</div>
+                  <div className="text-sm font-semibold text-white mt-0.5">Uzair Sufi</div>
+                </div>
+                {/* Subtle glow behind */}
+                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-brand-500/12 to-transparent blur-3xl -z-10 pointer-events-none" />
+              </div>
+            </Reveal>
+
+            <Reveal delay={120} direction="left">
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="h-px w-10 bg-brand-500" />
+                  <span className="text-eyebrow text-brand-600 uppercase font-bold tracking-widest">About Tackxel</span>
+                </div>
+                <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 mb-6 leading-tight max-w-xl">
+                  A small senior team that builds, not pitches.
+                </h2>
+                <p className="text-base lg:text-lg text-neutral-600 leading-relaxed mb-5 max-w-xl">
+                  Tackxel was founded in 2024 by Uzair Sufi after seven years leading mobile engineering. We&apos;re a boutique studio — founder, product designer, developers, and marketing — built to give founders and product teams real engineering hands without agency overhead.
+                </p>
+                <p className="text-base text-neutral-600 leading-relaxed mb-8 max-w-xl">
+                  No bench, no sales team, no juniors hidden behind senior interviews. The people you meet on the discovery call are the ones doing the work.
+                </p>
+
+                <div className="grid sm:grid-cols-3 gap-4 mb-8">
+                  <div className="bg-neutral-950 text-white rounded-xl p-5 card-lift">
+                    <div className="font-display text-4xl font-bold tracking-display mb-1.5">
+                      <Counter to={11} suffix="+" />
+                    </div>
+                    <div className="text-xs text-neutral-400 leading-snug">Production systems shipped</div>
+                  </div>
+                  <div className="bg-neutral-950 text-white rounded-xl p-5 card-lift">
+                    <div className="font-display text-4xl font-bold tracking-display mb-1.5">
+                      <Counter to={4} />
+                    </div>
+                    <div className="text-xs text-neutral-400 leading-snug">Industries served</div>
+                  </div>
+                  <div className="bg-neutral-950 text-white rounded-xl p-5 card-lift">
+                    <div className="font-display text-4xl font-bold tracking-display mb-1.5">
+                      <Counter to={6} />
+                    </div>
+                    <div className="text-xs text-neutral-400 leading-snug">Core services</div>
+                  </div>
+                </div>
+
+                <Link href="/about" className="btn-primary">
+                  More about us
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES — 6-card grid, AI pinned first with "Most in demand" tag */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <Reveal>
@@ -241,64 +314,24 @@ export default function HomePage() {
               <div>
                 <div className="text-eyebrow text-brand-600 uppercase mb-4">What we build</div>
                 <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950">
-                  Six practices, one senior team
+                  Built end to end.
                 </h2>
               </div>
               <p className="text-base text-neutral-600 leading-relaxed max-w-xl lg:justify-self-end">
-                Engage one practice or combine them. Most projects pull in two or three — AI plus mobile, web plus design, ERP plus a shop-floor app.
+                Six services. One senior team. Pick what you need — we&apos;ll scope it honestly and ship it.
               </p>
             </div>
           </Reveal>
 
-          {/* FEATURED — AI INTEGRATION */}
-          <Reveal>
-            <Link href={featuredService.href} className="block group mb-6 lg:mb-8">
-              <article className="relative bg-neutral-950 border border-neutral-800 text-white rounded-xl overflow-hidden card-lift">
-                <Parallax speed={0.12} className="absolute top-0 right-0 hidden lg:block pointer-events-none">
-                  <div className="w-96 h-96 rounded-full bg-brand-500/15 blur-3xl" />
-                </Parallax>
-                <span className="absolute top-4 right-4 z-10 bg-brand-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                  Lead service
-                </span>
-                <div className="relative grid lg:grid-cols-[1.2fr_1fr] gap-0 items-stretch">
-                  <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    <div className="text-eyebrow text-brand-300 uppercase mb-4 font-bold tracking-widest">
-                      Most in-demand
-                    </div>
-                    <h3 className="font-display text-h2 lg:text-h2-lg text-white mb-4 leading-tight">
-                      {featuredService.name}
-                    </h3>
-                    <p className="text-base text-neutral-300 leading-relaxed mb-7 max-w-xl">
-                      {featuredService.desc}
-                    </p>
-                    <ul className="grid sm:grid-cols-3 gap-3 mb-8">
-                      {featuredService.useCases.map((u) => (
-                        <li key={u} className="text-sm text-brand-100 flex items-start gap-2">
-                          <span className="text-brand-300 mt-0.5 flex-shrink-0">→</span>
-                          <span>{u}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white group-hover:text-brand-300 transition-colors">
-                      Explore AI Integration
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </span>
-                  </div>
-                  <div className="relative bg-gradient-to-br from-brand-600/30 via-brand-500/10 to-transparent border-t lg:border-t-0 lg:border-l border-neutral-800 flex items-center justify-center p-10 lg:p-12 min-h-[200px] lg:min-h-0">
-                    <div className="icon-wrap">
-                      <featuredService.Icon className="w-32 h-32 lg:w-44 lg:h-44" />
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </Link>
-          </Reveal>
-
-          {/* 5-CARD GRID */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
             {services.map((s, i) => (
               <Reveal key={s.name} delay={i * 60}>
-                <Link href={s.href} className="block bg-white border border-neutral-200 rounded-lg p-7 hover:border-neutral-300 transition-colors group h-full card-lift">
+                <Link href={s.href} className="relative block bg-white border border-neutral-200 rounded-lg p-7 hover:border-neutral-300 transition-colors group h-full card-lift">
+                  {s.featured && (
+                    <span className="absolute top-3 right-3 bg-brand-100 text-brand-700 text-[10px] font-mono uppercase tracking-wider font-semibold px-2 py-1 rounded">
+                      Most in demand
+                    </span>
+                  )}
                   <div className="icon-wrap mb-5">
                     <s.Icon className="w-14 h-14" />
                   </div>
@@ -360,16 +393,16 @@ export default function HomePage() {
               <div>
                 <div className="text-eyebrow text-brand-600 uppercase mb-4">Engagement models</div>
                 <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950">
-                  Two ways to engage
+                  Three ways to engage
                 </h2>
               </div>
               <p className="text-base text-neutral-600 leading-relaxed max-w-xl lg:justify-self-end">
-                Pick the shape that matches what you're building. Both put senior builders on your project from day one.
+                Pick the shape that matches what you&apos;re building. All three put senior builders on your project from day one — no agency middle layer, no junior bench.
               </p>
             </div>
           </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
+          <div className="grid md:grid-cols-3 gap-6">
             {engagements.map((e, i) => (
               <Reveal key={e.name} delay={i * 100}>
                 <article className={`rounded-lg border overflow-hidden h-full card-lift flex flex-col ${
@@ -542,47 +575,6 @@ export default function HomePage() {
               ))}
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      {/* ABOUT US */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <Reveal>
-              <div>
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="h-px w-10 bg-brand-500" />
-                  <span className="text-eyebrow text-brand-600 uppercase font-bold tracking-widest">About</span>
-                </div>
-                <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 mb-6">
-                  A small senior team that builds, not pitches.
-                </h2>
-                <p className="text-base text-neutral-600 leading-relaxed mb-5 max-w-xl">
-                  Tackxel was founded in 2024 by Uzair Sufi after seven years leading mobile engineering at Clustox. We're a boutique studio — founder, product designer, developers, and marketing — built to give founders and product teams real engineering hands without agency overhead.
-                </p>
-                <p className="text-base text-neutral-600 leading-relaxed mb-8 max-w-xl">
-                  No bench, no sales team, no juniors hidden behind senior interviews. The people you meet on the discovery call are the ones doing the work.
-                </p>
-
-                <Link href="/about" className="btn-primary">
-                  More about us
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </Reveal>
-
-            <Reveal delay={200} direction="left">
-              <div className="grid sm:grid-cols-3 gap-4">
-                {stats.map((s) => (
-                  <div key={s.label} className="bg-neutral-950 text-white rounded-2xl p-6 card-lift">
-                    <div className="font-display text-4xl font-bold tracking-display mb-2">{s.value}</div>
-                    <div className="text-sm text-neutral-400 leading-snug">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
         </div>
       </section>
 
