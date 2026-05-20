@@ -5,12 +5,24 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import {
-  IconMobileApp, IconWebApp, IconCustomSoftware, IconAI, IconIoT,
+  IconAI, IconMobileApp, IconWebApp, IconDesign, IconIoT, IconCustomSoftware,
   IconStartup, IconScaleup, IconEnterprise,
 } from "@/components/Icons";
 import {
   IllusFixedCost, IllusDedicatedTeam,
 } from "@/components/EngagementArt";
+
+const featuredService = {
+  Icon: IconAI,
+  name: "AI Integration",
+  href: "/services/ai-integration",
+  desc: "GPT, LLMs, and generative AI integrated into products that already ship. RAG, custom workflows, and evaluation pipelines built by engineers who understand both the models and the systems they live in.",
+  useCases: [
+    "Add AI to existing products",
+    "Build AI-first products",
+    "Custom agents and workflows",
+  ],
+};
 
 const services = [
   {
@@ -26,16 +38,16 @@ const services = [
     desc: "Production web platforms on Next.js, React, Node, and Rails — engineered for speed today and the team that maintains them next year.",
   },
   {
+    Icon: IconDesign,
+    name: "Product Design",
+    href: "/services/product-design",
+    desc: "UX research, wireframes, design systems, high-fidelity UI, and developer handover. Design that ships, not just deck art.",
+  },
+  {
     Icon: IconIoT,
     name: "IoT & Connected Devices",
     href: "/services/iot-and-connected-devices",
     desc: "BLE, NFC, wearables, and smart hardware paired with mobile companion apps and cloud telemetry — one team, end to end.",
-  },
-  {
-    Icon: IconAI,
-    name: "AI Integration",
-    href: "/services/ai-integration",
-    desc: "GPT, LLMs, and generative AI integrated into products that already ship. RAG, custom workflows, and evaluation pipelines that don't break.",
   },
   {
     Icon: IconCustomSoftware,
@@ -221,7 +233,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES — flat 5-card grid */}
+      {/* SERVICES — AI featured + 5-card grid */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <Reveal>
@@ -229,19 +241,64 @@ export default function HomePage() {
               <div>
                 <div className="text-eyebrow text-brand-600 uppercase mb-4">What we build</div>
                 <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950">
-                  Five practices, one senior team
+                  Six practices, one senior team
                 </h2>
               </div>
               <p className="text-base text-neutral-600 leading-relaxed max-w-xl lg:justify-self-end">
-                Engage one practice or combine them. Most of our projects pull in two or three — mobile plus IoT, web plus AI, ERP plus mobile shop-floor apps.
+                Engage one practice or combine them. Most projects pull in two or three — AI plus mobile, web plus design, ERP plus a shop-floor app.
               </p>
             </div>
           </Reveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-200 border border-neutral-200 rounded-lg overflow-hidden">
+          {/* FEATURED — AI INTEGRATION */}
+          <Reveal>
+            <Link href={featuredService.href} className="block group mb-6 lg:mb-8">
+              <article className="relative bg-neutral-950 border border-neutral-800 text-white rounded-xl overflow-hidden card-lift">
+                <Parallax speed={0.12} className="absolute top-0 right-0 hidden lg:block pointer-events-none">
+                  <div className="w-96 h-96 rounded-full bg-brand-500/15 blur-3xl" />
+                </Parallax>
+                <span className="absolute top-4 right-4 z-10 bg-brand-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  Lead service
+                </span>
+                <div className="relative grid lg:grid-cols-[1.2fr_1fr] gap-0 items-stretch">
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <div className="text-eyebrow text-brand-300 uppercase mb-4 font-bold tracking-widest">
+                      Most in-demand
+                    </div>
+                    <h3 className="font-display text-h2 lg:text-h2-lg text-white mb-4 leading-tight">
+                      {featuredService.name}
+                    </h3>
+                    <p className="text-base text-neutral-300 leading-relaxed mb-7 max-w-xl">
+                      {featuredService.desc}
+                    </p>
+                    <ul className="grid sm:grid-cols-3 gap-3 mb-8">
+                      {featuredService.useCases.map((u) => (
+                        <li key={u} className="text-sm text-brand-100 flex items-start gap-2">
+                          <span className="text-brand-300 mt-0.5 flex-shrink-0">→</span>
+                          <span>{u}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-white group-hover:text-brand-300 transition-colors">
+                      Explore AI Integration
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                  <div className="relative bg-gradient-to-br from-brand-600/30 via-brand-500/10 to-transparent border-t lg:border-t-0 lg:border-l border-neutral-800 flex items-center justify-center p-10 lg:p-12 min-h-[200px] lg:min-h-0">
+                    <div className="icon-wrap">
+                      <featuredService.Icon className="w-32 h-32 lg:w-44 lg:h-44" />
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </Link>
+          </Reveal>
+
+          {/* 5-CARD GRID */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
             {services.map((s, i) => (
               <Reveal key={s.name} delay={i * 60}>
-                <Link href={s.href} className="block bg-white p-7 hover:bg-neutral-50 transition-colors group h-full">
+                <Link href={s.href} className="block bg-white border border-neutral-200 rounded-lg p-7 hover:border-neutral-300 transition-colors group h-full card-lift">
                   <div className="icon-wrap mb-5">
                     <s.Icon className="w-14 h-14" />
                   </div>
@@ -249,7 +306,7 @@ export default function HomePage() {
                   <p className="text-sm text-neutral-600 leading-relaxed mb-5">{s.desc}</p>
                   <span className="text-sm font-medium text-neutral-900 group-hover:text-brand-600 transition-colors inline-flex items-center gap-1">
                     Learn more
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                   </span>
                 </Link>
               </Reveal>

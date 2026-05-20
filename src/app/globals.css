@@ -83,10 +83,11 @@ body {
   color: #FAFAFA;
   border: 1px solid #18181B;
   border-radius: 8px;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  transition: background 0.2s, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s;
   letter-spacing: -0.01em;
 }
-.btn-primary:hover { background: #3159A5; border-color: #3159A5; box-shadow: 0 6px 20px -8px rgba(49, 89, 165, 0.6); }
+.btn-primary:hover { background: #3159A5; border-color: #3159A5; box-shadow: 0 6px 20px -8px rgba(49, 89, 165, 0.6); transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0) scale(0.98); transition-duration: 0.1s; }
 
 .btn-brand {
   display: inline-flex;
@@ -99,10 +100,11 @@ body {
   color: #fff;
   border: 1px solid #3159A5;
   border-radius: 8px;
-  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   letter-spacing: -0.01em;
 }
-.btn-brand:hover { background: #264784; border-color: #264784; box-shadow: 0 6px 20px -8px rgba(49, 89, 165, 0.6); }
+.btn-brand:hover { background: #264784; border-color: #264784; box-shadow: 0 6px 20px -8px rgba(49, 89, 165, 0.6); transform: translateY(-1px); }
+.btn-brand:active { transform: translateY(0) scale(0.98); transition-duration: 0.1s; }
 
 .btn-secondary {
   display: inline-flex;
@@ -118,7 +120,8 @@ body {
   transition: all 0.2s;
   letter-spacing: -0.01em;
 }
-.btn-secondary:hover { border-color: #18181B; background: #fff; }
+.btn-secondary:hover { border-color: #18181B; background: #fff; transform: translateY(-1px); }
+.btn-secondary:active { transform: translateY(0) scale(0.98); transition-duration: 0.1s; }
 
 .btn-ghost-light {
   display: inline-flex;
@@ -134,7 +137,8 @@ body {
   transition: all 0.2s;
   letter-spacing: -0.01em;
 }
-.btn-ghost-light:hover { border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.05); }
+.btn-ghost-light:hover { border-color: rgba(255, 255, 255, 0.4); background: rgba(255, 255, 255, 0.05); transform: translateY(-1px); }
+.btn-ghost-light:active { transform: translateY(0) scale(0.98); transition-duration: 0.1s; }
 
 /* Animated Get in Touch button - arrow slides out, new arrow slides in */
 .btn-get-in-touch {
@@ -246,8 +250,12 @@ body {
   will-change: transform;
 }
 .card-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px -16px rgba(9, 9, 11, 0.18);
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px -18px rgba(9, 9, 11, 0.24), 0 8px 20px -12px rgba(49, 89, 165, 0.16);
+}
+.card-lift:active {
+  transform: translateY(-3px);
+  transition-duration: 0.15s;
 }
 
 /* Icon hover scale */

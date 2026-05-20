@@ -7,10 +7,11 @@ import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import Logo from "./Logo";
 
 const services = [
+  { name: "AI Integration",              href: "/services/ai-integration",               desc: "GPT, LLMs, generative AI in products", featured: true },
   { name: "Mobile App Development",      href: "/services/mobile-app-development",       desc: "iOS, Android, React Native, Flutter" },
   { name: "Web Application Development", href: "/services/web-app-development",          desc: "Next.js, React, Node, Rails" },
+  { name: "Product Design",              href: "/services/product-design",               desc: "UX research, design systems, handover" },
   { name: "IoT & Connected Devices",     href: "/services/iot-and-connected-devices",    desc: "BLE, NFC, wearables, smart hardware" },
-  { name: "AI Integration",              href: "/services/ai-integration",               desc: "GPT, LLMs, generative AI in products" },
   { name: "Enterprise Platforms & ERP",  href: "/services/enterprise-platforms-and-erp", desc: "Custom SaaS, ERP, internal tools" },
 ];
 
@@ -21,10 +22,11 @@ const DARK_HERO_PAGES = new Set<string>([
   "/",
   "/about",
   "/services",
+  "/services/ai-integration",
   "/services/mobile-app-development",
   "/services/web-app-development",
+  "/services/product-design",
   "/services/iot-and-connected-devices",
-  "/services/ai-integration",
   "/services/enterprise-platforms-and-erp",
   "/case-studies",
   "/case-studies/co-manufacturer-erp",
@@ -88,10 +90,17 @@ export default function Nav() {
                         <li key={s.name}>
                           <Link
                             href={s.href}
-                            className="block px-4 py-3 rounded-lg hover:bg-neutral-50 transition-colors group"
+                            className={`block px-4 py-3 rounded-lg transition-colors group ${s.featured ? "bg-brand-50/50 hover:bg-brand-50" : "hover:bg-neutral-50"}`}
                           >
-                            <div className="text-sm font-semibold text-neutral-950 group-hover:text-brand-600 transition-colors">
-                              {s.name}
+                            <div className="flex items-center gap-2">
+                              <div className="text-sm font-semibold text-neutral-950 group-hover:text-brand-600 transition-colors">
+                                {s.name}
+                              </div>
+                              {s.featured && (
+                                <span className="text-[10px] font-mono uppercase tracking-wider text-brand-700 bg-brand-100 px-1.5 py-0.5 rounded">
+                                  Lead
+                                </span>
+                              )}
                             </div>
                             <div className="text-xs text-neutral-500 mt-0.5">{s.desc}</div>
                           </Link>
@@ -146,9 +155,16 @@ export default function Nav() {
                       <Link
                         href={s.href}
                         onClick={() => setMobileOpen(false)}
-                        className="block py-2.5 border-b border-neutral-100"
+                        className={`block py-2.5 border-b border-neutral-100 ${s.featured ? "-mx-3 px-3 bg-brand-50/50 rounded" : ""}`}
                       >
-                        <div className="text-base font-semibold text-neutral-900">{s.name}</div>
+                        <div className="flex items-center gap-2">
+                          <div className="text-base font-semibold text-neutral-900">{s.name}</div>
+                          {s.featured && (
+                            <span className="text-[10px] font-mono uppercase tracking-wider text-brand-700 bg-brand-100 px-1.5 py-0.5 rounded">
+                              Lead
+                            </span>
+                          )}
+                        </div>
                         <div className="text-xs text-neutral-500 mt-0.5">{s.desc}</div>
                       </Link>
                     </li>

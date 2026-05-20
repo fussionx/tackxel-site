@@ -6,10 +6,11 @@ const columns = [
   {
     title: "Services",
     links: [
+      { label: "AI Integration", href: "/services/ai-integration" },
       { label: "Mobile App Development", href: "/services/mobile-app-development" },
       { label: "Web App Development", href: "/services/web-app-development" },
+      { label: "Product Design", href: "/services/product-design" },
       { label: "IoT & Connected Devices", href: "/services/iot-and-connected-devices" },
-      { label: "AI Integration", href: "/services/ai-integration" },
       { label: "Enterprise Platforms & ERP", href: "/services/enterprise-platforms-and-erp" },
     ],
   },
