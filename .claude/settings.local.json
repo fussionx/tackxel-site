@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config *)",
+      "Bash(node *)",
+      "Bash(npm install *)",
+      "PowerShell(Get-Item public\\\\images\\\\team\\\\uzair.jpg | Select-Object FullName, @{N='KB';E={[math]::Round\\($_.Length/1024,1\\)}})",
+      "PowerShell(Get-ChildItem public\\\\images -Recurse -File | Sort-Object FullName | Select-Object @{N='path';E={$_.FullName -replace [regex]::Escape\\(\\(Get-Location\\).Path + '\\\\public\\\\'\\),''}}, @{N='kb';E={[math]::Round\\($_.Length/1024,1\\)}} | Format-Table -AutoSize)",
+      "Bash(git commit *)",
+      "Bash(git add *)",
+      "Bash(npm run *)",
+      "Bash(git push *)"
+    ]
+  }
+}
