@@ -185,7 +185,7 @@ export default function HomePage() {
 
             <Reveal delay={200}>
               <p className="text-lg text-neutral-300 mt-6 max-w-2xl leading-relaxed">
-                Tackxel is a boutique product studio building mobile apps, web platforms, IoT systems, and AI-powered products for founders and product teams.
+                Tackxel is a UK-based boutique product studio building mobile apps, web platforms, IoT systems, and AI-powered products for founders and product teams globally.
               </p>
             </Reveal>
 

@@ -137,24 +137,23 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-neutral-800 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <p className="text-xs text-neutral-500">
-            © {new Date().getFullYear()} Tackxel, Inc. All rights reserved.
-          </p>
-          <div className="flex gap-6 text-xs text-neutral-500">
-            <Link href="/" className="hover:text-white transition-colors">
-              Privacy
-            </Link>
-            <Link href="/" className="hover:text-white transition-colors">
-              Terms
-            </Link>
-            <Link href="/" className="hover:text-white transition-colors">
-              Security
-            </Link>
-            <Link href="/" className="hover:text-white transition-colors">
-              Status
-            </Link>
+        <div className="mt-16 pt-8 border-t border-neutral-800 flex flex-col gap-3">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <p className="text-xs text-neutral-500">
+              © {new Date().getFullYear()} Tackxel Ltd · Registered in England &amp; Wales · Company No. 17212854
+            </p>
+            <div className="flex gap-6 text-xs text-neutral-500">
+              <Link href="/" className="hover:text-white transition-colors">
+                Privacy
+              </Link>
+              <Link href="/" className="hover:text-white transition-colors">
+                Terms
+              </Link>
+            </div>
           </div>
+          <p className="text-xs text-neutral-600">
+            19 Athol Road, Manchester, M16 8QW, United Kingdom
+          </p>
         </div>
       </div>
     </footer>

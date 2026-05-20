@@ -273,6 +273,43 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* WHERE WE'RE BASED */}
+      <section className="py-20 lg:py-24 bg-white border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-16 items-start">
+            <Reveal>
+              <div>
+                <div className="text-eyebrow text-brand-600 uppercase mb-4">Where we're based</div>
+                <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950">
+                  UK-registered, globally remote
+                </h2>
+              </div>
+            </Reveal>
+
+            <Reveal delay={150}>
+              <div className="max-w-2xl">
+                <p className="text-base text-neutral-700 leading-relaxed mb-8">
+                  Tackxel Ltd is a UK-registered Private Limited Company, headquartered in Manchester. We operate as a remote-first team, serving clients globally.
+                </p>
+
+                <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-6">
+                  <div className="text-xs text-neutral-500 uppercase tracking-wider font-semibold mb-3">Registered office</div>
+                  <address className="not-italic text-sm text-neutral-800 leading-relaxed mb-4">
+                    Tackxel Ltd<br />
+                    19 Athol Road<br />
+                    Manchester, M16 8QW<br />
+                    United Kingdom
+                  </address>
+                  <div className="pt-4 border-t border-neutral-200 text-xs text-neutral-500 font-mono">
+                    Company No. 17212854 · Registered in England &amp; Wales
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* FINAL CTA */}
       <section className="py-20 bg-neutral-950 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">

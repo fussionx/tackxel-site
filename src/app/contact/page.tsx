@@ -1,21 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Check, Mail, Phone, Calendar, Briefcase, Globe } from "lucide-react";
+import { ArrowRight, Check, Mail, Phone } from "lucide-react";
 import Reveal from "@/components/Reveal";
-
-const offices = [
-  { country: "United States", city: "Dover, Delaware", address: "8 The Green, STE A, Dover, DE 19901" },
-  { country: "Canada", city: "Toronto, Ontario", address: "1 Fore Street, Toronto, ON" },
-  { country: "Australia", city: "Sydney, NSW", address: "45 Lachlan St, Liverpool NSW 2170" },
-  { country: "Pakistan", city: "Lahore, Punjab", address: "30 Shah Jamal Road, Lahore" },
-];
 
 const expectations = [
   "Confidential — NDA available on request",
-  "First response within 4 business hours",
-  "Initial call routed to a senior engineer, not a sales rep",
-  "Written technical assessment within 5 business days",
+  "First response within one business day",
+  "Initial call with the founder, not a sales rep",
+  "Written follow-up summarising scope and next steps",
 ];
 
 export default function ContactPage() {
@@ -34,10 +27,10 @@ export default function ContactPage() {
                   Start a conversation
                 </span>
                 <h1 className="font-display text-h1 lg:text-h1-lg text-neutral-950 tracking-display-tight">
-                  Talk to a senior engineer about your project.
+                  Talk to the founder about your project.
                 </h1>
                 <p className="text-lg text-neutral-600 mt-6 max-w-xl leading-relaxed">
-                  Tell us what you&apos;re building. We&apos;ll respond within 4 business hours with a senior engineer who can speak to the specifics of your stack, timeline, and goals.
+                  Tell us what you&apos;re building. The founder responds within one business day — no sales reps, no slide decks.
                 </p>
 
                 <div className="mt-10 space-y-3">
@@ -56,18 +49,14 @@ export default function ContactPage() {
                 <div className="mt-10 pt-8 border-t border-neutral-200">
                   <div className="text-eyebrow text-neutral-500 uppercase mb-4">Prefer to skip the form?</div>
                   <div className="space-y-3">
-                    <a href="mailto:sales@tackxel.com" className="flex items-center gap-3 text-sm text-neutral-900 hover:text-brand-600 transition-colors">
+                    <a href="mailto:contact@tackxel.com" className="flex items-center gap-3 text-sm text-neutral-900 hover:text-brand-600 transition-colors">
                       <Mail className="w-4 h-4 text-neutral-400" />
-                      sales@tackxel.com
+                      contact@tackxel.com
                     </a>
-                    <a href="tel:+15188401004" className="flex items-center gap-3 text-sm text-neutral-900 hover:text-brand-600 transition-colors">
+                    <div className="flex items-center gap-3 text-sm text-neutral-500">
                       <Phone className="w-4 h-4 text-neutral-400" />
-                      +1 (518) 840-1004
-                    </a>
-                    <a href="#" className="flex items-center gap-3 text-sm text-neutral-900 hover:text-brand-600 transition-colors">
-                      <Calendar className="w-4 h-4 text-neutral-400" />
-                      Schedule directly on our calendar
-                    </a>
+                      Phone available on request
+                    </div>
                   </div>
                 </div>
               </div>
@@ -92,10 +81,8 @@ export default function ContactPage() {
                           Engagement type<span className="text-brand-600">*</span>
                         </label>
                         <select className="w-full bg-white border border-neutral-300 rounded-md px-3 py-2.5 text-sm text-neutral-900 focus:border-brand-500 outline-none transition-colors">
-                          <option>Fixed-scope project</option>
-                          <option>Dedicated engineering team</option>
-                          <option>Staff augmentation</option>
-                          <option>Technology audit / advisory</option>
+                          <option>Fixed-cost project</option>
+                          <option>Dedicated team</option>
                           <option>Not sure yet</option>
                         </select>
                       </div>
@@ -125,7 +112,7 @@ export default function ContactPage() {
                     </div>
                     <h2 className="font-display text-h3 text-neutral-950 mb-3">Inquiry received.</h2>
                     <p className="text-sm text-neutral-600 leading-relaxed max-w-sm mx-auto">
-                      A senior engineer will reach out within 4 business hours. In the meantime, you&apos;ll receive a confirmation email with a calendar link.
+                      The founder will reach out within one business day. In the meantime, you&apos;ll receive a confirmation email at the address you provided.
                     </p>
                   </div>
                 )}
@@ -135,55 +122,45 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-neutral-50 border-b border-neutral-200">
+      <section className="py-20 lg:py-24 bg-neutral-50 border-t border-neutral-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { Icon: Briefcase, label: "Sales & New Business", email: "sales@tackxel.com", subline: "+1 (518) 840-1004", isPhone: true },
-              { Icon: Calendar, label: "Press & Media", email: "press@tackxel.com", subline: "Response within 1 business day" },
-              { Icon: Globe, label: "Careers", email: "hr@tackxel.com", subline: "Open roles across all four offices" },
-            ].map((c, i) => (
-              <Reveal key={c.label} delay={i * 100}>
-                <div className="bg-white border border-neutral-200 rounded-lg p-8 card-lift h-full">
-                  <c.Icon className="w-5 h-5 text-brand-600 mb-6" />
-                  <div className="text-eyebrow text-neutral-500 uppercase mb-3">{c.label}</div>
-                  <a href={`mailto:${c.email}`} className="block text-lg font-semibold text-neutral-950 hover:text-brand-600 transition-colors mb-2">{c.email}</a>
-                  {c.isPhone ? (
-                    <a href={`tel:${c.subline.replace(/\s/g, "")}`} className="text-sm text-neutral-600 hover:text-brand-600 transition-colors">{c.subline}</a>
-                  ) : (
-                    <p className="text-sm text-neutral-600">{c.subline}</p>
-                  )}
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <Reveal>
-            <div className="grid lg:grid-cols-[1fr_2fr] gap-12 mb-12">
+          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-16 items-start">
+            <Reveal>
               <div>
-                <div className="text-eyebrow text-brand-600 uppercase mb-4">Office locations</div>
-                <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950">Four cities. One firm.</h2>
+                <div className="text-eyebrow text-brand-600 uppercase mb-4">Where we&apos;re based</div>
+                <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950">
+                  UK-registered, globally remote
+                </h2>
+                <p className="text-base text-neutral-600 leading-relaxed mt-6 max-w-md">
+                  Tackxel Ltd is a UK-registered Private Limited Company, headquartered in Manchester. We operate as a remote-first team, serving clients globally.
+                </p>
               </div>
-              <p className="text-base text-neutral-600 leading-relaxed self-end">
-                Our engineering teams are distributed across four offices. Every client gets a dedicated delivery lead in their time zone — and the option to visit in person.
-              </p>
-            </div>
-          </Reveal>
+            </Reveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-200 border border-neutral-200 rounded-lg overflow-hidden">
-            {offices.map((o, i) => (
-              <Reveal key={o.country} delay={i * 80}>
-                <div className="bg-white p-8 hover:bg-neutral-50 transition-colors h-full">
-                  <div className="text-xs text-neutral-500 uppercase tracking-wider font-semibold mb-3">{o.country}</div>
-                  <h3 className="text-h3 text-neutral-950 mb-2">{o.city}</h3>
-                  <p className="text-sm text-neutral-600 leading-relaxed">{o.address}</p>
+            <Reveal delay={150}>
+              <div className="bg-white border border-neutral-200 rounded-lg p-8 shadow-card max-w-xl">
+                <div className="text-xs text-neutral-500 uppercase tracking-wider font-semibold mb-4">Registered office</div>
+                <address className="not-italic text-base text-neutral-900 leading-relaxed mb-6">
+                  Tackxel Ltd<br />
+                  19 Athol Road<br />
+                  Manchester, M16 8QW<br />
+                  United Kingdom
+                </address>
+                <div className="pt-6 border-t border-neutral-200 space-y-3 text-sm">
+                  <a href="mailto:contact@tackxel.com" className="flex items-center gap-3 text-neutral-900 hover:text-brand-600 transition-colors">
+                    <Mail className="w-4 h-4 text-neutral-400" />
+                    contact@tackxel.com
+                  </a>
+                  <div className="flex items-center gap-3 text-neutral-500">
+                    <Phone className="w-4 h-4 text-neutral-400" />
+                    Phone available on request
+                  </div>
                 </div>
-              </Reveal>
-            ))}
+                <div className="mt-6 pt-6 border-t border-neutral-200 text-xs text-neutral-500 font-mono">
+                  Company No. 17212854 · Registered in England &amp; Wales
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
