@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
@@ -166,40 +167,55 @@ const selectedClients = [
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative hero-glow text-white pt-32 pb-24 overflow-hidden">
+      {/* HERO — dark, AI/tech feel, two-column with floating visual */}
+      <section className="relative hero-glow text-white pt-32 pb-20 lg:pb-28 overflow-hidden">
         <div className="absolute inset-0 grid-bg" />
 
-        <Parallax speed={0.15} className="absolute top-20 right-20 hidden lg:block pointer-events-none">
-          <div className="w-72 h-72 rounded-full bg-brand-500/10 blur-3xl float-slow" />
+        <Parallax speed={0.15} className="absolute top-20 -right-10 hidden lg:block pointer-events-none">
+          <div className="w-[28rem] h-[28rem] rounded-full bg-brand-500/15 blur-3xl float-slow" />
         </Parallax>
-        <Parallax speed={-0.1} className="absolute bottom-10 left-20 hidden lg:block pointer-events-none">
-          <div className="w-96 h-96 rounded-full bg-brand-400/5 blur-3xl" />
+        <Parallax speed={-0.1} className="absolute bottom-10 -left-20 hidden lg:block pointer-events-none">
+          <div className="w-[32rem] h-[32rem] rounded-full bg-brand-400/8 blur-3xl" />
         </Parallax>
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
-          <div className="max-w-4xl">
-            <Reveal delay={0}>
-              <span className="badge-dark mb-8">
+          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center lg:min-h-[640px]">
+            {/* LEFT — text */}
+            <div>
+              <motion.span
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="badge-dark mb-7 inline-flex"
+              >
                 <span className="dot-pulse" />
-                Boutique product engineering studio
-              </span>
-            </Reveal>
+                AI-led product engineering · UK
+              </motion.span>
 
-            <Reveal delay={100}>
-              <h1 className="font-display text-h1 lg:text-h1-lg text-white tracking-display-tight">
+              <motion.h1
+                initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                className="font-display text-h1 lg:text-h1-lg text-white tracking-display-tight"
+              >
                 Engineering teams that ship product.
-              </h1>
-            </Reveal>
+              </motion.h1>
 
-            <Reveal delay={200}>
-              <p className="text-lg text-neutral-300 mt-6 max-w-2xl leading-relaxed">
-                Tackxel is a UK-based boutique product studio building mobile apps, web platforms, IoT systems, and AI-powered products for founders and product teams globally.
-              </p>
-            </Reveal>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="text-lg text-neutral-300 mt-6 max-w-2xl leading-relaxed"
+              >
+                Tackxel is a UK-based boutique product studio building AI integrations, mobile apps, web platforms, IoT systems, and custom ERPs for founders and product teams globally.
+              </motion.p>
 
-            <Reveal delay={300}>
-              <div className="flex flex-wrap gap-3 mt-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-wrap gap-3 mt-8"
+              >
                 <Link href="/contact" className="btn-brand">
                   Book a discovery call
                   <ArrowRight className="w-4 h-4" />
@@ -208,24 +224,88 @@ export default function HomePage() {
                   See our work
                   <ArrowUpRight className="w-4 h-4" />
                 </Link>
-              </div>
-            </Reveal>
+              </motion.div>
 
-            <Reveal delay={500}>
-              <div className="mt-12 inline-flex items-center gap-1 px-2 py-2 rounded-full border border-neutral-800 bg-neutral-900/60 backdrop-blur">
-                {[
-                  { word: "Mobile" },
-                  { word: "Web" },
-                  { word: "IoT" },
-                  { word: "AI" },
-                ].map((item, i, arr) => (
-                  <div key={item.word} className="flex items-center">
-                    <span className="px-4 py-1.5 text-sm font-semibold text-white">{item.word}</span>
-                    {i < arr.length - 1 && <span className="w-1.5 h-1.5 rounded-full bg-brand-500" />}
-                  </div>
-                ))}
-              </div>
-            </Reveal>
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-neutral-500 font-mono uppercase tracking-widest"
+              >
+                <span className="inline-flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-brand-400" />
+                  11+ production systems shipped
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-brand-400" />
+                  Founded 2024
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-brand-400" />
+                  UK · Remote-first
+                </span>
+              </motion.div>
+            </div>
+
+            {/* RIGHT — visual element with subtle floating motion */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92, filter: "blur(8px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="relative hidden lg:block"
+            >
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                className="relative rounded-2xl overflow-hidden border border-brand-500/25 shadow-card-dark"
+              >
+                <Image
+                  src="/images/services/ai.jpg"
+                  alt="AI-led product engineering visualisation"
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto block"
+                  priority
+                />
+              </motion.div>
+
+              {/* Floating accent card — Lead service */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute -top-5 -right-5"
+              >
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="bg-neutral-950/95 backdrop-blur border border-brand-500/30 rounded-xl px-5 py-3 shadow-card-dark"
+                >
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-brand-300 font-semibold mb-0.5">Lead service</div>
+                  <div className="text-sm font-semibold text-white">AI Integration</div>
+                </motion.div>
+              </motion.div>
+
+              {/* Floating accent card — Stack */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute -bottom-5 -left-5"
+              >
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                  className="bg-neutral-950/95 backdrop-blur border border-brand-500/30 rounded-xl px-5 py-3 shadow-card-dark"
+                >
+                  <div className="text-[10px] font-mono uppercase tracking-widest text-brand-300 font-semibold mb-0.5">Stack</div>
+                  <div className="text-sm font-semibold text-white">Anthropic · OpenAI · Open</div>
+                </motion.div>
+              </motion.div>
+
+              {/* Subtle glow behind */}
+              <div className="absolute -inset-8 rounded-3xl bg-gradient-to-br from-brand-500/20 via-brand-500/5 to-transparent blur-3xl -z-10 pointer-events-none" />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -239,20 +319,24 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20 items-center">
             <Reveal>
               <div className="relative">
-                {/* PLACEHOLDER - swap with real founder photo at /public/images/team/uzair.jpg */}
-                <div className="relative rounded-2xl overflow-hidden border border-neutral-200 shadow-elevated">
-                  <Image
-                    src="/images/team/uzair.jpg"
-                    alt="Uzair Sufi, founder of Tackxel"
-                    width={600}
-                    height={600}
-                    className="w-full h-auto block"
-                  />
-                </div>
-                {/* Floating founder plaque */}
-                <div className="absolute -bottom-5 -right-5 bg-neutral-950 text-white rounded-xl shadow-elevated border-4 border-white px-5 py-3 card-lift">
-                  <div className="text-[10px] font-mono text-brand-300 uppercase tracking-widest font-semibold">Founder</div>
-                  <div className="text-sm font-semibold text-white mt-0.5">Uzair Sufi</div>
+                {/* PLACEHOLDER - swap with real team photo at /public/images/team/ */}
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { src: "/images/team/designer.jpg", role: "Product Designer" },
+                    { src: "/images/team/dev-1.jpg",    role: "Senior Engineer" },
+                    { src: "/images/team/dev-2.jpg",    role: "Engineer" },
+                    { src: "/images/team/marketing.jpg", role: "Growth" },
+                  ].map((m) => (
+                    <div key={m.role} className="relative rounded-xl overflow-hidden border border-neutral-200 aspect-square card-lift">
+                      <Image
+                        src={m.src}
+                        alt={`${m.role} placeholder`}
+                        width={600}
+                        height={600}
+                        className="w-full h-full object-cover block"
+                      />
+                    </div>
+                  ))}
                 </div>
                 {/* Subtle glow behind */}
                 <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-brand-500/12 to-transparent blur-3xl -z-10 pointer-events-none" />
@@ -269,24 +353,18 @@ export default function HomePage() {
                   A small senior team that builds, not pitches.
                 </h2>
                 <p className="text-base lg:text-lg text-neutral-600 leading-relaxed mb-5 max-w-xl">
-                  Tackxel was founded in 2024 by Uzair Sufi after seven years leading mobile engineering. We&apos;re a boutique studio — founder, product designer, developers, and marketing — built to give founders and product teams real engineering hands without agency overhead.
+                  Tackxel is a UK-registered boutique product engineering studio founded in 2024. A small senior team — designer, engineers, and growth — built to give founders and product teams real engineering hands without agency overhead.
                 </p>
                 <p className="text-base text-neutral-600 leading-relaxed mb-8 max-w-xl">
                   No bench, no sales team, no juniors hidden behind senior interviews. The people you meet on the discovery call are the ones doing the work.
                 </p>
 
-                <div className="grid sm:grid-cols-3 gap-4 mb-8">
+                <div className="grid sm:grid-cols-2 gap-4 mb-8 max-w-md">
                   <div className="bg-neutral-950 text-white rounded-xl p-5 card-lift">
                     <div className="font-display text-4xl font-bold tracking-display mb-1.5">
                       <Counter to={11} suffix="+" />
                     </div>
                     <div className="text-xs text-neutral-400 leading-snug">Production systems shipped</div>
-                  </div>
-                  <div className="bg-neutral-950 text-white rounded-xl p-5 card-lift">
-                    <div className="font-display text-4xl font-bold tracking-display mb-1.5">
-                      <Counter to={4} />
-                    </div>
-                    <div className="text-xs text-neutral-400 leading-snug">Industries served</div>
                   </div>
                   <div className="bg-neutral-950 text-white rounded-xl p-5 card-lift">
                     <div className="font-display text-4xl font-bold tracking-display mb-1.5">
