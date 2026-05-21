@@ -10,7 +10,17 @@
       "Bash(git add *)",
       "Bash(npm run *)",
       "Bash(git push *)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(curl -sS -o /dev/null -w \"tackxel.com -> HTTP %{http_code}\\\\n\" --max-time 25 https://tackxel.com/)",
+      "Bash(curl -sS -o /dev/null -w \"tackxel.com/case-studies -> HTTP %{http_code}\\\\n\" --max-time 25 https://tackxel.com/case-studies)",
+      "Bash(curl -sS -L -o /dev/null -w \"final: %{url_effective} -> HTTP %{http_code}\\\\n\" --max-time 25 https://tackxel.com/case-studies)",
+      "Bash(curl -sS -L -o /dev/null -w \"lexa: %{url_effective} -> HTTP %{http_code}\\\\n\" --max-time 25 https://tackxel.com/case-studies/lexa)",
+      "Bash(curl -sS -L -o /dev/null -w \"storage-iot\\(old\\): HTTP %{http_code}\\\\n\" --max-time 25 https://tackxel.com/case-studies/storage-iot)",
+      "Bash(curl -sS -L -o /dev/null -w \"lexa\\(slash\\): %{url_effective} -> HTTP %{http_code}\\\\n\" --max-time 25 https://tackxel.com/case-studies/lexa/)",
+      "Bash(curl -sS -L -o /dev/null -w \"robots: HTTP %{http_code}\\\\n\" --max-time 20 https://tackxel.com/robots.txt)",
+      "Bash(curl -sS -L -o /dev/null -w \"sitemap: HTTP %{http_code}\\\\n\" --max-time 20 https://tackxel.com/sitemap.xml)",
+      "Bash(curl -sS --max-time 25 https://tackxel.com/sitemap.xml)",
+      "Bash(curl -sS --max-time 25 https://tackxel.com/)"
     ]
   }
 }

@@ -108,8 +108,7 @@ const glyph = {
 
 // 1200x800 hero image with themed geometric motif + tags.
 // `motif` is an SVG string drawn into the centre area; helpers below produce them.
-function heroSvg({ category, title, motif, gradFrom = BRAND[800], gradTo = BRAND[950], shift = 0 }) {
-  const w = 1200, h = 800;
+function heroSvg({ category, title, motif, w = 1200, h = 800, gradFrom = BRAND[800], gradTo = BRAND[950], shift = 0 }) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">
     ${chrome({ w, h, gradFrom, gradTo, shift })}
     <g transform="translate(${w/2}, ${h/2 - 60})">${motif}</g>
@@ -294,6 +293,72 @@ const motif = {
       <circle cx="60"  cy="85"  r="3"/>
     </g>
   `,
+
+  // Row of figures — team / group photo
+  team: `
+    <g fill="none" stroke="${BRAND[300]}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <g transform="translate(-150, 10)">
+        <circle cx="0" cy="-46" r="30"/>
+        <path d="M -52 70 C -52 4 52 4 52 70"/>
+      </g>
+      <g transform="translate(150, 10)">
+        <circle cx="0" cy="-46" r="30"/>
+        <path d="M -52 70 C -52 4 52 4 52 70"/>
+      </g>
+      <g transform="translate(0, -8)">
+        <circle cx="0" cy="-56" r="38" fill="${BRAND[500]}" fill-opacity="0.25"/>
+        <path d="M -62 86 C -62 6 62 6 62 86" fill="${BRAND[500]}" fill-opacity="0.18"/>
+      </g>
+    </g>
+    <g fill="${BRAND[300]}" opacity="0.8">
+      <circle cx="-150" cy="-120" r="4"/>
+      <circle cx="0"    cy="-130" r="4"/>
+      <circle cx="150"  cy="-120" r="4"/>
+    </g>
+  `,
+
+  // Monitor + desk — office workspace
+  workspace: `
+    <g fill="none" stroke="${BRAND[300]}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="-130" y="-120" width="260" height="160" rx="8"/>
+      <rect x="-105" y="-98" width="210" height="116" rx="4" fill="${BRAND[500]}" fill-opacity="0.25"/>
+      <line x1="-20" y1="40" x2="20" y2="40"/>
+      <line x1="-50" y1="64" x2="50" y2="64"/>
+      <rect x="-170" y="80" width="340" height="14" rx="4" fill="${BRAND[400]}" fill-opacity="0.2"/>
+      <rect x="-140" y="64" width="90" height="14" rx="3"/>
+      <circle cx="130" cy="58" r="16"/>
+      <path d="M 146 50 q 18 8 0 16"/>
+    </g>
+  `,
+
+  // Table + chairs (top view) — meeting / collab space
+  meeting: `
+    <g fill="none" stroke="${BRAND[300]}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="-150" y="-46" width="300" height="92" rx="46" fill="${BRAND[500]}" fill-opacity="0.18"/>
+      <circle cx="-95" cy="-96" r="22"/>
+      <circle cx="0"   cy="-104" r="22"/>
+      <circle cx="95"  cy="-96" r="22"/>
+      <circle cx="-95" cy="96" r="22"/>
+      <circle cx="0"   cy="104" r="22"/>
+      <circle cx="95"  cy="96" r="22"/>
+    </g>
+    <g fill="${BRAND[300]}" opacity="0.85">
+      <circle cx="0" cy="0" r="6"/>
+    </g>
+  `,
+
+  // Whiteboard + sticky notes + arrow — collaboration
+  collab: `
+    <g fill="none" stroke="${BRAND[300]}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="-180" y="-120" width="360" height="210" rx="8"/>
+      <rect x="-150" y="-90" width="74" height="74" rx="4" fill="${BRAND[400]}" fill-opacity="0.3"/>
+      <rect x="-62"  y="-90" width="74" height="74" rx="4" fill="${BRAND[500]}" fill-opacity="0.38"/>
+      <rect x="26"   y="-90" width="74" height="74" rx="4" fill="${BRAND[400]}" fill-opacity="0.3"/>
+      <line x1="-150" y1="28" x2="110" y2="28"/>
+      <line x1="-150" y1="56" x2="40"  y2="56"/>
+      <polyline points="120,42 150,58 120,74"/>
+    </g>
+  `,
 };
 
 // ----- IMAGE DEFINITIONS -----
@@ -321,10 +386,20 @@ const services = [
   { key: "svc-enterprise", out: "services/enterprise.jpg", category: "SERVICE", title: "Enterprise Platforms & ERP",  motif: motif.enterprise, gradFrom: BRAND[700], gradTo: BRAND[950], shift: -4 },
 ];
 
-const ALL = [...team, ...caseStudies, ...services];
+// About page: team/office/collab photo placeholders + a founder portrait.
+const about = [
+  { key: "about-hero",    out: "about/hero-team.jpg",   w: 1200, h: 800, category: "THE TEAM",      title: "Senior builders, one room",   motif: motif.team,      gradFrom: BRAND[700], gradTo: BRAND[950], shift: 0 },
+  { key: "about-office1", out: "about/office-1.jpg",    w: 800,  h: 600, category: "WORKSPACE",     title: "Where the work happens",      motif: motif.workspace, gradFrom: BRAND[800], gradTo: BRAND[950], shift: 6 },
+  { key: "about-office2", out: "about/office-2.jpg",    w: 800,  h: 600, category: "MEETING",       title: "Where we think it through",   motif: motif.meeting,   gradFrom: BRAND[700], gradTo: BRAND[900], shift: -6 },
+  { key: "about-collab",  out: "about/team-collab.jpg", w: 1200, h: 600, category: "COLLABORATION", title: "Designed and built together", motif: motif.collab,    gradFrom: BRAND[800], gradTo: BRAND[950], shift: 4 },
+  { key: "about-founder", out: "about/founder-uzair.jpg", initials: "US", caption: "UZAIR SUFI",    gradFrom: BRAND[700], gradTo: BRAND[950], shift: 0 },
+];
+
+const ALL = [...team, ...caseStudies, ...services, ...about];
 
 async function render(item) {
-  const isTeam = team.includes(item);
+  // Square portrait/avatar style if it carries initials or a role glyph; else a hero image.
+  const isTeam = item.initials !== undefined || item.glyph !== undefined;
   const svg = isTeam ? teamSvg(item) : heroSvg(item);
   const outPath = join(OUT, item.out);
   await mkdir(dirname(outPath), { recursive: true });
@@ -334,10 +409,11 @@ async function render(item) {
 
 const onlyArg = process.argv.indexOf("--only");
 const only = onlyArg !== -1 ? process.argv[onlyArg + 1] : null;
+const onlyKeys = only ? only.split(",").map((k) => k.trim()) : null;
 
-const work = only ? ALL.filter((i) => i.key === only) : ALL;
-if (only && work.length === 0) {
-  console.error(`No placeholder with key '${only}'. Available keys: ${ALL.map((i) => i.key).join(", ")}`);
+const work = onlyKeys ? ALL.filter((i) => onlyKeys.includes(i.key)) : ALL;
+if (onlyKeys && work.length === 0) {
+  console.error(`No placeholder with key(s) '${only}'. Available keys: ${ALL.map((i) => i.key).join(", ")}`);
   process.exit(1);
 }
 

@@ -20,7 +20,6 @@ const services = [
 // the logo + link colors based on this. Lookup-by-Set so adding a page is
 // just one line, and the check is O(1).
 const DARK_HERO_PAGES = new Set<string>([
-  "/about",
   "/services",
   "/services/ai-integration",
   "/services/mobile-app-development",
