@@ -3,71 +3,69 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowRight, ArrowUpRight, MapPin, Building2,
-  UserCheck, Rocket, ShieldCheck, Repeat,
+  Rocket, UserCheck, Compass, Wrench,
+  Landmark, Scale, HeartPulse, UtensilsCrossed, Server, Cpu, Sparkles,
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import Counter from "@/components/Counter";
+import {
+  IconAI, IconMobileApp, IconWebApp, IconDesign, IconIoT, IconEnterprise,
+} from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "About Tackxel — UK boutique software studio founded 2024",
+  title: "About Tackxel — UK product studio shipping AI-first software",
   description:
-    "Tackxel Ltd is a UK-registered boutique software studio founded 2024 by Uzair Sufi. A senior team building mobile, web, AI, IoT and custom ERP products globally.",
+    "Tackxel is a UK-registered product studio building AI-first mobile apps, web platforms and enterprise software. Senior engineers, real production, real outcomes. Founded 2024.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Tackxel — UK boutique software studio",
+    title: "About Tackxel — UK product studio",
     description:
-      "Founded in 2024 by Uzair Sufi after 7 years leading mobile engineering. A senior boutique team — designer, engineers, growth — building product end to end.",
+      "Senior engineering teams that ship product. AI-first mobile, web and enterprise software across fintech, real estate, legal, healthcare and more.",
     url: "/about",
     type: "website",
   },
 };
 
-const principles = [
-  {
-    no: "01",
-    Icon: UserCheck,
-    title: "Senior by default",
-    desc: "No juniors hidden behind senior interviews. The people you meet on the discovery call are the ones writing the code.",
-  },
-  {
-    no: "02",
-    Icon: Rocket,
-    title: "Ship to production",
-    desc: "We don't make slideware. Every project goes live with real users — that's the only success metric we trust.",
-  },
-  {
-    no: "03",
-    Icon: ShieldCheck,
-    title: "Honesty over hype",
-    desc: "No inflated awards, no fabricated metrics, no Fortune 500 theatrics. Small senior team, real receipts.",
-  },
-  {
-    no: "04",
-    Icon: Repeat,
-    title: "Long-term over the first invoice",
-    desc: "We optimise for the second project. Clients come back because the first one was worth coming back to.",
-  },
+const beliefs = [
+  { Icon: Rocket, title: "Ship beats pitch", desc: "Production code, not slide decks. We measure ourselves by what goes live, not what gets presented." },
+  { Icon: UserCheck, title: "Senior by default", desc: "Every engagement is led by senior engineers. No junior bench, no learning on your product." },
+  { Icon: Compass, title: "Honest scoping", desc: "We tell you what's worth building, not just what we can sell. The hard calls, made up front." },
+  { Icon: Wrench, title: "Built to last", desc: "Code your team can own and maintain after we hand it off. No black boxes, no lock-in." },
 ];
 
-const team = [
-  { src: "/images/team/designer.jpg",  role: "Product Designer", area: "Design & UX" },
-  { src: "/images/team/dev-1.jpg",     role: "Senior Engineer",  area: "Engineering" },
-  { src: "/images/team/dev-2.jpg",     role: "Engineer",         area: "Engineering" },
-  { src: "/images/team/marketing.jpg", role: "Growth",           area: "Marketing" },
+const services = [
+  { Icon: IconAI, name: "AI Integration", href: "/services/ai-integration" },
+  { Icon: IconMobileApp, name: "Mobile App Development", href: "/services/mobile-app-development" },
+  { Icon: IconWebApp, name: "Web Application Development", href: "/services/web-app-development" },
+  { Icon: IconDesign, name: "Product Design", href: "/services/product-design" },
+  { Icon: IconIoT, name: "IoT & Connected Devices", href: "/services/iot-and-connected-devices" },
+  { Icon: IconEnterprise, name: "Enterprise Platforms & ERP", href: "/services/enterprise-platforms-and-erp" },
+];
+
+const industries = [
+  { Icon: Landmark, name: "Fintech", projects: "Sukuk" },
+  { Icon: Building2, name: "Real Estate", projects: "LuxeLocker · PropMetrics · MultiUnitX" },
+  { Icon: Scale, name: "Legal Tech", projects: "Lexa" },
+  { Icon: HeartPulse, name: "Healthcare", projects: "Kabyier" },
+  { Icon: UtensilsCrossed, name: "Food Tech", projects: "YallaGrub" },
+  { Icon: Server, name: "Enterprise SaaS", projects: "ShiftERP" },
+  { Icon: Cpu, name: "IoT & Wearables", projects: "WearOpal · Guardspur" },
+  { Icon: Sparkles, name: "AI & Consumer", projects: "My Friend" },
 ];
 
 const stats = [
+  { value: "11", suffix: "+", label: "Production systems shipped", counter: true },
+  { value: "7", suffix: "+", label: "Years founder engineering experience", counter: true },
+  { value: "9", suffix: "+", label: "Industries served", counter: true },
   { value: "2024", suffix: "", label: "Founded", counter: false },
-  { value: "11", suffix: "+", label: "Products shipped", counter: true },
-  { value: "7", suffix: "+", label: "Years founder experience", counter: true },
-  { value: "UK Ltd", suffix: "", label: "Registered in England & Wales", counter: false },
+  { value: "UK Ltd", suffix: "", label: "Companies House 17212854", counter: false },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      {/* HERO — warm, founder photo right */}
+      {/* HERO — warm, company visual (no founder photo) */}
       <section className="relative hero-warm pt-32 pb-20 lg:pb-28 overflow-hidden">
         <Parallax speed={0.08} className="absolute top-24 right-10 hidden lg:block pointer-events-none z-0">
           <div className="w-[24rem] h-[24rem] rounded-full bg-orange-200/40 blur-3xl float-slow" />
@@ -87,12 +85,12 @@ export default function AboutPage() {
               </Reveal>
               <Reveal delay={80}>
                 <h1 className="font-display text-h1 lg:text-h1-lg text-neutral-950 tracking-display-tight leading-[1.05]">
-                  A small team of <span className="text-brand-600">senior builders</span>.
+                  Senior engineering teams that <span className="text-brand-600">ship product</span>.
                 </h1>
               </Reveal>
               <Reveal delay={160}>
                 <p className="text-lg text-neutral-700 mt-6 max-w-2xl leading-relaxed">
-                  Tackxel is a UK boutique product engineering studio. We ship product for founders and product leaders who need senior hands fast &mdash; not agency overhead, a junior bench, or slideware.
+                  Tackxel is a UK product studio building AI-first mobile apps, web platforms, and enterprise software. Real engineers. Real production. Real outcomes.
                 </p>
               </Reveal>
               <Reveal delay={240}>
@@ -110,7 +108,7 @@ export default function AboutPage() {
               <Reveal delay={300}>
                 <div className="mt-8 flex items-center gap-2 text-sm text-neutral-500">
                   <MapPin className="w-3.5 h-3.5 text-brand-600" />
-                  Remote-first team — clients globally
+                  UK-registered · Remote-first · Clients globally
                 </div>
               </Reveal>
             </div>
@@ -118,11 +116,11 @@ export default function AboutPage() {
             <Reveal delay={200} direction="left">
               <div className="relative">
                 {/* PLACEHOLDER - swap with real photo when user provides */}
-                <div className="relative aspect-square rounded-3xl overflow-hidden border border-neutral-200 shadow-elevated">
+                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-neutral-200 shadow-elevated">
                   <Image
-                    src="/images/about/founder-uzair.jpg"
-                    alt="Uzair Sufi, founder of Tackxel"
-                    width={600}
+                    src="/images/about/office-1.jpg"
+                    alt="Tackxel — a UK product studio workspace"
+                    width={800}
                     height={600}
                     priority
                     className="w-full h-full object-cover block"
@@ -135,198 +133,129 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* OUR STORY */}
+      {/* WHO WE ARE */}
       <section className="py-20 lg:py-28 bg-white border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-16 items-start">
             <Reveal>
               <div>
-                <div className="text-eyebrow text-brand-600 uppercase mb-4">Our story</div>
-                <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 tracking-display-tight leading-tight mb-2">
-                  Founded by an engineer, for product teams
+                <div className="text-eyebrow text-brand-600 uppercase mb-4">Who we are</div>
+                <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 tracking-display-tight leading-tight">
+                  A product studio, built senior
                 </h2>
-                <div className="text-base text-neutral-500 font-medium mb-8">Uzair Sufi · Founder &amp; Engineering Lead</div>
-
-                <div className="space-y-5 text-base text-neutral-700 leading-relaxed max-w-xl">
-                  <p>
-                    Tackxel was founded in 2024. Before it, our founder spent seven years shipping production mobile and web systems &mdash; Lexa, My Friend, a Saudi fintech investment app, BLE-connected wearables, an iOS 3D scanning SDK &mdash; across fintech, food tech, healthcare, real estate, and wearables.
-                  </p>
-                  <p>
-                    Tackxel exists because the founders and product leaders we respected kept hitting the same wall. They needed senior engineering hands fast. The only options were agencies running a junior bench, or full-time hires that took six months to land. Neither matches how product teams actually move.
-                  </p>
-                  <p>
-                    So we built the team we wished we could hire. Small. Senior. No sales layer. The person you talk to on the first call is the person on the project.
-                  </p>
-                </div>
-
-                <div className="mt-8">
-                  <Link href="/contact" className="btn-primary">
-                    Talk to the founder
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
               </div>
             </Reveal>
-
-            <Reveal delay={150} direction="left">
-              <div className="relative">
-                {/* PLACEHOLDER - swap with real photo when user provides */}
-                <div className="relative aspect-[3/4] rounded-3xl overflow-hidden border border-neutral-200 shadow-elevated">
-                  <Image
-                    src="/images/about/hero-team.jpg"
-                    alt="The Tackxel team"
-                    width={1200}
-                    height={800}
-                    loading="lazy"
-                    className="w-full h-full object-cover block"
-                  />
-                </div>
+            <Reveal delay={150}>
+              <div className="space-y-5 text-base lg:text-lg text-neutral-700 leading-relaxed max-w-2xl">
+                <p>
+                  Tackxel builds production software for founders and product teams &mdash; AI features, mobile apps, web platforms, IoT systems, and custom enterprise tools. We take work from first scope to live deployment, with senior engineers on it the whole way.
+                </p>
+                <p>
+                  We&apos;re a UK-registered Private Limited Company, headquartered in Manchester and operating remote-first, serving clients globally. Small team, real receipts, no agency middle layer.
+                </p>
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* HOW WE WORK — numbered + icons */}
-      <section className="py-20 lg:py-28 bg-neutral-50 border-b border-neutral-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <Reveal>
-            <div className="grid lg:grid-cols-[1fr_2fr] gap-12 mb-12 items-end">
-              <div>
-                <div className="text-eyebrow text-brand-600 uppercase mb-4">How we work</div>
-                <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 tracking-display-tight leading-tight">
-                  Four things we don&apos;t compromise on
-                </h2>
-              </div>
-              <p className="text-base text-neutral-600 leading-relaxed max-w-xl lg:justify-self-end">
-                These are the principles we&apos;d want from a partner &mdash; so they&apos;re the ones we hold ourselves to.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
-            {principles.map((p, i) => (
-              <Reveal key={p.no} delay={i * 90}>
-                <article className="relative bg-white border border-neutral-200 rounded-3xl p-8 h-full card-lift overflow-hidden">
-                  <div className="font-display text-5xl lg:text-6xl font-bold text-brand-600 tracking-display leading-none mb-6">
-                    {p.no}
-                  </div>
-                  <div className="flex items-center gap-3 mb-3">
-                    <p.Icon className="w-5 h-5 text-neutral-700" />
-                    <h3 className="font-display text-h3 text-neutral-950 leading-snug">{p.title}</h3>
-                  </div>
-                  <p className="text-sm text-neutral-600 leading-relaxed">{p.desc}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* MEET THE TEAM */}
-      <section className="py-20 lg:py-28 bg-white border-b border-neutral-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <Reveal>
-            <div className="grid lg:grid-cols-[1fr_2fr] gap-12 mb-12 items-end">
-              <div>
-                <div className="text-eyebrow text-brand-600 uppercase mb-4">Meet the team</div>
-                <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 tracking-display-tight leading-tight">
-                  Hands on every project
-                </h2>
-              </div>
-              <p className="text-base text-neutral-600 leading-relaxed max-w-xl lg:justify-self-end">
-                A focused senior team across design, engineering, and growth. No bench, no offshore handoff, no juniors learning on your product.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-            {team.map((m, i) => (
-              <Reveal key={m.role} delay={i * 80}>
-                <article className="group bg-white border border-neutral-200 rounded-3xl overflow-hidden card-lift h-full">
-                  {/* PLACEHOLDER - swap with real photo when user provides */}
-                  <div className="relative aspect-square overflow-hidden">
-                    <Image
-                      src={m.src}
-                      alt={`${m.role} at Tackxel`}
-                      width={600}
-                      height={600}
-                      loading="lazy"
-                      className="w-full h-full object-cover block transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-5">
-                    <div className="text-base font-semibold text-neutral-950 leading-snug">{m.role}</div>
-                    <div className="text-sm text-neutral-500 mt-0.5">{m.area}</div>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal delay={400}>
-            <p className="mt-10 text-sm text-neutral-500 max-w-2xl">
-              Names and photos update as the team grows. The role each person owns stays the same &mdash; one designer, two engineers, one growth lead. That&apos;s the operating shape.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* WHERE WE WORK — office gallery */}
+      {/* WHAT WE BELIEVE */}
       <section className="py-20 lg:py-28 bg-neutral-50 border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <Reveal>
             <div className="max-w-3xl mb-12">
-              <div className="text-eyebrow text-brand-600 uppercase mb-4">Where we work</div>
+              <div className="text-eyebrow text-brand-600 uppercase mb-4">What we believe</div>
               <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 tracking-display-tight leading-tight">
-                Remote-first, Manchester-rooted
+                Four things we don&apos;t compromise on
               </h2>
-              <p className="text-base text-neutral-600 leading-relaxed mt-4 max-w-xl">
-                We meet to think, then build from wherever we work best. A look at the spaces in between.
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+            {beliefs.map((b, i) => (
+              <Reveal key={b.title} delay={i * 90}>
+                <article className="bg-white border border-neutral-200 rounded-3xl p-8 h-full card-lift">
+                  <div className="w-12 h-12 rounded-xl bg-neutral-50 border border-neutral-200 flex items-center justify-center mb-5">
+                    <b.Icon className="w-6 h-6 text-brand-600" />
+                  </div>
+                  <h3 className="font-display text-h3 text-neutral-950 mb-2 leading-snug">{b.title}</h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed">{b.desc}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT WE DO */}
+      <section className="py-20 lg:py-28 bg-white border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <Reveal>
+            <div className="grid lg:grid-cols-[1fr_2fr] gap-12 mb-12 items-end">
+              <div>
+                <div className="text-eyebrow text-brand-600 uppercase mb-4">What we do</div>
+                <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 tracking-display-tight leading-tight">
+                  Six services, one senior team
+                </h2>
+              </div>
+              <p className="text-base text-neutral-600 leading-relaxed max-w-xl lg:justify-self-end">
+                Pick one or combine them. Full detail lives on the services pages &mdash; here&apos;s the shape of what we build.
               </p>
             </div>
           </Reveal>
 
-          <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
-            <Reveal className="sm:col-span-2">
-              {/* PLACEHOLDER - swap with real photo when user provides */}
-              <div className="relative aspect-[2/1] rounded-3xl overflow-hidden border border-neutral-200 shadow-card">
-                <Image
-                  src="/images/about/team-collab.jpg"
-                  alt="The Tackxel team collaborating"
-                  width={1200}
-                  height={600}
-                  loading="lazy"
-                  className="w-full h-full object-cover block"
-                />
-              </div>
-            </Reveal>
-            <Reveal delay={100}>
-              {/* PLACEHOLDER - swap with real photo when user provides */}
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-neutral-200 shadow-card">
-                <Image
-                  src="/images/about/office-1.jpg"
-                  alt="Tackxel workspace"
-                  width={800}
-                  height={600}
-                  loading="lazy"
-                  className="w-full h-full object-cover block"
-                />
-              </div>
-            </Reveal>
-            <Reveal delay={180}>
-              {/* PLACEHOLDER - swap with real photo when user provides */}
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-neutral-200 shadow-card">
-                <Image
-                  src="/images/about/office-2.jpg"
-                  alt="Tackxel meeting space"
-                  width={800}
-                  height={600}
-                  loading="lazy"
-                  className="w-full h-full object-cover block"
-                />
-              </div>
-            </Reveal>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+            {services.map((s, i) => (
+              <Reveal key={s.name} delay={i * 70}>
+                <Link href={s.href} className="group flex items-center gap-4 bg-white border border-neutral-200 rounded-2xl p-5 card-lift h-full">
+                  <div className="w-12 h-12 rounded-xl bg-neutral-50 border border-neutral-200 flex items-center justify-center flex-shrink-0">
+                    <s.Icon className="w-7 h-7" />
+                  </div>
+                  <span className="text-base font-semibold text-neutral-950 leading-snug flex-1">{s.name}</span>
+                  <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-brand-600 transition-colors flex-shrink-0" />
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={300}>
+            <div className="mt-10">
+              <Link href="/services" className="btn-primary">
+                Explore all services
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* INDUSTRIES WE SERVE */}
+      <section className="py-20 lg:py-28 bg-neutral-50 border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <Reveal>
+            <div className="max-w-3xl mb-12">
+              <div className="text-eyebrow text-brand-600 uppercase mb-4">Industries we serve</div>
+              <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 tracking-display-tight leading-tight">
+                Shipped across nine-plus industries
+              </h2>
+              <p className="text-base text-neutral-600 leading-relaxed mt-4 max-w-xl">
+                Real projects, real domains. The breadth that informs how we build.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+            {industries.map((ind, i) => (
+              <Reveal key={ind.name} delay={i * 70}>
+                <Link href="/case-studies" className="group block bg-white border border-neutral-200 rounded-3xl p-6 lg:p-7 h-full card-lift">
+                  <div className="w-11 h-11 rounded-xl bg-neutral-50 border border-neutral-200 flex items-center justify-center mb-4">
+                    <ind.Icon className="w-5 h-5 text-brand-600" />
+                  </div>
+                  <h3 className="text-base font-semibold text-neutral-950 leading-snug group-hover:text-brand-600 transition-colors">{ind.name}</h3>
+                  <p className="text-xs text-neutral-500 mt-1.5 leading-relaxed">{ind.projects}</p>
+                </Link>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -341,16 +270,16 @@ export default function AboutPage() {
                 Tackxel, honestly
               </h2>
               <p className="text-base text-neutral-600 leading-relaxed mt-4 max-w-xl">
-                No vanity metrics. Just the facts about who we are and what we&apos;ve shipped.
+                No vanity metrics &mdash; just the provable facts.
               </p>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
             {stats.map((s, i) => (
               <Reveal key={s.label} delay={i * 80}>
-                <div className="bg-gradient-to-br from-brand-50 via-white to-orange-50 border border-neutral-200 rounded-3xl p-7 lg:p-8 h-full card-lift">
-                  <div className="font-display text-4xl lg:text-5xl font-bold text-brand-600 tracking-display leading-none mb-3">
+                <div className="bg-gradient-to-br from-brand-50 via-white to-orange-50 border border-neutral-200 rounded-3xl p-6 lg:p-7 h-full card-lift">
+                  <div className="font-display text-3xl lg:text-4xl font-bold text-brand-600 tracking-display leading-none mb-3">
                     {s.counter ? <Counter to={Number(s.value)} suffix={s.suffix} /> : s.value}
                   </div>
                   <div className="text-sm text-neutral-700 leading-relaxed">{s.label}</div>
@@ -364,23 +293,18 @@ export default function AboutPage() {
       {/* WHERE WE'RE BASED */}
       <section className="py-20 lg:py-24 bg-neutral-50 border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <Reveal>
               <div>
                 <div className="text-eyebrow text-brand-600 uppercase mb-4">Where we&apos;re based</div>
-                <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 tracking-display-tight leading-tight">
+                <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 tracking-display-tight leading-tight mb-6">
                   UK-registered, globally remote
                 </h2>
-              </div>
-            </Reveal>
-
-            <Reveal delay={150}>
-              <div className="max-w-2xl">
-                <p className="text-base text-neutral-700 leading-relaxed mb-8">
+                <p className="text-base text-neutral-700 leading-relaxed mb-8 max-w-xl">
                   Tackxel Ltd is a UK-registered Private Limited Company, headquartered in Manchester. We operate as a remote-first team, serving clients globally.
                 </p>
 
-                <div className="bg-white border border-neutral-200 rounded-3xl p-7 lg:p-8 shadow-card">
+                <div className="bg-white border border-neutral-200 rounded-3xl p-7 lg:p-8 shadow-card max-w-md">
                   <div className="flex items-center gap-2 mb-4">
                     <Building2 className="w-4 h-4 text-brand-600" />
                     <div className="text-xs text-neutral-500 uppercase tracking-wider font-semibold">Registered office</div>
@@ -397,7 +321,45 @@ export default function AboutPage() {
                 </div>
               </div>
             </Reveal>
+
+            <Reveal delay={150} direction="left">
+              {/* PLACEHOLDER - swap with real photo when user provides */}
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-neutral-200 shadow-card">
+                <Image
+                  src="/images/about/office-2.jpg"
+                  alt="Tackxel meeting space, Manchester"
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  className="w-full h-full object-cover block"
+                />
+              </div>
+            </Reveal>
           </div>
+        </div>
+      </section>
+
+      {/* FOUNDER — brief, not a hero */}
+      <section className="py-14 lg:py-16 bg-white border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <Reveal>
+            <div className="flex items-center gap-4 max-w-3xl">
+              {/* PLACEHOLDER - swap with real photo when user provides */}
+              <div className="relative w-14 h-14 rounded-full overflow-hidden border border-neutral-200 flex-shrink-0">
+                <Image
+                  src="/images/about/founder-uzair.jpg"
+                  alt="Uzair Sufi, founder of Tackxel"
+                  width={120}
+                  height={120}
+                  loading="lazy"
+                  className="w-full h-full object-cover block"
+                />
+              </div>
+              <p className="text-sm lg:text-base text-neutral-600 leading-relaxed">
+                Founded by <span className="font-semibold text-neutral-900">Uzair Sufi</span>, who spent 7+ years leading mobile engineering at Clustox before starting Tackxel.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -418,12 +380,12 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={100}>
               <h2 className="font-display text-h2 lg:text-h1 text-white tracking-display-tight leading-tight">
-                Got something to ship? Let&apos;s scope it.
+                Let&apos;s build something real.
               </h2>
             </Reveal>
             <Reveal delay={200}>
               <p className="text-base lg:text-lg text-neutral-300 leading-relaxed mt-6 max-w-xl mx-auto">
-                30 minutes with the founder. No deck, no sales rep &mdash; just a senior engineer thinking through your problem with you.
+                Tell us what you&apos;re trying to build. We&apos;ll handle the rest.
               </p>
             </Reveal>
             <Reveal delay={300}>
