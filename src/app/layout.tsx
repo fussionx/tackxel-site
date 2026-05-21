@@ -56,7 +56,7 @@ const jsonLd = {
   "@type": "Organization",
   name: "Tackxel Ltd",
   url: "https://tackxel.com",
-  logo: "https://tackxel.com/logo.png",
+  logo: "https://tackxel.com/logo/tackxel.svg",
   description:
     "Tackxel Ltd is a UK-based boutique product engineering studio building mobile apps, web platforms, IoT systems, and AI-powered products for founders and product teams globally.",
   foundingDate: "2024",
