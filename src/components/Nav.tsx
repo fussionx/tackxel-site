@@ -21,7 +21,6 @@ const services = [
 // just one line, and the check is O(1).
 const DARK_HERO_PAGES = new Set<string>([
   "/services",
-  "/services/ai-integration",
   "/services/mobile-app-development",
   "/services/web-app-development",
   "/services/product-design",

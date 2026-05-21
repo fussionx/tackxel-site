@@ -20,7 +20,11 @@
       "Bash(curl -sS -L -o /dev/null -w \"robots: HTTP %{http_code}\\\\n\" --max-time 20 https://tackxel.com/robots.txt)",
       "Bash(curl -sS -L -o /dev/null -w \"sitemap: HTTP %{http_code}\\\\n\" --max-time 20 https://tackxel.com/sitemap.xml)",
       "Bash(curl -sS --max-time 25 https://tackxel.com/sitemap.xml)",
-      "Bash(curl -sS --max-time 25 https://tackxel.com/)"
+      "Bash(curl -sS --max-time 25 https://tackxel.com/)",
+      "Bash(curl -sS -L -o /dev/null -w '%{http_code}' --max-time 20 https://tackxel.com/case-studies/__TRACKED_VAR__)",
+      "Bash(curl -sS -L -o /dev/null -w '%{http_code}' --max-time 20 https://tackxel.com__TRACKED_VAR__)",
+      "Bash(curl -sS -L -o /dev/null -w \"%{http_code}\" --max-time 20 \"https://tackxel.com/case-studies/lexa/\")",
+      "Bash(ls -la vercel.json)"
     ]
   }
 }
