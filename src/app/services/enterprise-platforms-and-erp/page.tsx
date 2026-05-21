@@ -429,7 +429,7 @@ export default function EnterprisePlatformsErpPage() {
                     <div className="text-xs text-neutral-400">Ops, finance, IT, shop floor</div>
                   </div>
                 </div>
-                <Link href="/case-studies/co-manufacturer-erp" className="btn-brand">
+                <Link href="/case-studies/shifterp" className="btn-brand">
                   Read the case study
                   <ArrowRight className="w-4 h-4" />
                 </Link>

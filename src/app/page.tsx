@@ -2,15 +2,17 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ArrowRight, ArrowUpRight, Sparkles,
-  Lightbulb, Hammer, TrendingUp, Check, Users,
+  ArrowRight, ArrowUpRight, Sparkles, Play, X,
+  Lightbulb, Hammer, TrendingUp, Users,
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import Counter from "@/components/Counter";
+import CaseStudyVisual from "@/components/CaseStudyVisual";
+import { featuredCaseStudies } from "@/lib/case-studies";
 import {
   IconAI, IconMobileApp, IconWebApp, IconDesign, IconIoT,
 } from "@/components/Icons";
@@ -98,28 +100,48 @@ const otherServices = [
   },
 ];
 
-const caseStudyTiles = [
-  { title: "Co-manufacturer ERP", subtitle: "Manufacturing · ERP · Flagship", href: "/case-studies/co-manufacturer-erp", img: "/images/case-studies/erp.jpg" },
-  { title: "Mobile + IoT for a US storage operator", subtitle: "Real Estate · IoT", href: "/case-studies/storage-iot", img: "/images/case-studies/storage-iot.jpg" },
-  { title: "Investor SaaS for real estate agents", subtitle: "PropTech · SaaS", href: "/case-studies/investor-saas", img: "/images/case-studies/investor-saas.jpg" },
-  { title: "Real-estate syndication marketplace", subtitle: "PropTech · Marketplace", href: "/case-studies/real-estate-syndication", img: "/images/case-studies/syndication.jpg" },
-];
-
 const techLogos = [
   "React", "Next.js", "React Native", "Flutter", "AWS",
   "OpenAI", "Anthropic", "LangChain", "Stripe", "Firebase",
 ];
 
-const testimonials = [
-  { industry: "CTO at US fintech", quote: "Working on it — real testimonials coming soon." },
-  { industry: "Founder at US proptech", quote: "Real quotes after the next launch ships." },
-  { industry: "Product lead at UK SaaS", quote: "Coming soon. We'd rather show real ones than invented ones." },
-  { industry: "Operations lead at US co-manufacturer", quote: "Soon. Confidentiality NDAs lift as projects ship publicly." },
-  { industry: "CTO at US storage operator", quote: "Working on it — real testimonials coming soon." },
+// VIDEO PLACEHOLDER — user will provide MP4 files later.
+// Drop files at /public/videos/ and update `src` below; the lightbox player is wired.
+const videoTestimonials = [
+  {
+    name: "Client Name",
+    role: "Title at Company",
+    quote: "A short, punchy line from the founder about working with Tackxel.",
+    src: "/videos/testimonial-1.mp4",
+    accent: "from-brand-500/30 via-brand-400/15 to-orange-400/25",
+  },
+  {
+    name: "Client Name",
+    role: "Title at Company",
+    quote: "What changed for their team after we shipped — in their words.",
+    src: "/videos/testimonial-2.mp4",
+    accent: "from-orange-400/30 via-rose-400/15 to-brand-500/25",
+  },
+  {
+    name: "Client Name",
+    role: "Title at Company",
+    quote: "Why they'd work with the team again on the next build.",
+    src: "/videos/testimonial-3.mp4",
+    accent: "from-emerald-400/30 via-teal-400/15 to-brand-500/25",
+  },
 ];
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState<StartingPath>("I have an idea");
+  const [activeVideo, setActiveVideo] = useState<number | null>(null);
+
+  // Close the video lightbox on Escape.
+  useEffect(() => {
+    if (activeVideo === null) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setActiveVideo(null);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [activeVideo]);
 
   return (
     <>
@@ -383,33 +405,33 @@ export default function HomePage() {
               <div>
                 <div className="text-eyebrow text-brand-600 uppercase mb-4">Selected work</div>
                 <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 tracking-display-tight leading-tight">
-                  5+ shipped products.
+                  11 shipped products.
                 </h2>
               </div>
               <p className="text-base text-neutral-600 leading-relaxed max-w-xl lg:justify-self-end">
-                Mobile, web, AI, IoT, enterprise. Clients anonymised by request. Every project is live in production.
+                AI, mobile, web, IoT, fintech, enterprise. Real names, real systems &mdash; every project below is live in production.
               </p>
             </div>
           </Reveal>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-            {caseStudyTiles.map((c, i) => (
-              <Reveal key={c.title} delay={i * 80}>
-                <Link href={c.href} className="group block">
-                  <article className="bg-neutral-950 rounded-2xl overflow-hidden h-full card-lift">
-                    <div className="relative aspect-[3/2] overflow-hidden">
-                      <Image
-                        src={c.img}
-                        alt={`${c.title} case study`}
-                        width={1200}
-                        height={800}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
+            {featuredCaseStudies.map((c, i) => (
+              <Reveal key={c.slug} delay={i * 80}>
+                <Link href={`/case-studies/${c.slug}`} className="group block h-full">
+                  <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white card-lift">
+                    <div className="relative aspect-[3/2]">
+                      <CaseStudyVisual monogram={c.monogram} accent={c.accent} name={c.name} />
+                      {c.liveUrl && (
+                        <span className="absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-neutral-950/85 px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-widest text-white backdrop-blur">
+                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                          Live
+                        </span>
+                      )}
                     </div>
-                    <div className="p-6">
-                      <div className="text-[10px] font-mono uppercase tracking-widest text-brand-300 font-semibold mb-2">{c.subtitle}</div>
-                      <h3 className="text-base font-semibold text-white leading-snug">{c.title}</h3>
-                      <div className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-300 group-hover:text-white transition-colors">
+                    <div className="flex flex-1 flex-col p-6">
+                      <div className="text-[10px] font-mono uppercase tracking-widest text-brand-600 font-semibold mb-2">{c.industry}</div>
+                      <h3 className="text-base font-semibold text-neutral-950 leading-snug">{c.name}</h3>
+                      <div className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-neutral-900 group-hover:text-brand-600 transition-colors">
                         Read case
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </div>
@@ -423,7 +445,7 @@ export default function HomePage() {
           <Reveal delay={300}>
             <div className="mt-10 flex justify-center">
               <Link href="/case-studies" className="btn-primary">
-                All case studies
+                View all 11 case studies
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -463,38 +485,106 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* TESTIMONIAL MARQUEE */}
-      <section className="py-20 lg:py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-10">
+      {/* VIDEO TESTIMONIALS */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <Reveal>
-            <div className="text-eyebrow text-brand-600 uppercase mb-4">What clients say</div>
-            <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 tracking-display-tight leading-tight max-w-2xl">
-              Quotes coming soon. <span className="text-neutral-500">Until then &mdash; honesty.</span>
-            </h2>
+            <div className="max-w-3xl mb-12">
+              <div className="text-eyebrow text-brand-600 uppercase mb-4">Testimonials</div>
+              <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 tracking-display-tight leading-tight">
+                Hear it from our clients.
+              </h2>
+              <p className="text-base text-neutral-600 leading-relaxed mt-4 max-w-xl">
+                Real video stories from real founders.
+              </p>
+            </div>
           </Reveal>
-        </div>
 
-        <div className="marquee-pause relative">
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-          <div className="flex gap-5 animate-marquee w-max">
-            {[...testimonials, ...testimonials].map((t, i) => (
-              <article
-                key={`${t.industry}-${i}`}
-                className="flex-shrink-0 w-[320px] bg-neutral-50 border border-neutral-200 rounded-2xl p-7"
-              >
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-100 to-orange-100 border border-neutral-200 flex items-center justify-center">
-                    <span className="text-xs font-mono font-bold text-brand-700">···</span>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+            {videoTestimonials.map((v, i) => (
+              <Reveal key={i} delay={i * 90}>
+                {/* VIDEO PLACEHOLDER — gradient thumbnail until an MP4 is dropped in /public/videos/ */}
+                <button
+                  onClick={() => setActiveVideo(i)}
+                  className="group block w-full text-left overflow-hidden rounded-3xl border border-neutral-200 bg-white card-lift"
+                  aria-label={`Play video testimonial from ${v.name}`}
+                >
+                  <div className="relative aspect-video overflow-hidden">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${v.accent}`} />
+                    <div className="absolute -top-1/4 -right-1/4 w-2/3 h-2/3 rounded-full bg-white/40 blur-3xl" />
+                    <div className="absolute inset-0 grid-bg-light opacity-50" />
+                    <div className="relative z-10 flex h-full w-full items-center justify-center">
+                      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/85 shadow-elevated backdrop-blur transition-transform duration-300 group-hover:scale-110">
+                        <Play className="ml-0.5 h-6 w-6 text-brand-600" fill="currentColor" />
+                      </span>
+                    </div>
                   </div>
-                  <div className="text-xs font-mono text-neutral-500 uppercase tracking-widest">{t.industry}</div>
-                </div>
-                <p className="text-sm text-neutral-700 leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
-              </article>
+                  <div className="p-6">
+                    <p className="text-sm text-neutral-700 leading-relaxed mb-5">&ldquo;{v.quote}&rdquo;</p>
+                    <div className="flex items-center gap-3 pt-5 border-t border-neutral-100">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-100 to-orange-100 border border-neutral-200 flex items-center justify-center flex-shrink-0">
+                        <span className="text-xs font-mono font-bold text-brand-700">{v.name.split(" ").map((w) => w[0]).join("")}</span>
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-neutral-950 leading-tight">{v.name}</div>
+                        <div className="text-xs text-neutral-500 mt-0.5">{v.role}</div>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
+
+      {/* VIDEO LIGHTBOX — plays the selected testimonial. Wired for MP4s in /public/videos/ */}
+      <AnimatePresence>
+        {activeVideo !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setActiveVideo(null)}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-neutral-950/80 backdrop-blur-sm p-4"
+            role="dialog"
+            aria-modal="true"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96, y: 12 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.96, y: 12 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-3xl"
+            >
+              <button
+                onClick={() => setActiveVideo(null)}
+                className="absolute -top-12 right-0 inline-flex items-center gap-1.5 text-sm text-neutral-300 hover:text-white transition-colors"
+                aria-label="Close video"
+              >
+                Close
+                <X className="w-5 h-5" />
+              </button>
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-black shadow-card-dark">
+                <video
+                  key={activeVideo}
+                  src={videoTestimonials[activeVideo].src}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="w-full aspect-video bg-black"
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <div className="text-sm font-semibold text-white">{videoTestimonials[activeVideo].name}</div>
+                <div className="text-xs text-neutral-400 mt-0.5">{videoTestimonials[activeVideo].role}</div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* FINAL CTA — dark with warm accent */}
       <section className="relative py-20 lg:py-28 bg-neutral-950 text-white overflow-hidden">

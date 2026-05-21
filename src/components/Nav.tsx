@@ -29,11 +29,7 @@ const DARK_HERO_PAGES = new Set<string>([
   "/services/iot-and-connected-devices",
   "/services/enterprise-platforms-and-erp",
   "/services/staff-augmentation",
-  "/case-studies",
-  "/case-studies/co-manufacturer-erp",
-  "/case-studies/storage-iot",
-  "/case-studies/investor-saas",
-  "/case-studies/real-estate-syndication",
+  // Case studies (index + all detail pages) use a light/warm hero — not listed here.
 ]);
 
 export default function Nav() {

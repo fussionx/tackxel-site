@@ -18,11 +18,11 @@ const columns = [
   {
     title: "Case studies",
     links: [
-      { label: "Co-manufacturer ERP", href: "/case-studies/co-manufacturer-erp" },
-      { label: "Storage IoT", href: "/case-studies/storage-iot" },
-      { label: "Investor SaaS", href: "/case-studies/investor-saas" },
-      { label: "Real-estate syndication", href: "/case-studies/real-estate-syndication" },
-      { label: "All case studies", href: "/case-studies" },
+      { label: "Lexa — AI legal chatbot", href: "/case-studies/lexa" },
+      { label: "ShiftERP", href: "/case-studies/shifterp" },
+      { label: "LuxeLocker", href: "/case-studies/luxelocker" },
+      { label: "PropMetrics", href: "/case-studies/propmetrics" },
+      { label: "All 11 case studies", href: "/case-studies" },
     ],
   },
   {

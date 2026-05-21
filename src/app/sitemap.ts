@@ -16,10 +16,17 @@ const serviceRoutes = [
 ];
 
 const caseStudyRoutes = [
-  "/case-studies/co-manufacturer-erp",
-  "/case-studies/storage-iot",
-  "/case-studies/investor-saas",
-  "/case-studies/real-estate-syndication",
+  "/case-studies/lexa",
+  "/case-studies/luxelocker",
+  "/case-studies/propmetrics",
+  "/case-studies/multiunitx",
+  "/case-studies/shifterp",
+  "/case-studies/sukuk",
+  "/case-studies/yallagrub",
+  "/case-studies/kintec-footscanner",
+  "/case-studies/guardspur",
+  "/case-studies/wearopal",
+  "/case-studies/my-friend",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

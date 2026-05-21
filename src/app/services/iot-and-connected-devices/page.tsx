@@ -428,7 +428,7 @@ export default function IotPage() {
                     <div className="text-xs text-neutral-400">Tenants, admins, vendors</div>
                   </div>
                 </div>
-                <Link href="/case-studies/storage-iot" className="btn-brand">
+                <Link href="/case-studies/luxelocker" className="btn-brand">
                   Read the case study
                   <ArrowRight className="w-4 h-4" />
                 </Link>
