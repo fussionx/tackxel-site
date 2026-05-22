@@ -122,11 +122,11 @@ export default function Nav() {
               <AnimatePresence>
                 {servicesOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 8, x: "-50%" }}
+                    animate={{ opacity: 1, y: 0, x: "-50%" }}
+                    exit={{ opacity: 0, y: 8, x: "-50%" }}
                     transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    className="fixed left-1/2 top-16 -translate-x-1/2 z-50 w-[min(1080px,calc(100vw-2rem))] pt-2"
+                    className="fixed left-1/2 top-16 z-50 w-[min(1080px,calc(100vw-2rem))] pt-2"
                   >
                     <div className="rounded-2xl border border-neutral-200/80 bg-white/90 backdrop-blur-xl shadow-2xl p-5">
                       <div className="grid grid-cols-[1.1fr_0.82fr_1.1fr_0.92fr] gap-5">
