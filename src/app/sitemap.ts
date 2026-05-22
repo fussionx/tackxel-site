@@ -20,6 +20,13 @@ const serviceRoutes = [
   "/services/iot-and-connected-devices",
   "/services/enterprise-platforms-and-erp",
   "/services/staff-augmentation",
+  "/services/cloud-native-journey",
+  "/services/devops-platform-engineering",
+  "/services/kubernetes-consultancy",
+  "/services/supply-chain-security",
+  "/services/managed-services",
+  "/services/application-modernization",
+  "/services/cloud-migration",
 ];
 
 const caseStudyRoutes = [
