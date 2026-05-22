@@ -79,7 +79,7 @@ export const caseStudies: CaseStudy[] = [
       "Fast, responsive Next.js web front end — no install, instant access.",
       "Designed for a general audience, not lawyers — readable, calm, approachable.",
     ],
-    tech: ["LLMs", "GPT", "RAG", "Prompt Engineering", "Conversational AI", "Next.js"],
+    tech: ["LLM", "GPT", "Prompt Engineering", "RAG", "Conversational AI", "Next.js", "Python"],
     resultsSummary:
       "Lexa is live at lexa.lawyer as Pakistan's first AI legal chatbot — putting first-pass legal guidance in front of anyone with a browser, grounded in real law rather than guesswork.",
     stats: [],
@@ -121,7 +121,7 @@ export const caseStudies: CaseStudy[] = [
       "CI/CD pipelines for one-tap App Store and Play Store releases.",
       "Push notifications and store submissions handled end to end.",
     ],
-    tech: ["Swift (iOS)", "Kotlin (Android)", "AWS EC2", "AWS S3", "AWS RDS", "Docker", "IoT Hardware", "Push Notifications", "CI/CD"],
+    tech: ["Swift", "Kotlin", "AWS EC2", "AWS S3", "AWS RDS", "Docker", "CI/CD", "IoT"],
     resultsSummary:
       "The platform is live on both app stores. Tenants manage units, gates, and climate from their phones; operators run the admin side; mobile, IoT, and cloud all run as one platform owned by a single team.",
     stats: [],
@@ -162,7 +162,7 @@ export const caseStudies: CaseStudy[] = [
       "AWS infrastructure on EC2, RDS, and S3, Dockerized end to end.",
       "CloudWatch observability and CI/CD for safe, repeatable deploys.",
     ],
-    tech: ["Full-stack Web", "AWS EC2", "AWS RDS", "AWS S3", "Docker", "MLS API", "CloudWatch", "RBAC", "CI/CD"],
+    tech: ["React", "Node.js", "AWS EC2", "AWS RDS", "AWS S3", "Docker", "CI/CD", "CloudWatch", "MLS API"],
     resultsSummary:
       "PropMetrics is live in production with live MLS data, role-based access, and full observability — giving agents investor-grade analytics without standing up an engineering team of their own.",
     stats: [],
@@ -202,7 +202,7 @@ export const caseStudies: CaseStudy[] = [
       "AWS infrastructure (EC2, RDS, S3) with CloudFront edge delivery.",
       "Docker Compose environments and staged CI/CD pipelines.",
     ],
-    tech: ["Full-stack Web", "AWS EC2", "AWS RDS", "AWS S3", "CloudFront", "Docker Compose", "CRM Integration", "CI/CD"],
+    tech: ["React", "Node.js", "AWS EC2", "AWS RDS", "AWS S3", "CloudFront", "Docker Compose", "CI/CD"],
     resultsSummary:
       "MultiUnitX is live with the full syndication flow — discovery, onboarding, and group investing — connected to CRM and served globally over CloudFront.",
     stats: [],
@@ -243,7 +243,7 @@ export const caseStudies: CaseStudy[] = [
       "GitHub Actions CI/CD for repeatable, safe deployments.",
       "CloudWatch observability across the stack.",
     ],
-    tech: ["Full-stack Web", "AWS EC2 Auto Scaling", "AWS ECS", "AWS ALB", "RDS PostgreSQL", "AWS S3", "Docker", "EDI Integration", "GitHub Actions", "CloudWatch"],
+    tech: ["AWS EC2 Auto Scaling", "RDS PostgreSQL", "AWS S3", "AWS ALB", "AWS ECS", "Docker", "GitHub Actions", "EDI", "CloudWatch"],
     resultsSummary:
       "ShiftERP is live in production, trading EDI with three of the largest retailers in the world at 99.5% accuracy on infrastructure built to scale with volume.",
     stats: [
@@ -284,7 +284,7 @@ export const caseStudies: CaseStudy[] = [
       "Mixpanel and Firebase analytics for product and reliability insight.",
       "Codemagic CI/CD pipeline for automated releases.",
     ],
-    tech: ["Flutter", "Dart", "Biometrics", "Jailbreak Detection", "AES Encryption", "Tokenization", "CC Avenue", "RiverPod", "GoRouter", "Mixpanel", "Firebase", "Codemagic"],
+    tech: ["Flutter", "Dart", "Firebase", "RiverPod", "GoRouter", "Stripe", "CC Avenue", "AES Encryption", "Codemagic CI/CD", "Mixpanel"],
     resultsSummary:
       "Built by the founder at Clustox, Sukuk shipped to both stores and distributed more than 160 million riyals to investors on bank-grade security foundations.",
     stats: [
@@ -326,7 +326,7 @@ export const caseStudies: CaseStudy[] = [
       "Google Maps integration for location and live tracking.",
       "Custom animations and a polished, responsive UI.",
     ],
-    tech: ["Flutter", "MVVM", "Clean Architecture", "Stripe", "Google Maps", "Real-time Tracking"],
+    tech: ["Flutter", "MVVM", "Clean Architecture", "Stripe", "Google Maps"],
     resultsSummary:
       "Built by the founder leading a team of six mobile engineers at Clustox, YallaGrub shipped to the App Store with real-time tracking and table management on a clean, scalable architecture.",
     stats: [
@@ -366,7 +366,7 @@ export const caseStudies: CaseStudy[] = [
       "On-device ML — capture and processing run locally.",
       "Designed as a reusable SDK for integration into products.",
     ],
-    tech: ["Swift (iOS)", "TrueDepth Camera", "3D Point Cloud", "On-device ML", "STL / PLY Export"],
+    tech: ["Swift", "TrueDepth Camera", "3D Point Cloud", "On-device ML"],
     resultsSummary:
       "Built by the founder at Clustox, the FootScanner SDK turns a standard iPhone's TrueDepth camera into a 3D scanning tool that outputs manufacturing-ready models — no dedicated hardware required.",
     stats: [],
@@ -406,7 +406,7 @@ export const caseStudies: CaseStudy[] = [
       "Incident reporting from the field, in the moment.",
       "Push notifications for guard and supervisor coordination.",
     ],
-    tech: ["Flutter", "Dart", "QR Scanning", "Geofencing", "Real-time Tracking", "Incident Reporting", "Push Notifications"],
+    tech: ["Flutter", "Dart", "Geofencing", "QR Scanning", "Push Notifications"],
     resultsSummary:
       "Built by the founder at Clustox, Guardspur is live on Google Play, giving security teams verifiable patrols and real-time incident visibility in the field.",
     stats: [],
@@ -444,7 +444,7 @@ export const caseStudies: CaseStudy[] = [
       "Firebase backend for data and messaging.",
       "Discreet, fast safety-trigger experience.",
     ],
-    tech: ["Swift", "SwiftUI", "Custom BLE SDK", "BLE Protocol", "Noonlight API", "Firebase"],
+    tech: ["Swift", "SwiftUI", "Custom BLE SDK", "Noonlight API", "Firebase"],
     resultsSummary:
       "Built by the founder at Clustox, WearOpal pairs a safety smart ring with a SwiftUI app over a custom BLE stack and a real emergency-dispatch integration — turning a gesture into help.",
     stats: [],
@@ -481,7 +481,7 @@ export const caseStudies: CaseStudy[] = [
       "Trusted user and family integration.",
       "Consistent, warm UI across both platforms.",
     ],
-    tech: ["Flutter", "ChatGPT / OpenAI API", "Generative AI", "Large Language Models"],
+    tech: ["Flutter", "ChatGPT / OpenAI", "Generative AI", "LLM"],
     resultsSummary:
       "Built by the founder at Clustox, My Friend pairs an LLM-powered companion with a trusted-family layer — an AI that's available any time, inside a real support network.",
     stats: [],

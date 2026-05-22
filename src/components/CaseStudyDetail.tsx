@@ -44,7 +44,6 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
 
   const glance = [
     { label: "Industry", value: study.industry },
-    { label: "Built by", value: study.builtBy === "Tackxel" ? "Tackxel" : "Founder @ Clustox" },
     { label: "Platforms", value: study.platforms },
     { label: "Status", value: study.liveUrl ? "Live in production" : "Shipped" },
   ];
@@ -76,12 +75,12 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
               <Reveal>
                 <span className="badge mb-6">
                   <span className="dot-pulse" />
-                  {study.builtByLabel}
+                  {study.industry}
                 </span>
               </Reveal>
               <Reveal delay={80}>
                 <div className="text-eyebrow text-brand-600 uppercase tracking-widest mb-4">
-                  {study.name} · {study.industry}
+                  {study.name}
                 </div>
               </Reveal>
               <Reveal delay={140}>
@@ -136,7 +135,7 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
       {/* AT A GLANCE */}
       <section className="bg-white border-y border-neutral-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-y divide-neutral-200 lg:divide-y-0 lg:divide-x lg:divide-neutral-200">
+          <div className="grid grid-cols-2 lg:grid-cols-3 divide-y divide-neutral-200 lg:divide-y-0 lg:divide-x lg:divide-neutral-200">
             {glance.map((g) => (
               <div key={g.label} className="py-6 lg:py-8 lg:px-8 first:lg:pl-0">
                 <div className="text-eyebrow text-brand-600 uppercase mb-2">{g.label}</div>
