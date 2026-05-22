@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
+import ServiceHeroImage from "@/components/ServiceHeroImage";
 import Counter from "@/components/Counter";
 
 const services = [
@@ -184,13 +185,10 @@ export default function ProductDesignPage() {
               </Reveal>
               <Reveal delay={400}><div className="mt-5 flex items-center gap-2 text-sm text-neutral-500"><ShieldCheck className="w-3.5 h-3.5 text-brand-600" />Free 30-minute design audit with a senior product designer. NDA on request.</div></Reveal>
             </div>
-            <Reveal delay={250} direction="left">
-              <div className="space-y-3">
-                <div className="bg-white border border-neutral-200 shadow-card rounded-2xl p-5 flex items-center gap-4 card-lift"><div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0"><Award className="w-6 h-6 text-brand-600" /></div><div><div className="font-display text-base font-bold text-neutral-950">Senior-only</div><div className="text-xs text-neutral-600">5+ years production · No junior bench</div></div></div>
-                <div className="bg-white border border-neutral-200 shadow-card rounded-2xl p-5 flex items-center gap-4 card-lift"><div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0"><Palette className="w-6 h-6 text-brand-600" /></div><div><div className="font-display text-base font-bold text-neutral-950">Design that ships</div><div className="text-xs text-neutral-600">Production UI + developer handover</div></div></div>
-                <div className="bg-white border border-neutral-200 shadow-card rounded-2xl p-5 flex items-center gap-4 card-lift"><div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0"><Sparkles className="w-6 h-6 text-brand-600" /></div><div><div className="font-display text-base font-bold text-neutral-950">Fast track</div><div className="text-xs text-neutral-600">Weekly demos · Transparent updates</div></div></div>
-              </div>
-            </Reveal>
+            <ServiceHeroImage
+              src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1200&q=80"
+              alt="Product design — UI and UX mockups"
+            />
           </div>
         </div>
       </section>

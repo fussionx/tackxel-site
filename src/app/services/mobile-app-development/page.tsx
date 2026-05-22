@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
+import ServiceHeroImage from "@/components/ServiceHeroImage";
 
 const customerTypes = [
   {
@@ -200,37 +201,10 @@ export default function MobileAppDevelopmentPage() {
               </Reveal>
             </div>
 
-            <Reveal delay={250} direction="left">
-              <div className="space-y-3">
-                <div className="bg-white border border-neutral-200 shadow-card rounded-2xl p-5 flex items-center gap-4 card-lift">
-                  <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0">
-                    <Award className="w-6 h-6 text-brand-600" />
-                  </div>
-                  <div>
-                    <div className="font-display text-base font-bold text-neutral-950">App Store-ready</div>
-                    <div className="text-xs text-neutral-600">First-pass review approvals · CI/CD wired in</div>
-                  </div>
-                </div>
-                <div className="bg-white border border-neutral-200 shadow-card rounded-2xl p-5 flex items-center gap-4 card-lift">
-                  <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-brand-600" />
-                  </div>
-                  <div>
-                    <div className="font-display text-base font-bold text-neutral-950">10–14 weeks</div>
-                    <div className="text-xs text-neutral-600">Typical MVP timeline · Production-grade</div>
-                  </div>
-                </div>
-                <div className="bg-white border border-neutral-200 shadow-card rounded-2xl p-5 flex items-center gap-4 card-lift">
-                  <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0">
-                    <Sparkles className="w-6 h-6 text-brand-600" />
-                  </div>
-                  <div>
-                    <div className="font-display text-base font-bold text-neutral-950">90-day support</div>
-                    <div className="text-xs text-neutral-600">Post-launch SLA · Bug fixes · Store-review</div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
+            <ServiceHeroImage
+              src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=1200&q=80"
+              alt="Mobile app development for iOS and Android"
+            />
           </div>
         </div>
       </section>

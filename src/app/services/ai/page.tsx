@@ -8,6 +8,7 @@ import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import Counter from "@/components/Counter";
 import AIVisual from "@/components/AIVisual";
+import ServiceHeroImage from "@/components/ServiceHeroImage";
 import CaseStudyVisual from "@/components/CaseStudyVisual";
 import JsonLd from "@/components/JsonLd";
 import { aiServices } from "@/lib/ai-services";
@@ -112,11 +113,10 @@ export default function AiPillarPage() {
                 </div>
               </Reveal>
             </div>
-            <Reveal delay={200} direction="left">
-              <div className="aspect-[4/3] rounded-3xl shadow-elevated border border-neutral-200 overflow-hidden">
-                <AIVisual variant="neural" accent="from-brand-100/70 via-white to-sky-50" label="AI Development" />
-              </div>
-            </Reveal>
+            <ServiceHeroImage
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80"
+              alt="AI development company UK — neural network and circuitry"
+            />
           </div>
         </div>
       </section>

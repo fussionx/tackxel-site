@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
+import ServiceHeroImage from "@/components/ServiceHeroImage";
 import Counter from "@/components/Counter";
 import {
   IconWebApp, IconAnalytics, IconMobileApp, IconCustomSoftware, IconCommerce, IconLegacy,
@@ -295,39 +296,10 @@ export default function WebAppDevelopmentPage() {
               </Reveal>
             </div>
 
-            <Reveal delay={250} direction="left">
-              <div className="space-y-3">
-                <div className="bg-white border border-neutral-200 shadow-card rounded-2xl p-5 flex items-center gap-4 card-lift">
-                  <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0">
-                    <Award className="w-6 h-6 text-brand-600" />
-                  </div>
-                  <div>
-                    <div className="font-display text-base font-bold text-neutral-950">Production-grade</div>
-                    <div className="text-xs text-neutral-600">Built for maintainability, not just launch day</div>
-                  </div>
-                </div>
-
-                <div className="bg-white border border-neutral-200 shadow-card rounded-2xl p-5 flex items-center gap-4 card-lift">
-                  <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0">
-                    <Zap className="w-6 h-6 text-brand-600" />
-                  </div>
-                  <div>
-                    <div className="font-display text-base font-bold text-neutral-950">Senior-only</div>
-                    <div className="text-xs text-neutral-600">5+ years production · No junior bench</div>
-                  </div>
-                </div>
-
-                <div className="bg-white border border-neutral-200 shadow-card rounded-2xl p-5 flex items-center gap-4 card-lift">
-                  <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0">
-                    <ShieldCheck className="w-6 h-6 text-brand-600" />
-                  </div>
-                  <div>
-                    <div className="font-display text-base font-bold text-neutral-950">Yours to own</div>
-                    <div className="text-xs text-neutral-600">Clean handover · No platform lock-in</div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
+            <ServiceHeroImage
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80"
+              alt="Web and product engineering — code on a laptop"
+            />
           </div>
         </div>
       </section>

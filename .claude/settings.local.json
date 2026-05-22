@@ -25,7 +25,10 @@
       "Bash(curl -sS -L -o /dev/null -w '%{http_code}' --max-time 20 https://tackxel.com__TRACKED_VAR__)",
       "Bash(curl -sS -L -o /dev/null -w \"%{http_code}\" --max-time 20 \"https://tackxel.com/case-studies/lexa/\")",
       "Bash(ls -la vercel.json)",
-      "Bash(curl -sS -L -o /dev/null -w \"tackxel.com -> HTTP %{http_code}\\\\n\" --max-time 20 https://tackxel.com/)"
+      "Bash(curl -sS -L -o /dev/null -w \"tackxel.com -> HTTP %{http_code}\\\\n\" --max-time 20 https://tackxel.com/)",
+      "PowerShell(Test-Path *)",
+      "PowerShell(git restore *)",
+      "Bash(curl -sS -o /dev/null -w '%{http_code}' --max-time 20 'https://images.unsplash.com/photo-__TRACKED_VAR__?w=1200&q=80')"
     ]
   }
 }

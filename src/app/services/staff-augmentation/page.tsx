@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
+import ServiceHeroImage from "@/components/ServiceHeroImage";
 
 export const metadata: Metadata = {
   title: "Staff Augmentation UK — Senior Engineers Embedded In Your Team",
@@ -207,37 +208,10 @@ export default function StaffAugmentationPage() {
               </Reveal>
             </div>
 
-            <Reveal delay={250} direction="left">
-              <div className="space-y-3">
-                <div className="bg-white border border-neutral-200 shadow-card rounded-2xl p-5 flex items-center gap-4 card-lift">
-                  <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-brand-600" />
-                  </div>
-                  <div>
-                    <div className="font-display text-base font-bold text-neutral-950">4 working days</div>
-                    <div className="text-xs text-neutral-600">Brief to shortlist</div>
-                  </div>
-                </div>
-                <div className="bg-white border border-neutral-200 shadow-card rounded-2xl p-5 flex items-center gap-4 card-lift">
-                  <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0">
-                    <BadgeCheck className="w-6 h-6 text-brand-600" />
-                  </div>
-                  <div>
-                    <div className="font-display text-base font-bold text-neutral-950">Senior-only</div>
-                    <div className="text-xs text-neutral-600">5+ years production · No junior bench</div>
-                  </div>
-                </div>
-                <div className="bg-white border border-neutral-200 shadow-card rounded-2xl p-5 flex items-center gap-4 card-lift">
-                  <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center flex-shrink-0">
-                    <Plug className="w-6 h-6 text-brand-600" />
-                  </div>
-                  <div>
-                    <div className="font-display text-base font-bold text-neutral-950">Embedded</div>
-                    <div className="text-xs text-neutral-600">Your standup · Your codebase · Your cadence</div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
+            <ServiceHeroImage
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80"
+              alt="Senior engineers embedded in a team"
+            />
           </div>
         </div>
       </section>

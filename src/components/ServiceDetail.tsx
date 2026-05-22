@@ -8,6 +8,7 @@ import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import Counter from "@/components/Counter";
 import AIVisual from "@/components/AIVisual";
+import ServiceHeroImage from "@/components/ServiceHeroImage";
 import CaseStudyVisual from "@/components/CaseStudyVisual";
 import TiltCard from "@/components/TiltCard";
 import JsonLd from "@/components/JsonLd";
@@ -29,6 +30,8 @@ export default function ServiceDetail({
   stats,
   proofSlugs,
   related,
+  heroImage,
+  heroAlt,
   proofEyebrow = "Proof in production",
 }: {
   service: AiService;
@@ -38,6 +41,8 @@ export default function ServiceDetail({
   stats: ServiceStat[];
   proofSlugs: string[];
   related: RelatedItem[];
+  heroImage?: string;
+  heroAlt?: string;
   proofEyebrow?: string;
 }) {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -137,11 +142,15 @@ export default function ServiceDetail({
               </Reveal>
             </div>
 
-            <Reveal delay={200} direction="left">
-              <div className="aspect-[4/3] rounded-3xl shadow-elevated border border-neutral-200 overflow-hidden">
-                <AIVisual variant={s.heroVariant} accent={s.accent} label={s.name} />
-              </div>
-            </Reveal>
+            {heroImage ? (
+              <ServiceHeroImage src={heroImage} alt={heroAlt ?? `${s.name} services`} />
+            ) : (
+              <Reveal delay={200} direction="left">
+                <div className="aspect-[4/3] rounded-3xl shadow-elevated border border-neutral-200 overflow-hidden">
+                  <AIVisual variant={s.heroVariant} accent={s.accent} label={s.name} />
+                </div>
+              </Reveal>
+            )}
           </div>
         </div>
       </section>
