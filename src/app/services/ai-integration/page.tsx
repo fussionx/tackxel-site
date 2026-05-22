@@ -14,6 +14,7 @@ import Counter from "@/components/Counter";
 import AIVisual from "@/components/AIVisual";
 import CaseStudyVisual from "@/components/CaseStudyVisual";
 import { getCaseStudy } from "@/lib/case-studies";
+import JsonLd from "@/components/JsonLd";
 
 const lexa = getCaseStudy("lexa")!;
 const myFriend = getCaseStudy("my-friend")!;
@@ -211,6 +212,35 @@ export default function AiIntegrationPage() {
 
   return (
     <>
+      <JsonLd
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "AI Integration",
+            serviceType: "AI Integration",
+            description: "Production-grade AI integration: GPT, LLMs, RAG, agents and eval pipelines built into your product by a senior UK team.",
+            url: "https://tackxel.com/services/ai-integration",
+            provider: { "@type": "Organization", name: "Tackxel Ltd", url: "https://tackxel.com" },
+            areaServed: ["GB", "Worldwide"],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://tackxel.com" },
+              { "@type": "ListItem", position: 2, name: "Services", item: "https://tackxel.com/services" },
+              { "@type": "ListItem", position: 3, name: "AI Integration", item: "https://tackxel.com/services/ai-integration" },
+            ],
+          },
+        ]}
+      />
+
       {/* HERO — warm, animated chat mockup */}
       <section className="relative hero-warm pt-32 pb-20 lg:pb-28 overflow-hidden">
         <Parallax speed={0.08} className="absolute top-24 right-10 hidden lg:block pointer-events-none z-0">

@@ -9,28 +9,35 @@ import Parallax from "@/components/Parallax";
 import Counter from "@/components/Counter";
 import AIVisual from "@/components/AIVisual";
 import CaseStudyVisual from "@/components/CaseStudyVisual";
+import TiltCard from "@/components/TiltCard";
+import JsonLd from "@/components/JsonLd";
 import type { AiService } from "@/lib/ai-services";
 import { getCaseStudy } from "@/lib/case-studies";
 
 export type ServiceStat = { value: string; suffix?: string; label: string; counter?: boolean };
 export type Crumb = { name: string; href?: string };
+export type RelatedItem = { name: string; href: string; desc: string };
+
+const BASE = "https://tackxel.com";
 
 // Shared detail template for every AI and Cloud Native service page.
-// Content comes from a data object; proof, stats, breadcrumb, and the
-// "why" heading are passed by the thin per-category wrapper.
 export default function ServiceDetail({
   service: s,
+  path,
   breadcrumb,
   whyHeading,
   stats,
   proofSlugs,
+  related,
   proofEyebrow = "Proof in production",
 }: {
   service: AiService;
+  path: string;
   breadcrumb: Crumb[];
   whyHeading: string;
   stats: ServiceStat[];
   proofSlugs: string[];
+  related: RelatedItem[];
   proofEyebrow?: string;
 }) {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -38,8 +45,43 @@ export default function ServiceDetail({
     .map((slug) => getCaseStudy(slug))
     .filter((c): c is NonNullable<typeof c> => Boolean(c));
 
+  // --- Structured data (Service + FAQPage + BreadcrumbList) ---
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: s.name,
+      serviceType: s.name,
+      description: s.subhead,
+      url: `${BASE}${path}`,
+      provider: { "@type": "Organization", name: "Tackxel Ltd", url: BASE },
+      areaServed: ["GB", "Worldwide"],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: s.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumb.map((c, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: c.name,
+        item: `${BASE}${c.href ?? path}`,
+      })),
+    },
+  ];
+
   return (
     <>
+      <JsonLd data={jsonLd} />
+
       {/* HERO */}
       <section className="relative hero-warm pt-32 pb-20 lg:pb-28 overflow-hidden">
         <Parallax speed={0.08} className="absolute top-24 right-10 hidden lg:block pointer-events-none z-0">
@@ -153,7 +195,7 @@ export default function ServiceDetail({
         </div>
       </section>
 
-      {/* BENEFITS */}
+      {/* BENEFITS — 3D tilt cards */}
       <section className="py-20 lg:py-28 bg-white border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <Reveal>
@@ -168,13 +210,13 @@ export default function ServiceDetail({
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
             {s.benefits.map((b, i) => (
               <Reveal key={b.title} delay={(i % 3) * 80}>
-                <article className="bg-neutral-50 border border-neutral-200 rounded-3xl p-7 h-full card-lift">
+                <TiltCard className="bg-neutral-50 border border-neutral-200 rounded-3xl p-7 h-full hover:shadow-elevated">
                   <div className="w-12 h-12 rounded-xl bg-white border border-neutral-200 flex items-center justify-center shadow-subtle mb-5">
                     <b.Icon className="w-6 h-6 text-brand-600" />
                   </div>
                   <h3 className="text-lg font-semibold text-neutral-950 mb-2 leading-snug">{b.title}</h3>
                   <p className="text-sm text-neutral-600 leading-relaxed">{b.desc}</p>
-                </article>
+                </TiltCard>
               </Reveal>
             ))}
           </div>
@@ -296,7 +338,7 @@ export default function ServiceDetail({
       </section>
 
       {/* FAQ */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-28 bg-white border-b border-neutral-200">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <Reveal>
             <div className="mb-12">
@@ -345,6 +387,36 @@ export default function ServiceDetail({
           </div>
         </div>
       </section>
+
+      {/* RELATED SERVICES — internal links */}
+      {related.length > 0 && (
+        <section className="py-20 lg:py-24 bg-neutral-50 border-b border-neutral-200">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <Reveal>
+              <div className="max-w-3xl mb-10">
+                <div className="text-eyebrow text-brand-600 uppercase mb-4">Related services</div>
+                <h2 className="font-display text-h2 text-neutral-950 tracking-display-tight leading-tight">
+                  Explore what pairs with {s.name.toLowerCase()}
+                </h2>
+              </div>
+            </Reveal>
+            <div className="grid md:grid-cols-3 gap-4 lg:gap-5">
+              {related.map((r, i) => (
+                <Reveal key={r.href} delay={i * 70}>
+                  <Link href={r.href} className="group block bg-white border border-neutral-200 rounded-3xl p-7 card-lift h-full">
+                    <h3 className="text-lg font-semibold text-neutral-950 mb-2 leading-snug group-hover:text-brand-600 transition-colors">{r.name}</h3>
+                    <p className="text-sm text-neutral-600 leading-relaxed mb-5">{r.desc}</p>
+                    <span className="inline-flex items-center gap-1 text-sm font-medium text-neutral-900 group-hover:text-brand-600 transition-colors">
+                      Learn more
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                    </span>
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FINAL CTA */}
       <section className="relative py-20 lg:py-28 bg-neutral-950 text-white overflow-hidden">

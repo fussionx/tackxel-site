@@ -12,6 +12,7 @@ import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import Counter from "@/components/Counter";
 import CaseStudyVisual from "@/components/CaseStudyVisual";
+import CursorGlow from "@/components/CursorGlow";
 import { featuredCaseStudies } from "@/lib/case-studies";
 import {
   IconAI, IconMobileApp, IconWebApp, IconDesign, IconIoT,
@@ -147,6 +148,7 @@ export default function HomePage() {
     <>
       {/* HERO — warm light gradient */}
       <section className="relative hero-warm pt-32 pb-24 lg:pb-32 overflow-hidden">
+        <CursorGlow />
         <Parallax speed={0.08} className="absolute top-20 right-10 hidden lg:block pointer-events-none z-0">
           <div className="w-[26rem] h-[26rem] rounded-full bg-orange-200/40 blur-3xl float-slow" />
         </Parallax>

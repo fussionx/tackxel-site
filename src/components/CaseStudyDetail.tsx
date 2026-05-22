@@ -9,6 +9,7 @@ import {
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import CaseStudyVisual from "@/components/CaseStudyVisual";
+import JsonLd from "@/components/JsonLd";
 import type { CaseStudy } from "@/lib/case-studies";
 
 // Maps a tech string to a representative icon so each badge reads visually.
@@ -50,6 +51,18 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://tackxel.com" },
+            { "@type": "ListItem", position: 2, name: "Case studies", item: "https://tackxel.com/case-studies" },
+            { "@type": "ListItem", position: 3, name: study.name, item: `https://tackxel.com/case-studies/${study.slug}` },
+          ],
+        }}
+      />
+
       {/* HERO — warm, homepage style */}
       <section className="relative hero-warm pt-32 pb-20 lg:pb-28 overflow-hidden">
         <Parallax speed={0.08} className="absolute top-24 right-10 hidden lg:block pointer-events-none z-0">

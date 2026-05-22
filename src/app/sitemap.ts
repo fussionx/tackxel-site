@@ -6,6 +6,7 @@ const BASE = "https://tackxel.com";
 const staticRoutes = ["", "/about", "/contact", "/services", "/case-studies"];
 
 const serviceRoutes = [
+  "/services/ai",
   "/services/ai-integration",
   "/services/ai-consulting",
   "/services/ai-ml-development",
