@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight, ArrowUpRight, ExternalLink, Plus, Minus, Check,
   Zap, ShieldCheck, Bot, Sparkles, MessageSquare, Database, FileText,
-  Building2, TrendingUp,
+  Building2, TrendingUp, Boxes,
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
@@ -34,6 +34,17 @@ const pillars = [
     title: "Autonomous",
     desc: "AI agents that take action, not just chat. Workflow automation, RAG systems, autonomous decision-making — built for real ops.",
   },
+];
+
+// The 7 AI sub-services this hub links out to.
+const aiCategories = [
+  { Icon: Sparkles, name: "AI Consulting", href: "/services/ai-consulting", desc: "AI strategy, roadmaps, feasibility, and audits — find where AI fits and what to build." },
+  { Icon: Database, name: "AI & ML Development", href: "/services/ai-ml-development", desc: "Custom ML models, predictive analytics, computer vision, and NLP — shipped to production." },
+  { Icon: Zap, name: "AI App Development", href: "/services/ai-app-development", desc: "Full mobile and web apps with AI at the core, not bolted on." },
+  { Icon: MessageSquare, name: "Chatbot Development", href: "/services/chatbot-development", desc: "Conversational AI for support, sales, and internal tools — grounded in your data." },
+  { Icon: FileText, name: "Generative AI", href: "/services/generative-ai", desc: "Content and image generation, RAG, document intelligence, and AI copilots." },
+  { Icon: Bot, name: "AI Agents", href: "/services/ai-agents", desc: "Autonomous agents that take action — workflow automation and multi-step tasks." },
+  { Icon: Boxes, name: "Agentic AI", href: "/services/agentic-ai", desc: "Multi-agent systems, agentic workflows, and orchestrated autonomous decisions." },
 ];
 
 const rows = [
@@ -353,6 +364,43 @@ export default function AiIntegrationPage() {
                   <h3 className="font-display text-h3 text-neutral-950 mb-3">{p.title}</h3>
                   <p className="text-sm text-neutral-600 leading-relaxed">{p.desc}</p>
                 </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AI SERVICE CATEGORIES — hub links to the 7 sub-pages */}
+      <section className="py-20 lg:py-28 bg-neutral-50 border-y border-neutral-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <Reveal>
+            <div className="grid lg:grid-cols-[1fr_2fr] gap-12 mb-12 items-end">
+              <div>
+                <div className="text-eyebrow text-brand-600 uppercase mb-4">Explore AI services</div>
+                <h2 className="font-display text-h2 lg:text-h2-lg text-neutral-950 tracking-display-tight leading-tight">
+                  Seven ways we build with AI
+                </h2>
+              </div>
+              <p className="text-base text-neutral-600 leading-relaxed max-w-xl lg:justify-self-end">
+                AI Integration is the hub. Go deeper on the capability you need — each is a full service in its own right.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+            {aiCategories.map((c, i) => (
+              <Reveal key={c.name} delay={(i % 3) * 70}>
+                <Link href={c.href} className="group block bg-white border border-neutral-200 rounded-3xl p-7 card-lift h-full">
+                  <div className="w-12 h-12 rounded-xl bg-brand-50 border border-brand-100 flex items-center justify-center mb-5">
+                    <c.Icon className="w-6 h-6 text-brand-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-neutral-950 mb-2 leading-snug">{c.name}</h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed mb-5">{c.desc}</p>
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-neutral-900 group-hover:text-brand-600 transition-colors">
+                    Explore
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </span>
+                </Link>
               </Reveal>
             ))}
           </div>

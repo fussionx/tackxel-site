@@ -4,7 +4,7 @@
 // Swap any of these for a real screenshot later by replacing the consumer
 // with <Image />.
 
-type Variant =
+export type Variant =
   | "chat"
   | "neural"
   | "capabilities"

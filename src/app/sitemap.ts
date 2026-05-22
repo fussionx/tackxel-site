@@ -7,6 +7,13 @@ const staticRoutes = ["", "/about", "/contact", "/services", "/case-studies"];
 
 const serviceRoutes = [
   "/services/ai-integration",
+  "/services/ai-consulting",
+  "/services/ai-ml-development",
+  "/services/ai-app-development",
+  "/services/chatbot-development",
+  "/services/generative-ai",
+  "/services/ai-agents",
+  "/services/agentic-ai",
   "/services/mobile-app-development",
   "/services/web-app-development",
   "/services/product-design",
