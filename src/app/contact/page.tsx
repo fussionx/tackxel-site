@@ -5,14 +5,12 @@ import { ArrowRight, Check, Mail, Phone, AlertCircle } from "lucide-react";
 import Reveal from "@/components/Reveal";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// WEB3FORMS SETUP (required for the contact form to actually send):
-// 1. Go to https://web3forms.com and enter your email: contact@tackxel.com
-// 2. Web3Forms emails you a free Access Key. Submissions are delivered to the
-//    email you registered with (use contact@tackxel.com so they reach you).
-// 3. Paste that key below, replacing YOUR_WEB3FORMS_KEY_HERE.
+// WEB3FORMS SETUP:
+// Submissions are delivered to the email registered with this access key at
+// https://web3forms.com (use contact@tackxel.com so they reach you).
 // No backend or server needed — this works on the static Vercel deployment.
 // ─────────────────────────────────────────────────────────────────────────────
-const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_KEY_HERE";
+const WEB3FORMS_ACCESS_KEY = "2067b320-aa6a-40b0-8e1f-90f5afc7248f";
 
 const expectations = [
   "Confidential — NDA available on request",
@@ -111,11 +109,9 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit}>
-                    {/* Web3Forms hidden fields */}
                     <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
                     <input type="hidden" name="subject" value="New project inquiry from tackxel.com" />
                     <input type="hidden" name="from_name" value="Tackxel Website" />
-                    {/* Honeypot — bots fill this, humans never see it */}
                     <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
 
                     <h2 className="font-display text-h3 text-neutral-950 mb-2">Project inquiry</h2>
