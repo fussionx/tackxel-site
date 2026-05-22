@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Software Development Services & Solutions — Custom, Mobile, AI, Cloud",
-  description: "Comprehensive software engineering services from Tackxel: custom software development, mobile and web apps, AI and ML, cloud and DevOps, legacy modernization, and quality engineering. End-to-end delivery from a senior engineering team.",
+  title: "Services — AI, Mobile, Web, Product Design, IoT & ERP",
+  description:
+    "Tackxel services: AI integration, mobile app development, web & product engineering, product design, staff augmentation, IoT & connected devices, and enterprise platforms & ERP — delivered by a senior UK team.",
   alternates: { canonical: "/services" },
   openGraph: {
-    title: "Software Development Services — Tackxel",
-    description: "Custom software, mobile, web, AI, and cloud engineering services for startups, scaleups, and enterprises.",
+    title: "Services — Tackxel",
+    description:
+      "AI integration, mobile, web, product design, staff augmentation, IoT and custom ERP — one senior team, end to end.",
     url: "/services",
   },
 };

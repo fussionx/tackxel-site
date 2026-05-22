@@ -154,47 +154,46 @@ const techStack = [
 export default function EnterprisePlatformsErpPage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative hero-glow text-white pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 grid-bg" />
-        <Parallax speed={0.15} className="absolute top-20 right-20 hidden lg:block pointer-events-none">
-          <div className="w-72 h-72 rounded-full bg-brand-500/10 blur-3xl float-slow" />
+      {/* HERO — warm */}
+      <section className="relative hero-warm pt-32 pb-20 lg:pb-24 overflow-hidden">
+        <Parallax speed={0.08} className="absolute top-24 right-10 hidden lg:block pointer-events-none z-0">
+          <div className="w-[24rem] h-[24rem] rounded-full bg-orange-200/40 blur-3xl float-slow" />
         </Parallax>
-        <Parallax speed={-0.1} className="absolute bottom-10 left-20 hidden lg:block pointer-events-none">
-          <div className="w-96 h-96 rounded-full bg-brand-400/5 blur-3xl" />
+        <Parallax speed={-0.06} className="absolute bottom-0 left-10 hidden lg:block pointer-events-none z-0">
+          <div className="w-[26rem] h-[26rem] rounded-full bg-brand-200/40 blur-3xl" />
         </Parallax>
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
           <Reveal>
-            <nav className="flex items-center gap-2 text-xs text-neutral-400 mb-6 font-mono">
-              <Link href="/" className="hover:text-brand-300 transition-colors">Home</Link>
-              <span>/</span>
-              <Link href="/services" className="hover:text-brand-300 transition-colors">Services</Link>
-              <span>/</span>
-              <span className="text-brand-300">Enterprise Platforms &amp; ERP</span>
+            <nav className="flex items-center gap-2 text-xs text-neutral-500 mb-8 font-mono">
+              <Link href="/" className="hover:text-brand-600 transition-colors">Home</Link>
+              <span className="text-neutral-300">/</span>
+              <Link href="/services" className="hover:text-brand-600 transition-colors">Services</Link>
+              <span className="text-neutral-300">/</span>
+              <span className="text-brand-600">Enterprise Platforms &amp; ERP</span>
             </nav>
           </Reveal>
 
-          <div className="grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-16 items-center">
             <div>
               <Reveal>
-                <span className="badge-dark mb-6">
+                <span className="badge mb-6">
                   <span className="dot-pulse" />
                   ERP · SaaS · Internal tools · Integrations
                 </span>
               </Reveal>
               <Reveal delay={80}>
-                <div className="text-eyebrow text-brand-300 uppercase font-semibold tracking-widest mb-4">
+                <div className="text-eyebrow text-brand-600 uppercase font-semibold tracking-widest mb-4">
                   Enterprise Platforms &amp; ERP
                 </div>
               </Reveal>
               <Reveal delay={140}>
-                <h1 className="font-display text-h1 lg:text-h1-lg text-white tracking-display-tight">
+                <h1 className="font-display text-h1 lg:text-h1-lg text-neutral-950 tracking-display-tight leading-[1.05]">
                   Custom systems for the workflows your business actually has.
                 </h1>
               </Reveal>
               <Reveal delay={220}>
-                <p className="text-lg text-neutral-300 mt-6 max-w-2xl leading-relaxed">
+                <p className="text-lg text-neutral-700 mt-6 max-w-2xl leading-relaxed">
                   Custom ERPs, internal SaaS, role-based portals, and integration platforms — built end to end on AWS for operations-grade reliability. The whole platform from one team, not seven products glued together.
                 </p>
               </Reveal>
@@ -204,23 +203,23 @@ export default function EnterprisePlatformsErpPage() {
                     <Calendar className="w-4 h-4" />
                     Book a discovery call
                   </Link>
-                  <Link href="/contact?intent=estimate" className="btn-ghost-light">
+                  <Link href="/contact?intent=estimate" className="btn-secondary">
                     <Calculator className="w-4 h-4" />
                     Get a delivery estimate
                   </Link>
                 </div>
               </Reveal>
               <Reveal delay={400}>
-                <div className="mt-5 flex items-center gap-2 text-sm text-neutral-400">
-                  <ShieldCheck className="w-3.5 h-3.5 text-brand-300" />
+                <div className="mt-5 flex items-center gap-2 text-sm text-neutral-500">
+                  <ShieldCheck className="w-3.5 h-3.5 text-brand-600" />
                   Free 30-minute scoping call with the founder. NDA on request.
                 </div>
               </Reveal>
             </div>
 
-            <Reveal delay={300} direction="left">
+            <Reveal delay={250} direction="left">
               {/* PLACEHOLDER - swap with real visual at /public/images/services/enterprise.jpg */}
-              <div className="relative rounded-2xl overflow-hidden border border-neutral-800 shadow-card-dark">
+              <div className="relative rounded-3xl overflow-hidden border border-neutral-200 shadow-elevated">
                 <Image
                   src="/images/services/enterprise.jpg"
                   alt="Enterprise platforms and ERP architecture illustration"

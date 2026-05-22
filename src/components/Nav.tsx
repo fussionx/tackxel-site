@@ -19,16 +19,9 @@ const services = [
 // Pages whose hero is dark (white text on dark background). Header switches
 // the logo + link colors based on this. Lookup-by-Set so adding a page is
 // just one line, and the check is O(1).
-const DARK_HERO_PAGES = new Set<string>([
-  "/services",
-  "/services/mobile-app-development",
-  "/services/web-app-development",
-  "/services/product-design",
-  "/services/iot-and-connected-devices",
-  "/services/enterprise-platforms-and-erp",
-  "/services/staff-augmentation",
-  // Case studies (index + all detail pages) use a light/warm hero — not listed here.
-]);
+// Every page now uses a light/warm hero, so the header logo stays dark
+// everywhere. Add a pathname here if a page is ever given a dark hero again.
+const DARK_HERO_PAGES = new Set<string>([]);
 
 export default function Nav() {
   const pathname = usePathname();

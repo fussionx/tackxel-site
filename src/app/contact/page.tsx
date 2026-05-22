@@ -16,8 +16,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="relative pt-32 pb-16 bg-white border-b border-neutral-200">
-        <div className="absolute inset-0 grid-bg-light" />
+      <section className="relative hero-warm pt-32 pb-16 overflow-hidden border-b border-neutral-200">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-start">
             <Reveal>
