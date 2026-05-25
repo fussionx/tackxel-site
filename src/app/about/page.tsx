@@ -12,6 +12,7 @@ import Counter from "@/components/Counter";
 import {
   IconAI, IconMobileApp, IconWebApp, IconDesign, IconIoT, IconEnterprise,
 } from "@/components/Icons";
+import UnionJack from "@/components/UnionJack";
 
 export const metadata: Metadata = {
   title: "About Tackxel — UK product studio shipping AI-first software",
@@ -323,16 +324,16 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal delay={150} direction="left">
-              {/* PLACEHOLDER - swap with real photo when user provides */}
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-neutral-200 shadow-card">
-                <Image
-                  src="/images/about/office-2.jpg"
-                  alt="Tackxel meeting space, Manchester"
-                  width={800}
-                  height={600}
-                  loading="lazy"
-                  className="w-full h-full object-cover block"
-                />
+              <div className="flex justify-center lg:justify-end">
+                <div className="w-full max-w-sm bg-white border border-neutral-200 rounded-3xl shadow-card p-8 lg:p-10">
+                  <div className="overflow-hidden rounded-2xl border border-neutral-200 shadow-subtle ring-1 ring-neutral-900/5">
+                    <UnionJack className="block w-full aspect-[2/1]" />
+                  </div>
+                  <div className="mt-5 flex items-center justify-center gap-2 text-sm font-medium text-neutral-700">
+                    <MapPin className="w-4 h-4 text-brand-600" />
+                    United Kingdom
+                  </div>
+                </div>
               </div>
             </Reveal>
           </div>
