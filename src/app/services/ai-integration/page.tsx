@@ -12,7 +12,7 @@ import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import Counter from "@/components/Counter";
 import AIVisual from "@/components/AIVisual";
-import ServiceHeroImage from "@/components/ServiceHeroImage";
+import LottieAI from "@/components/LottieAI";
 import CaseStudyVisual from "@/components/CaseStudyVisual";
 import { getCaseStudy } from "@/lib/case-studies";
 import JsonLd from "@/components/JsonLd";
@@ -301,10 +301,13 @@ export default function AiIntegrationPage() {
             </div>
 
             <Reveal delay={200} direction="left">
-              <ServiceHeroImage
-                src="https://images.unsplash.com/photo-1644088379091-d574269d422f?w=1200&q=80"
-                alt="AI integration and machine learning neural network visualization"
-              />
+              <div className="relative aspect-[4/3] rounded-3xl border border-neutral-200 shadow-elevated overflow-hidden bg-gradient-to-br from-brand-50 via-white to-orange-50">
+                <div className="absolute inset-0 grid-bg-light opacity-40 pointer-events-none" />
+                <LottieAI
+                  fitClassName="w-full h-full max-w-[420px] max-h-[420px]"
+                  fallbackAlt="AI integration — machine learning visualisation"
+                />
+              </div>
             </Reveal>
           </div>
         </div>

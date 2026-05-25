@@ -13,6 +13,7 @@ import Parallax from "@/components/Parallax";
 import Counter from "@/components/Counter";
 import CaseStudyVisual from "@/components/CaseStudyVisual";
 import CursorGlow from "@/components/CursorGlow";
+import LottieAI from "@/components/LottieAI";
 import { featuredCaseStudies } from "@/lib/case-studies";
 import BlogVisual from "@/components/BlogVisual";
 import BlogImage from "@/components/BlogImage";
@@ -367,13 +368,11 @@ export default function HomePage({ latestPosts }: { latestPosts: PostMeta[] }) {
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                     </span>
                   </div>
-                  <div className="hidden lg:block relative border-l border-neutral-200/50">
-                    <Image
-                      src="/images/services/ai.jpg"
-                      alt="AI integration visualisation"
-                      width={1200}
-                      height={800}
-                      className="w-full h-full object-cover"
+                  <div className="hidden lg:block relative overflow-hidden border-l border-neutral-200/50 bg-gradient-to-br from-brand-50 via-white to-orange-50">
+                    <div className="absolute inset-0 grid-bg-light opacity-40 pointer-events-none" />
+                    <LottieAI
+                      fitClassName="w-full h-full max-w-[300px] max-h-[260px]"
+                      fallbackAlt="AI integration visualisation"
                     />
                   </div>
                 </div>
