@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
+import { getAllSlugs } from "@/lib/blog";
 
 const BASE = "https://tackxel.com";
 
 // Keep in sync with Nav.tsx / Footer.tsx and the app/ route tree.
-const staticRoutes = ["", "/about", "/contact", "/services", "/case-studies"];
+const staticRoutes = ["", "/about", "/contact", "/services", "/case-studies", "/blog"];
 
 const serviceRoutes = [
   "/services/ai",
@@ -57,5 +58,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes.slice(1).map((p) => entry(p, 0.6, "monthly")),
     ...serviceRoutes.map((p) => entry(p, 0.8, "monthly")),
     ...caseStudyRoutes.map((p) => entry(p, 0.8, "monthly")),
+    ...getAllSlugs().map((s) => entry(`/blog/${s}`, 0.7, "monthly")),
   ];
 }

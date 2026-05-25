@@ -176,6 +176,10 @@ export default function Nav() {
               Case studies
             </Link>
 
+            <Link href="/blog" className={`px-4 py-2 text-sm font-medium transition-colors ${linkClass}`}>
+              Blog
+            </Link>
+
             <Link href="/about" className={`px-4 py-2 text-sm font-medium transition-colors ${linkClass}`}>
               About
             </Link>
@@ -254,6 +258,9 @@ export default function Nav() {
               <div className="space-y-3 pt-4">
                 <Link href="/case-studies" onClick={() => setMobileOpen(false)} className="block text-base font-medium text-neutral-900">
                   Case studies
+                </Link>
+                <Link href="/blog" onClick={() => setMobileOpen(false)} className="block text-base font-medium text-neutral-900">
+                  Blog
                 </Link>
                 <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-base font-medium text-neutral-900">
                   About
