@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import CaseStudyVisual from "@/components/CaseStudyVisual";
@@ -59,7 +60,11 @@ export default function CaseStudiesGrid() {
               <Link href={`/case-studies/${c.slug}`} className="group block h-full">
                 <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-white card-lift">
                   <div className="relative aspect-[16/10]">
-                    <CaseStudyVisual monogram={c.monogram} accent={c.accent} name={c.name} />
+                    {c.heroImage ? (
+                      <Image src={c.heroImage} alt={`${c.name} live site screenshot`} width={1280} height={960} loading="lazy" className="w-full h-full object-cover object-top" />
+                    ) : (
+                      <CaseStudyVisual monogram={c.monogram} accent={c.accent} name={c.name} />
+                    )}
                     {c.liveUrl && (
                       <span className="absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-neutral-950/85 px-2.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-widest text-white backdrop-blur">
                         <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />

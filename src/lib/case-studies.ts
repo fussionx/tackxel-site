@@ -22,6 +22,7 @@ export type CaseStudy = {
   tagline: string; // hero sub-paragraph
   platforms: string; // at-a-glance
   accent: string; // gradient classes for the visual placeholder (keep literal for Tailwind)
+  heroImage?: string; // optional real screenshot of the live site; falls back to the gradient visual
   featured?: boolean; // surfaced on the homepage strip
   challenge: string[];
   approach: ApproachStep[];
@@ -61,6 +62,7 @@ export const caseStudies: CaseStudy[] = [
       "An AI assistant that turns plain-language questions into clear, sourced legal guidance — built on a retrieval pipeline so answers stay anchored to actual statutes, not model hallucinations.",
     platforms: "Web · Conversational AI",
     accent: "from-indigo-500/25 via-brand-500/15 to-sky-400/20",
+    heroImage: "/images/case-studies/lexa.png",
     featured: true,
     challenge: [
       "Legal help in Pakistan is expensive, slow, and intimidating for ordinary people. Most never speak to a lawyer until a problem has already become a crisis, and generic chatbots are worse than useless on law — they invent confident-sounding answers with no basis in statute.",
@@ -102,6 +104,7 @@ export const caseStudies: CaseStudy[] = [
       "Tenants manage their unit, gate access, and climate from their phone — including time-bounded access for family and contractors — on a Dockerized AWS backend with one-tap store releases.",
     platforms: "iOS (Swift) · Android (Kotlin) · AWS",
     accent: "from-amber-400/25 via-orange-400/15 to-brand-500/20",
+    heroImage: "/images/case-studies/luxelocker.png",
     featured: true,
     challenge: [
       "Storage operators are under pressure to digitise. Customers expect to manage their unit, gate access, and climate from their phone — and to grant time-bounded access to movers or family. That's a mobile app, an IoT layer, and a cloud backend, all moving in lockstep.",
@@ -144,6 +147,7 @@ export const caseStudies: CaseStudy[] = [
       "A web platform that pulls live MLS data, runs the numbers agents care about, and serves it through role-based access with full observability — Dockerized on AWS and built to scale.",
     platforms: "Web · AWS",
     accent: "from-emerald-400/25 via-teal-400/15 to-brand-500/20",
+    heroImage: "/images/case-studies/propmetrics.png",
     featured: true,
     challenge: [
       "Real estate agents serving investors live in spreadsheets. The data they need — MLS listings, ROI, deal comparisons — sits in different systems and goes stale the moment it's exported.",
@@ -185,6 +189,7 @@ export const caseStudies: CaseStudy[] = [
       "Deal discovery, investor onboarding, and group syndication in one platform — with CRM integration and a global edge, built on AWS to handle real deals from day one.",
     platforms: "Web · AWS",
     accent: "from-sky-400/25 via-brand-400/15 to-indigo-500/20",
+    heroImage: "/images/case-studies/multiunitx.png",
     challenge: [
       "Real estate syndication is coordination-heavy: sponsors, investors, deals, documents, and follow-ups, usually spread across email, spreadsheets, and a disconnected CRM.",
       "MultiUnitX wanted that whole flow — discovery, onboarding, and group syndication — in one platform that felt fast and trustworthy to investors putting real money in.",
@@ -225,6 +230,7 @@ export const caseStudies: CaseStudy[] = [
       "Production scheduling, multi-warehouse inventory, and EDI integration with Walmart, Target, and Amazon at 99.5% accuracy — running on auto-scaling AWS infrastructure built to take real load.",
     platforms: "Web · AWS (ECS, Auto Scaling)",
     accent: "from-brand-500/25 via-brand-400/15 to-orange-400/20",
+    heroImage: "/images/case-studies/shifterp.png",
     featured: true,
     challenge: [
       "Co-manufacturers run on margins where a single EDI rejection from a major retailer can mean chargebacks, missed ship windows, and lost shelf space. Most run on a patchwork of legacy tools that don't talk to each other.",

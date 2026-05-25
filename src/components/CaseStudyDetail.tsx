@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight, ArrowUpRight, Check, ExternalLink,
   Smartphone, Cloud, Database, CreditCard, ShieldCheck, Cpu, Bluetooth,
@@ -138,7 +139,18 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
             <Reveal delay={250} direction="left">
               {/* VISUAL PLACEHOLDER — designed gradient; swap for a real screenshot later */}
               <div className="aspect-[4/3] rounded-3xl shadow-elevated border border-neutral-200 overflow-hidden">
-                <CaseStudyVisual monogram={study.monogram} accent={study.accent} name={study.name} />
+                {study.heroImage ? (
+                  <Image
+                    src={study.heroImage}
+                    alt={`${study.name} — ${study.industry} live site screenshot`}
+                    width={1280}
+                    height={960}
+                    priority
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <CaseStudyVisual monogram={study.monogram} accent={study.accent} name={study.name} />
+                )}
               </div>
             </Reveal>
           </div>
