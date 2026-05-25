@@ -337,35 +337,52 @@ export default function HomePage({ latestPosts }: { latestPosts: PostMeta[] }) {
             </div>
           </Reveal>
 
-          {/* Services grid — AI Integration first (same size, highlighted) */}
+          {/* Featured AI card */}
+          <Reveal>
+            <Link href="/services/ai-integration" className="group block mb-5 lg:mb-6">
+              <article className="relative bg-gradient-to-br from-orange-50 via-white to-brand-50 border border-neutral-200 rounded-3xl overflow-hidden card-lift">
+                <span className="absolute top-5 right-5 z-10 bg-neutral-950 text-white text-[10px] font-mono uppercase tracking-widest font-semibold px-3 py-1 rounded-full">
+                  Most in demand
+                </span>
+                <div className="grid lg:grid-cols-[1.4fr_1fr] gap-0 items-stretch">
+                  <div className="px-8 py-5 lg:px-12 lg:py-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-white border border-neutral-200 flex items-center justify-center shadow-subtle">
+                        <IconAI className="w-7 h-7" />
+                      </div>
+                      <h3 className="font-display text-h3 text-neutral-950">AI Integration</h3>
+                    </div>
+                    <p className="text-base lg:text-lg text-neutral-700 leading-relaxed mb-4 max-w-xl">
+                      Ship AI features that hold up in production. GPT, LLMs, RAG, agents, and the eval pipelines that keep quality measurable.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {["GPT", "LLMs", "RAG", "Agents", "Eval pipelines"].map((t) => (
+                        <span key={t} className="inline-flex items-center px-2.5 py-1 rounded-full bg-white border border-neutral-200 text-[11px] font-medium text-neutral-700">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-neutral-950 group-hover:text-brand-600 transition-colors">
+                      Learn more
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                    </span>
+                  </div>
+                  <div className="hidden lg:block relative border-l border-neutral-200/50">
+                    <Image
+                      src="/images/services/ai.jpg"
+                      alt="AI integration visualisation"
+                      width={1200}
+                      height={800}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </article>
+            </Link>
+          </Reveal>
+
+          {/* 5 other services */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-            <Reveal>
-              <Link href="/services/ai-integration" className="group flex h-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-white card-lift">
-                <div className="relative aspect-[5/2]">
-                  <Image
-                    src="https://images.unsplash.com/photo-1644088379091-d574269d422f?w=1200&q=80"
-                    alt="AI integration and machine learning neural network visualization"
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-brand-700/25 via-brand-500/5 to-orange-200/10 mix-blend-multiply pointer-events-none" />
-                  <span className="absolute top-3 left-3 z-10 rounded-full bg-neutral-950 px-3 py-1 text-[10px] font-mono font-semibold uppercase tracking-widest text-white">
-                    Most in demand
-                  </span>
-                </div>
-                <div className="flex flex-1 flex-col p-7">
-                  <h3 className="text-lg font-semibold text-neutral-950 mb-2 leading-snug">AI Integration</h3>
-                  <p className="text-sm text-neutral-600 leading-relaxed mb-5 flex-1">
-                    Ship AI features that hold up in production — GPT, LLMs, RAG, agents, and the eval pipelines that keep quality measurable.
-                  </p>
-                  <span className="inline-flex items-center gap-1 text-sm font-medium text-neutral-900 group-hover:text-brand-600 transition-colors">
-                    Learn more
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </span>
-                </div>
-              </Link>
-            </Reveal>
             {otherServices.map((s, i) => (
               <Reveal key={s.name} delay={i * 60}>
                 <Link href={s.href} className="group block bg-white border border-neutral-200 rounded-3xl p-7 card-lift h-full">
