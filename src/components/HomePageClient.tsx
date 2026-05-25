@@ -341,7 +341,7 @@ export default function HomePage({ latestPosts }: { latestPosts: PostMeta[] }) {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
             <Reveal>
               <Link href="/services/ai-integration" className="group flex h-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-white card-lift">
-                <div className="relative aspect-[16/10]">
+                <div className="relative aspect-[5/2]">
                   <Image
                     src="https://images.unsplash.com/photo-1644088379091-d574269d422f?w=1200&q=80"
                     alt="AI integration and machine learning neural network visualization"
