@@ -12,6 +12,7 @@ import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import Counter from "@/components/Counter";
 import AIVisual from "@/components/AIVisual";
+import AIRobotVisual from "@/components/AIRobotVisual";
 import CaseStudyVisual from "@/components/CaseStudyVisual";
 import { getCaseStudy } from "@/lib/case-studies";
 import JsonLd from "@/components/JsonLd";
@@ -299,73 +300,11 @@ export default function AiIntegrationPage() {
               </Reveal>
             </div>
 
-            {/* Animated AI conversation mockup */}
+            {/* Futuristic AI robot */}
             <Reveal delay={200} direction="left">
-              <div className="relative rounded-3xl border border-neutral-200 shadow-elevated bg-white overflow-hidden">
-                <div className="flex items-center gap-2 px-5 py-3.5 border-b border-neutral-100 bg-neutral-50/60">
-                  <span className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
-                  <span className="ml-2 text-xs font-mono text-neutral-500">AI assistant · in production</span>
-                </div>
-                <div className="relative p-5 sm:p-6 space-y-4 bg-gradient-to-br from-brand-50/50 via-white to-orange-50/50 min-h-[320px]">
-                  <motion.div
-                    initial={{ opacity: 0, y: 14 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex justify-end"
-                  >
-                    <div className="max-w-[80%] rounded-2xl rounded-br-md bg-brand-500 text-white px-4 py-3 text-sm leading-relaxed shadow-subtle">
-                      Can my landlord evict me without notice?
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 14 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex items-start gap-2.5"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-white border border-neutral-200 flex items-center justify-center flex-shrink-0 shadow-subtle">
-                      <Sparkles className="w-4 h-4 text-brand-600" />
-                    </div>
-                    <div className="max-w-[80%] rounded-2xl rounded-tl-md bg-white border border-neutral-200 px-4 py-3 text-sm text-neutral-800 leading-relaxed shadow-subtle">
-                      No. They must give written notice and follow due process. Here&apos;s what the law requires, with the relevant sections cited&hellip;
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 14 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex items-center gap-2.5"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-white border border-neutral-200 flex items-center justify-center flex-shrink-0 shadow-subtle">
-                      <Sparkles className="w-4 h-4 text-brand-400" />
-                    </div>
-                    <div className="rounded-2xl rounded-tl-md bg-white border border-neutral-200 px-4 py-3.5 shadow-subtle">
-                      <div className="flex items-center gap-1.5">
-                        {[0, 1, 2].map((i) => (
-                          <motion.span
-                            key={i}
-                            className="w-2 h-2 rounded-full bg-brand-300"
-                            animate={{ opacity: [0.3, 1, 0.3] }}
-                            transition={{ duration: 1.2, repeat: Infinity, delay: 1.8 + i * 0.2 }}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  <div className="absolute bottom-4 left-5 right-5">
-                    <div className="flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2.5 shadow-subtle">
-                      <span className="text-sm text-neutral-400 flex-1">Ask anything&hellip;</span>
-                      <span className="w-7 h-7 rounded-full bg-brand-500 flex items-center justify-center">
-                        <ArrowRight className="w-3.5 h-3.5 text-white" />
-                      </span>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative flex items-center justify-center aspect-[4/3] rounded-3xl border border-neutral-200 shadow-elevated overflow-hidden bg-gradient-to-br from-brand-50 via-white to-orange-50 p-6">
+                <div className="absolute inset-0 grid-bg-light opacity-40 pointer-events-none" />
+                <AIRobotVisual />
               </div>
             </Reveal>
           </div>

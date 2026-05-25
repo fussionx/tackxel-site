@@ -13,7 +13,7 @@ import Parallax from "@/components/Parallax";
 import Counter from "@/components/Counter";
 import CaseStudyVisual from "@/components/CaseStudyVisual";
 import CursorGlow from "@/components/CursorGlow";
-import AIRobot from "@/components/AIRobot";
+import AIRobotVisual from "@/components/AIRobotVisual";
 import { featuredCaseStudies } from "@/lib/case-studies";
 import BlogVisual from "@/components/BlogVisual";
 import BlogImage from "@/components/BlogImage";
@@ -370,7 +370,7 @@ export default function HomePage({ latestPosts }: { latestPosts: PostMeta[] }) {
                   </div>
                   <div className="relative flex items-center justify-center overflow-hidden border-t lg:border-t-0 lg:border-l border-neutral-200/50 bg-gradient-to-br from-brand-50 via-white to-orange-50 p-8 min-h-[240px]">
                     <div className="absolute inset-0 grid-bg-light opacity-40 pointer-events-none" />
-                    <AIRobot />
+                    <AIRobotVisual />
                   </div>
                 </div>
               </article>

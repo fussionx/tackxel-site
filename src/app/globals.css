@@ -438,3 +438,30 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .robot-bob, .robot-eye, .robot-pulse, .robot-glow { animation: none; }
 }
+
+/* Futuristic AI robot (AIRobotVisual) */
+@keyframes ai-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes ai-ring-a { to { transform: rotate(360deg); } }
+@keyframes ai-ring-b { to { transform: rotate(-360deg); } }
+@keyframes ai-core { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+@keyframes ai-particle { 0%, 100% { transform: translateY(0); opacity: 0.25; } 50% { transform: translateY(-9px); opacity: 0.9; } }
+@keyframes ai-scan { 0% { transform: translateX(0); opacity: 0; } 15% { opacity: 0.55; } 85% { opacity: 0.55; } 100% { transform: translateX(74px); opacity: 0; } }
+@keyframes ai-glow { 0%, 100% { opacity: 0.55; transform: scale(1); } 50% { opacity: 0.85; transform: scale(1.06); } }
+
+.ai-float { animation: ai-float 6s ease-in-out infinite; }
+.ai-glow { animation: ai-glow 6s ease-in-out infinite; }
+.ai-ring { transform-box: fill-box; transform-origin: center; }
+.ai-ring-a { animation: ai-ring-a 40s linear infinite; }
+.ai-ring-b { animation: ai-ring-b 28s linear infinite; }
+.ai-core { animation: ai-core 2.4s ease-in-out infinite; }
+.ai-particle { transform-box: fill-box; transform-origin: center; }
+.ai-p1 { animation: ai-particle 4s ease-in-out infinite; }
+.ai-p2 { animation: ai-particle 5.2s ease-in-out infinite 0.4s; }
+.ai-p3 { animation: ai-particle 4.6s ease-in-out infinite 0.8s; }
+.ai-p4 { animation: ai-particle 5.6s ease-in-out infinite 0.2s; }
+.ai-scan { transform-box: fill-box; transform-origin: center; animation: ai-scan 3.2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-float, .ai-glow, .ai-ring-a, .ai-ring-b, .ai-core, .ai-particle,
+  .ai-p1, .ai-p2, .ai-p3, .ai-p4, .ai-scan { animation: none; }
+}
