@@ -5,7 +5,7 @@ excerpt: "You don't need an in-house ML team to ship real AI features. Here's th
 category: "AI"
 date: "2026-05-08"
 readTime: "5 min read"
-image: ""
+image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80"
 ---
 
 A few years ago, shipping an AI feature meant hiring ML researchers, standing up training infrastructure, and waiting months. That's no longer true. Most of the AI features that actually move the needle for a product today are built with hosted models and good software engineering — not a research team. Here's the pragmatic path.

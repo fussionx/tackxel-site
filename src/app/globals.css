@@ -408,3 +408,33 @@ body {
 }
 .prose img { border-radius: 14px; }
 .prose hr { border: 0; border-top: 1px solid #E4E4E7; margin: 2.5rem 0; }
+
+/* AI robot animation (homepage AI highlight) */
+@keyframes robot-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+@keyframes robot-eye {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+@keyframes robot-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+@keyframes robot-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.08); }
+}
+.robot-bob { animation: robot-bob 5s ease-in-out infinite; }
+.robot-eye { animation: robot-eye 2.6s ease-in-out infinite; }
+.robot-pulse {
+  animation: robot-pulse 2.2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.robot-glow { animation: robot-glow 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .robot-bob, .robot-eye, .robot-pulse, .robot-glow { animation: none; }
+}

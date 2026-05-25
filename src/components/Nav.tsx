@@ -109,6 +109,10 @@ export default function Nav() {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
+            <Link href="/about" className={`px-4 py-2 text-sm font-medium transition-colors ${linkClass}`}>
+              About
+            </Link>
+
             <div
               className="static"
               onMouseEnter={() => setServicesOpen(true)}
@@ -179,10 +183,6 @@ export default function Nav() {
             <Link href="/blog" className={`px-4 py-2 text-sm font-medium transition-colors ${linkClass}`}>
               Blog
             </Link>
-
-            <Link href="/about" className={`px-4 py-2 text-sm font-medium transition-colors ${linkClass}`}>
-              About
-            </Link>
           </nav>
 
           <div className="hidden lg:flex items-center">
@@ -210,6 +210,9 @@ export default function Nav() {
         <div className="fixed inset-0 z-40 bg-white lg:hidden pt-20">
           <div className="px-6 py-8 overflow-y-auto h-full">
             <div className="space-y-3">
+              <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-base font-medium text-neutral-900 border-b border-neutral-100 pb-3">
+                About
+              </Link>
               {mobileGroups.map((g) => {
                 const open = openGroup === g.title;
                 return (
@@ -261,9 +264,6 @@ export default function Nav() {
                 </Link>
                 <Link href="/blog" onClick={() => setMobileOpen(false)} className="block text-base font-medium text-neutral-900">
                   Blog
-                </Link>
-                <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-base font-medium text-neutral-900">
-                  About
                 </Link>
                 <Link
                   href="/contact"

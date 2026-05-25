@@ -13,8 +13,10 @@ import Parallax from "@/components/Parallax";
 import Counter from "@/components/Counter";
 import CaseStudyVisual from "@/components/CaseStudyVisual";
 import CursorGlow from "@/components/CursorGlow";
+import AIRobot from "@/components/AIRobot";
 import { featuredCaseStudies } from "@/lib/case-studies";
 import BlogVisual from "@/components/BlogVisual";
+import BlogImage from "@/components/BlogImage";
 import type { PostMeta } from "@/lib/blog-types";
 import {
   IconAI, IconMobileApp, IconWebApp, IconDesign, IconIoT,
@@ -366,14 +368,9 @@ export default function HomePage({ latestPosts }: { latestPosts: PostMeta[] }) {
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                     </span>
                   </div>
-                  <div className="hidden lg:block relative border-l border-neutral-200/50">
-                    <Image
-                      src="/images/services/ai.jpg"
-                      alt="AI integration visualisation"
-                      width={1200}
-                      height={800}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="relative flex items-center justify-center overflow-hidden border-t lg:border-t-0 lg:border-l border-neutral-200/50 bg-gradient-to-br from-brand-50 via-white to-orange-50 p-8 min-h-[240px]">
+                    <div className="absolute inset-0 grid-bg-light opacity-40 pointer-events-none" />
+                    <AIRobot />
                   </div>
                 </div>
               </article>
@@ -619,7 +616,7 @@ export default function HomePage({ latestPosts }: { latestPosts: PostMeta[] }) {
                     <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-white card-lift">
                       <div className="relative aspect-[16/10]">
                         {p.image ? (
-                          <Image src={p.image} alt={p.title} width={1200} height={750} loading="lazy" className="w-full h-full object-cover" />
+                          <BlogImage src={p.image} alt={p.title} />
                         ) : (
                           <BlogVisual accent={p.accent} category={p.category} />
                         )}

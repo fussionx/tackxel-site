@@ -5,7 +5,7 @@ excerpt: "The real lessons from shipping Lexa — grounding, guardrails, and wha
 category: "AI"
 date: "2026-05-20"
 readTime: "7 min read"
-image: ""
+image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=1200&q=80"
 ---
 
 We built [Lexa](/case-studies/lexa), Pakistan's first AI legal chatbot, to put first-pass legal guidance in front of anyone with a browser. It's live, it answers real questions about real law, and building it taught us more about shipping production AI than any amount of prototyping could. Here's what actually mattered.

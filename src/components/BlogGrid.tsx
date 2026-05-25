@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Clock } from "lucide-react";
 import BlogVisual from "@/components/BlogVisual";
+import BlogImage from "@/components/BlogImage";
 import { BLOG_CATEGORIES, type PostMeta } from "@/lib/blog-types";
 
 const tabs = ["All", ...BLOG_CATEGORIES] as const;
@@ -56,7 +57,7 @@ export default function BlogGrid({ posts }: { posts: PostMeta[] }) {
                   <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-white card-lift">
                     <div className="relative aspect-[16/10]">
                       {p.image ? (
-                        <Image src={p.image} alt={p.title} width={1200} height={750} loading="lazy" className="w-full h-full object-cover" />
+                        <BlogImage src={p.image} alt={p.title} />
                       ) : (
                         <BlogVisual accent={p.accent} category={p.category} />
                       )}

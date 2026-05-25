@@ -5,7 +5,7 @@ excerpt: "Embedding senior engineers vs making full-time hires — a clear frame
 category: "Engineering"
 date: "2026-04-22"
 readTime: "6 min read"
-image: ""
+image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80"
 ---
 
 When a team needs more senior engineering capacity, the instinct is to hire. Sometimes that's right. Often it's the slow, expensive answer to a problem that has a faster one. Staff augmentation — embedding senior engineers into your team — isn't a lesser alternative to hiring; it's a different tool for a different shape of problem. Here's a clear framework for choosing.

@@ -6,6 +6,7 @@ import { ArrowRight, ArrowUpRight, Clock, Calendar, User } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import BlogVisual from "@/components/BlogVisual";
+import BlogImage from "@/components/BlogImage";
 import ShareButtons from "@/components/ShareButtons";
 import JsonLd from "@/components/JsonLd";
 import { getPostBySlug, getAllSlugs, getRelatedPosts, formatPostDate } from "@/lib/blog";
@@ -112,7 +113,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <Reveal>
             <div className="aspect-[2/1] rounded-3xl overflow-hidden border border-neutral-200 shadow-elevated mt-8">
               {meta.image ? (
-                <Image src={meta.image} alt={meta.title} width={1280} height={640} priority className="w-full h-full object-cover" />
+                <BlogImage src={meta.image} alt={meta.title} />
               ) : (
                 <BlogVisual accent={meta.accent} category={meta.category} />
               )}
@@ -168,7 +169,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-white card-lift">
                       <div className="relative aspect-[16/10]">
                         {p.image ? (
-                          <Image src={p.image} alt={p.title} width={1200} height={750} loading="lazy" className="w-full h-full object-cover" />
+                          <BlogImage src={p.image} alt={p.title} />
                         ) : (
                           <BlogVisual accent={p.accent} category={p.category} />
                         )}

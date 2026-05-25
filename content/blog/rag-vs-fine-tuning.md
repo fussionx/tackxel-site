@@ -5,7 +5,7 @@ excerpt: "A practical guide to choosing between retrieval-augmented generation a
 category: "AI"
 date: "2026-05-14"
 readTime: "6 min read"
-image: ""
+image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=1200&q=80"
 ---
 
 "Should we use RAG or fine-tuning?" is one of the first questions we get when a team wants to add AI to their product. It's also one of the most misunderstood. The honest answer: for most products, you want **retrieval-augmented generation (RAG)**, sometimes you want both, and you rarely want fine-tuning on its own. Here's how to tell which case you're in.
