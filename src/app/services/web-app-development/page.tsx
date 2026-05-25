@@ -343,7 +343,7 @@ export default function WebAppDevelopmentPage() {
 
                 <div className="grid grid-cols-2 gap-px bg-neutral-200 border border-neutral-200 rounded-md overflow-hidden">
                   <div className="bg-white p-3.5">
-                    <div className="font-display text-xl font-bold text-neutral-950"><Counter to={10} suffix="+" /></div>
+                    <div className="font-display text-xl font-bold text-neutral-950"><Counter to={7} suffix="+" /></div>
                     <div className="text-[10px] text-neutral-500 leading-snug mt-0.5">Years of Experience</div>
                   </div>
                   <div className="bg-white p-3.5">

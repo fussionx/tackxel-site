@@ -136,6 +136,10 @@ const videoTestimonials = [
   },
 ];
 
+// Testimonials are hidden until real client quotes/videos are ready.
+// Flip to true to re-enable — the data, section and lightbox below stay wired.
+const SHOW_TESTIMONIALS = false;
+
 export default function HomePage({ latestPosts }: { latestPosts: PostMeta[] }) {
   const [activeTab, setActiveTab] = useState<StartingPath>("I have an idea");
   const [activeVideo, setActiveVideo] = useState<number | null>(null);
@@ -493,7 +497,8 @@ export default function HomePage({ latestPosts }: { latestPosts: PostMeta[] }) {
         </div>
       </section>
 
-      {/* VIDEO TESTIMONIALS */}
+      {/* VIDEO TESTIMONIALS — hidden until real client testimonials are ready (flip SHOW_TESTIMONIALS) */}
+      {SHOW_TESTIMONIALS && (
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <Reveal>
@@ -545,8 +550,10 @@ export default function HomePage({ latestPosts }: { latestPosts: PostMeta[] }) {
           </div>
         </div>
       </section>
+      )}
 
-      {/* VIDEO LIGHTBOX — plays the selected testimonial. Wired for MP4s in /public/videos/ */}
+      {/* VIDEO LIGHTBOX — hidden with the testimonials section (flip SHOW_TESTIMONIALS) */}
+      {SHOW_TESTIMONIALS && (
       <AnimatePresence>
         {activeVideo !== null && (
           <motion.div
@@ -593,6 +600,7 @@ export default function HomePage({ latestPosts }: { latestPosts: PostMeta[] }) {
           </motion.div>
         )}
       </AnimatePresence>
+      )}
 
       {/* LATEST FROM THE BLOG */}
       {latestPosts.length > 0 && (

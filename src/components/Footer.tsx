@@ -132,11 +132,11 @@ export default function Footer() {
               © {new Date().getFullYear()} Tackxel Ltd · Registered in England &amp; Wales · Company No. 17212854
             </p>
             <div className="flex gap-6 text-xs text-neutral-500">
-              <Link href="/" className="hover:text-white transition-colors">
-                Privacy
+              <Link href="/privacy" className="hover:text-white transition-colors">
+                Privacy Policy
               </Link>
-              <Link href="/" className="hover:text-white transition-colors">
-                Terms
+              <Link href="/terms" className="hover:text-white transition-colors">
+                Terms of Service
               </Link>
             </div>
           </div>

@@ -4,7 +4,7 @@ import { getAllSlugs } from "@/lib/blog";
 const BASE = "https://tackxel.com";
 
 // Keep in sync with Nav.tsx / Footer.tsx and the app/ route tree.
-const staticRoutes = ["", "/about", "/contact", "/services", "/case-studies", "/blog"];
+const staticRoutes = ["", "/about", "/contact", "/services", "/case-studies", "/blog", "/privacy", "/terms"];
 
 const serviceRoutes = [
   "/services/ai",
