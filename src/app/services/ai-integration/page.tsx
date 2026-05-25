@@ -12,7 +12,7 @@ import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import Counter from "@/components/Counter";
 import AIVisual from "@/components/AIVisual";
-import AIRobotVisual from "@/components/AIRobotVisual";
+import ServiceHeroImage from "@/components/ServiceHeroImage";
 import CaseStudyVisual from "@/components/CaseStudyVisual";
 import { getCaseStudy } from "@/lib/case-studies";
 import JsonLd from "@/components/JsonLd";
@@ -300,12 +300,11 @@ export default function AiIntegrationPage() {
               </Reveal>
             </div>
 
-            {/* Futuristic AI robot */}
             <Reveal delay={200} direction="left">
-              <div className="relative flex items-center justify-center aspect-[4/3] rounded-3xl border border-neutral-200 shadow-elevated overflow-hidden bg-gradient-to-br from-brand-50 via-white to-orange-50 p-6">
-                <div className="absolute inset-0 grid-bg-light opacity-40 pointer-events-none" />
-                <AIRobotVisual />
-              </div>
+              <ServiceHeroImage
+                src="https://images.unsplash.com/photo-1644088379091-d574269d422f?w=1200&q=80"
+                alt="AI integration and machine learning neural network visualization"
+              />
             </Reveal>
           </div>
         </div>
