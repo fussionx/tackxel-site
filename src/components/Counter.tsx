@@ -11,17 +11,17 @@ type Props = {
 
 export default function Counter({ to, suffix = "", duration = 1600, className = "" }: Props) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [value, setValue] = useState(0);
+  // Render the real number on the server / first paint, so the value is correct
+  // even before (or without) JS — it is never 0.
+  const [value, setValue] = useState(to);
   const doneRef = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    // Reduced motion (or a non-positive target): skip the animation and show
-    // the real number immediately.
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced || to <= 0) {
+    // Non-positive target, or reduced motion: just show the final number.
+    if (to <= 0 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setValue(to);
       return;
     }
@@ -35,16 +35,24 @@ export default function Counter({ to, suffix = "", duration = 1600, className = 
       const tick = (now: number) => {
         const t = Math.min((now - start) / duration, 1);
         setValue(Math.round(to * easeOutCubic(t)));
-        if (t < 1) {
-          raf = requestAnimationFrame(tick);
-        } else {
-          // Land exactly on the target — the resting value is never short, never 0.
-          setValue(to);
-        }
+        if (t < 1) raf = requestAnimationFrame(tick);
+        else setValue(to); // land exactly on the target
       };
       raf = requestAnimationFrame(tick);
     };
 
+    // Already on screen at load: keep the final number (no flash through 0).
+    const rect = el.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+    if (inView) {
+      doneRef.current = true;
+      setValue(to);
+      return;
+    }
+
+    // Below the fold: start at 0 and count up when scrolled into view. The user
+    // never sees the reset because the element isn't visible yet.
+    setValue(0);
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries.some((e) => e.isIntersecting)) {
@@ -56,9 +64,8 @@ export default function Counter({ to, suffix = "", duration = 1600, className = 
     );
     observer.observe(el);
 
-    // Safety net: if the observer never fires (already-in-view edge cases,
-    // layout quirks), animate anyway so the number is never stuck at 0.
-    const fallback = window.setTimeout(run, 1200);
+    // Safety net so it can never get stuck at 0 if the observer doesn't fire.
+    const fallback = window.setTimeout(run, 2000);
 
     return () => {
       observer.disconnect();
