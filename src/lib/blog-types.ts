@@ -1,14 +1,23 @@
 // Client-safe blog types and constants (no filesystem imports). Both client
 // components and the server-only blog.ts import from here.
 
-export const BLOG_CATEGORIES = ["AI", "Engineering", "Product", "Cloud"] as const;
+export const BLOG_CATEGORIES = [
+  "AI",
+  "AI/ML",
+  "Web Dev",
+  "Software Dev",
+  "Product Design",
+  "SaaS",
+] as const;
 
 // Each category maps to a warm brand gradient for the placeholder visual.
 export const categoryAccent: Record<string, string> = {
   AI: "from-brand-100/70 via-white to-sky-50",
-  Engineering: "from-orange-50 via-white to-brand-50",
-  Product: "from-violet-100/60 via-white to-brand-50",
-  Cloud: "from-emerald-50 via-white to-brand-50",
+  "AI/ML": "from-cyan-100/60 via-white to-brand-50",
+  "Web Dev": "from-orange-50 via-white to-brand-50",
+  "Software Dev": "from-slate-100/60 via-white to-brand-50",
+  "Product Design": "from-violet-100/60 via-white to-brand-50",
+  SaaS: "from-emerald-50 via-white to-brand-50",
 };
 
 export type PostMeta = {

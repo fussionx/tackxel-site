@@ -1,11 +1,12 @@
 ---
-title: "We Built Pakistan's First AI Legal Chatbot — Here's What We Learned"
+title: "Building Conversational AI: Lessons From Shipping a Legal Chatbot"
 slug: "building-pakistans-first-ai-legal-chatbot"
-excerpt: "The real lessons from shipping Lexa — grounding, guardrails, and what it takes to put AI legal guidance in front of the public."
+excerpt: "Real lessons from shipping Lexa — Pakistan's first AI legal chatbot. Grounding, guardrails, and what it takes to put conversational AI in front of the public."
 category: "AI"
-date: "2026-05-20"
+date: "2025-07-02"
 readTime: "7 min read"
 image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=1200&q=80"
+author: "Tackxel Team"
 ---
 
 We built [Lexa](/case-studies/lexa), Pakistan's first AI legal chatbot, to put first-pass legal guidance in front of anyone with a browser. It's live, it answers real questions about real law, and building it taught us more about shipping production AI than any amount of prototyping could. Here's what actually mattered.

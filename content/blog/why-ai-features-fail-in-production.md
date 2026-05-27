@@ -1,11 +1,12 @@
 ---
 title: "Why Most AI Features Fail in Production (And How to Ship Ones That Don't)"
 slug: "why-ai-features-fail-in-production"
-excerpt: "The gap between an impressive demo and a dependable AI feature — and the engineering that closes it."
+excerpt: "The gap between an impressive AI demo and a dependable production feature — the five reasons AI development projects fail and the engineering that closes the gap."
 category: "AI"
-date: "2026-04-30"
+date: "2025-05-14"
 readTime: "8 min read"
 image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1200&q=80"
+author: "Tackxel Team"
 ---
 
 Almost any team can build an AI demo that wows a room. Far fewer can ship an AI feature that holds up once real users, real data, and real load arrive. The gap between the two is where most AI projects die. Here are the five ways they fail — and the engineering that closes the gap.

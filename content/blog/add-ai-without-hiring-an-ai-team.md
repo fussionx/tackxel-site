@@ -1,11 +1,12 @@
 ---
-title: "How to Add AI to Your App Without Hiring an AI Team"
+title: "How to Add AI to Your Product Without Hiring an AI Team"
 slug: "add-ai-without-hiring-an-ai-team"
-excerpt: "You don't need an in-house ML team to ship real AI features. Here's the pragmatic path to production."
+excerpt: "You don't need an in-house ML team to ship real AI features. Here's the pragmatic path to production — hosted models, RAG, guardrails, and what it actually takes."
 category: "AI"
-date: "2026-05-08"
-readTime: "5 min read"
+date: "2025-10-22"
+readTime: "6 min read"
 image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80"
+author: "Tackxel Team"
 ---
 
 A few years ago, shipping an AI feature meant hiring ML researchers, standing up training infrastructure, and waiting months. That's no longer true. Most of the AI features that actually move the needle for a product today are built with hosted models and good software engineering — not a research team. Here's the pragmatic path.
