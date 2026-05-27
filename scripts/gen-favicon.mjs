@@ -1,8 +1,12 @@
 // One-shot favicon generator.
-//   Reads public/favicon-source.png.png, crops to the head, and writes:
+//   Reads public/favicon-source.png.png and writes:
 //     src/app/favicon.ico          (multi-size: 16, 32, 48)
 //     src/app/icon.png             (32x32 — Next auto-injects <link rel="icon">)
 //     src/app/apple-icon.png       (180x180 on white — Next auto-injects apple-touch-icon)
+//
+// Centred-square crop of the source (no opinionated head crop): the source
+// IS the mark, so we resize it as-is and let Next's content-hashed URLs bust
+// the cache.
 //
 // Run: node scripts/gen-favicon.mjs
 import sharp from "sharp";
@@ -16,16 +20,13 @@ const OUT = join("src", "app");
 const meta = await sharp(SRC).metadata();
 console.log(`Source: ${meta.width}x${meta.height} ${meta.format} (channels=${meta.channels})`);
 
-// Head crop: a square containing the head + headphones, top-aligned, centered
-// horizontally. side = ~55% of source height — captures the head with a touch
-// of shoulder so the icon isn't claustrophobic.
-const sideTarget = Math.round(meta.height * 0.55);
-const side = Math.min(sideTarget, meta.width, meta.height);
-const left = Math.max(0, Math.round((meta.width - side) / 2));
-const top = 0;
-console.log(`Head crop: ${side}x${side} at (${left}, ${top})`);
+// Centred square crop. For a square source this is a no-op; for any other
+// aspect ratio it takes the central square so the mark isn't off-centre.
+const side = Math.min(meta.width, meta.height);
+const left = Math.round((meta.width - side) / 2);
+const top = Math.round((meta.height - side) / 2);
+console.log(`Crop: ${side}x${side} at (${left}, ${top})`);
 
-// Reusable cropped pipeline.
 const head = () =>
   sharp(SRC).extract({ left, top, width: side, height: side });
 
