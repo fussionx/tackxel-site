@@ -11,6 +11,7 @@ import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import ServiceHeroImage from "@/components/ServiceHeroImage";
 import Counter from "@/components/Counter";
+import ServiceSeoTail from "@/components/ServiceSeoTail";
 import {
   IconWebApp, IconAnalytics, IconMobileApp, IconCustomSoftware, IconCommerce, IconLegacy,
   IconAI, IconAWS, IconDevOps,
@@ -172,12 +173,34 @@ const techStackTabs = [
 ];
 
 const faqs = [
-  { q: "How quickly can you start a web app development project?", a: "Most engagements begin within two weeks. We run a brief technical discovery, agree on team composition and scope, sign the MSA and SOW, and onboard your dedicated team into your environments. Urgent needs can compress this to one week with the right preparation." },
-  { q: "What's the difference between SPA, PWA, and traditional web apps?", a: "Traditional web apps reload the whole page on navigation. SPAs (Single-Page Apps) load once and update via JavaScript — feels app-like, sub-second interactions. PWAs add offline support, push notifications, and home-screen install — closest to a native app without an app store. We'll recommend the right architecture after discovery." },
-  { q: "Do you provide ongoing maintenance after launch?", a: "Yes. Most clients move to a monthly retainer for ongoing feature development, security patches, performance monitoring, and infrastructure operations. We also offer fixed-scope maintenance contracts if your team plans to take ownership long-term." },
-  { q: "Who owns the code, IP, and infrastructure?", a: "You do — from the first commit. All code is written into your repositories under your accounts, hosted in your cloud, and licensed to you. We deliberately avoid any lock-in patterns — when our engagement ends, your team owns everything with zero migration cost." },
-  { q: "What does a typical web app project cost?", a: "Dedicated teams start at around USD 25K per month for a small squad. Fixed-scope MVPs typically range from USD 60K to USD 200K depending on complexity. Enterprise platforms can run higher. We provide a written estimate after a free 30-minute technical assessment." },
-  { q: "Can you integrate with our existing engineering team?", a: "Yes. Our dedicated teams integrate via your tools (Linear, Jira, GitHub, Slack), your standups, your code review process, and your release cadence. Your engineering leadership stays in command — we extend your team, not replace it." },
+  {
+    q: "Why Next.js instead of React, Vue, or other frameworks?",
+    a: "Next.js is React, with batteries included — server rendering, file-based routing, API routes/Server Actions, and image and font optimisation all in one. For a modern web app it removes most of the glue code teams used to write themselves, and the typed, server-rendered model is excellent for both performance and SEO. We use Vue or Astro when there's a clear reason, but Next.js + React + TypeScript is our default for almost every new web app build.",
+  },
+  {
+    q: "Can you build a SaaS product from MVP to scale?",
+    a: "Yes — most of our web work is SaaS. We can take a SaaS product from idea through V1 (multi-tenancy, billing, auth, the core workflow) into Series-A scale (real observability, performance hardening, integrations, and a deploy cadence that ships every day). Our MVP-to-scale playbook is exactly how we built and grew our own shipped products.",
+  },
+  {
+    q: "How long does it take to build a web application?",
+    a: "A focused MVP typically reaches production in 8–14 weeks. A more complete V1 (multiple roles, billing, integrations, polish) is 4–6 months. Enterprise platforms with complex compliance or data integrations run longer. We give a written range after a short technical discovery — not a number off the back of a sales call.",
+  },
+  {
+    q: "Do you handle hosting, deployment, and DevOps?",
+    a: "Yes. We typically deploy on Vercel (fastest path for Next.js) or AWS when the requirements call for it — managed Postgres, CI/CD, observability, error tracking, and uptime monitoring wired up from day one. We can also work entirely inside your existing cloud and infrastructure if you have one. You own everything: accounts, repos, infrastructure, IP.",
+  },
+  {
+    q: "Can you join an existing engineering team?",
+    a: "Yes. Through staff augmentation we embed senior engineers into your team — your standups, your code review, your release cadence, your tools (Linear, Jira, GitHub, Slack). Your engineering leadership stays in command; we extend your team, we don't replace it. Most embeds are productive within two weeks.",
+  },
+  {
+    q: "What's your typical web development tech stack?",
+    a: "Next.js (App Router) + React + TypeScript on the front, Node.js or Next Server Actions on the back, managed Postgres (Neon, Supabase, or RDS) for the database, Tailwind for styling, and TanStack Query for client cache. Vercel or AWS for hosting, with Sentry for errors and PostHog/Plausible for product analytics. Boring choices that ship fast and scale gracefully.",
+  },
+  {
+    q: "How do you handle authentication, payments, and integrations?",
+    a: "Auth via NextAuth/Auth.js, Clerk, or your existing identity provider (Cognito, Auth0, Okta) depending on requirements. Payments via Stripe by default — subscriptions, metered billing, customer portal, webhooks, the lot. Integrations (CRM, accounting, comms, third-party APIs) are normal everyday work for us — designed cleanly so they don't bleed complexity through the rest of the codebase.",
+  },
 ];
 
 const awards = [
@@ -265,13 +288,19 @@ export default function WebAppDevelopmentPage() {
 
               <Reveal delay={140}>
                 <h1 className="font-display text-h1 lg:text-h1-lg text-neutral-950 tracking-display-tight leading-[1.05]">
-                  Web platforms built for the team that owns them next.
+                  Web Development UK <span className="text-brand-600">— Next.js, React &amp; Node.js Product Engineering</span>
                 </h1>
               </Reveal>
 
               <Reveal delay={220}>
                 <p className="text-lg text-neutral-700 mt-6 max-w-2xl leading-relaxed">
-                  Tackxel ships production web apps on Next.js, React, Node, and Rails. Built for the team that owns it next year, not just the launch on Friday.
+                  Tackxel is a UK Next.js development agency building production web apps on Next.js, React, and Node.js — SaaS platforms, dashboards, internal tools. Senior engineers, shipped in front of real users. 11+ products including <Link href="/case-studies/propmetrics" className="text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500 transition-colors">PropMetrics</Link>, <Link href="/case-studies/multiunitx" className="text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500 transition-colors">MultiUnitX</Link>, and the web surfaces behind <Link href="/case-studies/lexa" className="text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500 transition-colors">Lexa</Link> and ShiftERP.
+                </p>
+              </Reveal>
+
+              <Reveal delay={260}>
+                <p className="text-base text-neutral-600 mt-4 max-w-2xl leading-relaxed">
+                  React development agency work for founders and product teams who need a web app that ships fast, scales gracefully, and stays maintainable when the team takes it over next year.
                 </p>
               </Reveal>
 
@@ -1034,6 +1063,27 @@ export default function WebAppDevelopmentPage() {
           </div>
         </div>
       </section>
+
+      <ServiceSeoTail
+        serviceName="Web App Development"
+        servicePath="/services/web-app-development"
+        renderFaq={false}
+        service={{
+          name: "Web App Development",
+          description:
+            "UK Next.js development agency building Next.js, React, and Node.js web applications — SaaS, dashboards, internal tools. Senior engineers, production-grade.",
+          serviceType: "Web Application Development",
+        }}
+        caseStudies={[
+          { href: "/case-studies/propmetrics", title: "PropMetrics — property analytics platform", meta: "Next.js · multi-tenant SaaS · dashboards" },
+          { href: "/case-studies/multiunitx", title: "MultiUnitX — multi-unit operations platform", meta: "React · Node · operations workflows" },
+        ]}
+        insights={[
+          { href: "/blog/modern-web-stack-2026", title: "The Modern Web Stack in 2026: Next.js, React, and What Actually Matters" },
+          { href: "/blog/mvp-to-scale", title: "MVP to Scale: How to Build Software That Won't Break When You Grow" },
+        ]}
+        faqs={faqs}
+      />
 
       {/* ========== FINAL CTA ========== */}
       <section className="py-20 bg-neutral-950 text-white border-t border-neutral-800 relative overflow-hidden">

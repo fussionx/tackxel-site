@@ -9,24 +9,27 @@ import {
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
+import ServiceSeoTail from "@/components/ServiceSeoTail";
 
 export const metadata: Metadata = {
-  title: "Custom ERP Development UK — Enterprise Platforms & SaaS",
+  title: "Custom ERP Development UK | Manufacturing ERP | Tackxel",
   description:
-    "UK custom ERP development. Enterprise platforms, internal SaaS, role-based portals and EDI integrations on AWS by a senior boutique studio. Operations-grade reliability.",
+    "UK custom ERP development for manufacturers and enterprises. Built ShiftERP — production ERP for co-manufacturers. Book a discovery call.",
   keywords: [
     "custom ERP development UK",
+    "manufacturing ERP UK",
+    "shop floor app UK",
+    "custom ERP UK",
     "enterprise software development UK",
-    "internal tools development UK",
-    "SaaS development UK",
-    "AWS development UK",
     "EDI integration UK",
+    "internal SaaS development UK",
+    "AWS ERP development UK",
   ],
   alternates: { canonical: "/services/enterprise-platforms-and-erp" },
   openGraph: {
-    title: "Custom ERP Development UK — Tackxel",
+    title: "Custom ERP Development UK — Manufacturing ERP | Tackxel",
     description:
-      "Custom ERPs, internal SaaS, role-based portals and EDI integrations on AWS. By a UK boutique studio with operations-grade reliability.",
+      "UK custom ERP development for manufacturers and enterprises. Built ShiftERP — production ERP for co-manufacturers with EDI integration.",
     url: "/services/enterprise-platforms-and-erp",
     type: "website",
   },
@@ -189,12 +192,17 @@ export default function EnterprisePlatformsErpPage() {
               </Reveal>
               <Reveal delay={140}>
                 <h1 className="font-display text-h1 lg:text-h1-lg text-neutral-950 tracking-display-tight leading-[1.05]">
-                  Custom systems for the workflows your business actually has.
+                  Custom ERP Development UK <span className="text-brand-600">— Manufacturing &amp; Enterprise Platforms</span>
                 </h1>
               </Reveal>
               <Reveal delay={220}>
                 <p className="text-lg text-neutral-700 mt-6 max-w-2xl leading-relaxed">
-                  Custom ERPs, internal SaaS, role-based portals, and integration platforms — built end to end on AWS for operations-grade reliability. The whole platform from one team, not seven products glued together.
+                  Tackxel is a UK custom ERP development team building manufacturing ERPs, internal SaaS, shop-floor apps, and integration platforms for operators with real workflows. We built <Link href="/case-studies/shifterp" className="text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500 transition-colors">ShiftERP</Link> — a production ERP for co-manufacturers, with EDI integration running at 99.5% accuracy.
+                </p>
+              </Reveal>
+              <Reveal delay={260}>
+                <p className="text-base text-neutral-600 mt-4 max-w-2xl leading-relaxed">
+                  Custom ERPs, role-based portals, and integration platforms — built end to end on AWS for operations-grade reliability. The whole platform from one team, not seven products glued together.
                 </p>
               </Reveal>
               <Reveal delay={300}>
@@ -450,6 +458,51 @@ export default function EnterprisePlatformsErpPage() {
           </Reveal>
         </div>
       </section>
+
+      <ServiceSeoTail
+        serviceName="Enterprise Platforms & ERP"
+        servicePath="/services/enterprise-platforms-and-erp"
+        service={{
+          name: "Custom ERP Development",
+          description:
+            "UK custom ERP development for manufacturers and enterprises. Manufacturing ERP, shop-floor apps, EDI integration, and internal SaaS on AWS.",
+          serviceType: "Enterprise Software Development",
+        }}
+        caseStudies={[
+          { href: "/case-studies/shifterp", title: "ShiftERP — production ERP for co-manufacturers", meta: "Manufacturing · EDI integration · 99.5% EDI accuracy · AWS" },
+        ]}
+        insights={[]}
+        faqs={[
+          {
+            q: "When should I build a custom ERP vs buying SAP or NetSuite?",
+            a: "Buy when your operations look like the average — accounting, inventory, standard order-to-cash. Build when your workflows have real specificity that off-the-shelf will never model: co-manufacturing, multi-step compliance, unusual costing, mixed B2B/B2C, niche regulated industries. The honest test: if you'd have to bend every off-the-shelf system to fit your operation (and pay ongoing for the bending), a custom ERP is usually cheaper inside three years and meaningfully more productive forever.",
+          },
+          {
+            q: "How long does custom ERP development take?",
+            a: "A focused ERP for one operating company — one production site, a handful of workflows, a few integrations — typically reaches production in 5–8 months. A larger, multi-site, multi-role platform with EDI, accounting, and shop-floor apps usually runs 9–15 months. We deliver in production-ready phases, not a big-bang launch, so value lands continuously.",
+          },
+          {
+            q: "Can you integrate with existing systems (EDI, accounting, etc.)?",
+            a: "Yes — integration is one of the biggest parts of custom ERP work. We routinely build EDI (X12, EDIFACT, custom AS2/SFTP flows), accounting (Xero, QuickBooks, NetSuite, Sage), e-commerce (Shopify, BigCommerce), 3PL/WMS connections, and HRIS/payroll. ShiftERP's EDI layer runs at 99.5% accuracy across multiple trading partners — that's the standard we aim for.",
+          },
+          {
+            q: "How much does custom ERP cost?",
+            a: "Realistic ranges: a focused operating-company ERP is £150k–£350k; a multi-site or heavily integrated platform is £350k–£800k+. Ongoing support typically runs 15–25% of build cost per year. We give a written cost band after a short discovery — not a number off the back of a sales call, and not before we've seen the workflow.",
+          },
+          {
+            q: "Do you handle shop-floor apps and operations?",
+            a: "Yes. Shop-floor apps — tablet/phone interfaces for operators, dispatchers, line supervisors — are a core part of the ERP work we deliver. We design for the actual environment (gloves, noise, glance-able UIs, offline support) and pair them tightly with the back-office system, so operations and management see the same single source of truth in real time.",
+          },
+          {
+            q: "Can you migrate from a legacy ERP?",
+            a: "Yes — and we treat it as a project on its own. We start with a deep audit (data model, integrations, custom logic baked into the old system, in-flight transactions), design a phased cutover plan, and run the new and old systems in parallel during transition to de-risk the switch. Most migrations succeed or fail on data quality and change management, not technology — both get explicit attention in our plan.",
+          },
+          {
+            q: "Do you provide ongoing ERP support?",
+            a: "Yes. After go-live we typically continue with a small dedicated team on retainer — bug fixes, OS and dependency upgrades, EDI partner changes, new integrations, and incremental feature work. We can also transfer the system cleanly to your internal team when you're ready to bring it in-house. No lock-in — your accounts, your repos, your IP, end to end.",
+          },
+        ]}
+      />
 
       {/* FINAL CTA */}
       <section className="py-20 bg-white">

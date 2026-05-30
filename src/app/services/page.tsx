@@ -12,37 +12,37 @@ const otherServices = [
     Icon: IconMobileApp,
     name: "Mobile App Development",
     href: "/services/mobile-app-development",
-    desc: "Native iOS, Android, React Native, and Flutter. App Store-ready pipelines and 90 days of post-launch support.",
+    desc: "iOS, Android, React Native, and Flutter mobile apps. 11+ shipped apps including LuxeLocker, YallaGrub and Sukuk. App Store + Play Store ready.",
   },
   {
     Icon: IconWebApp,
-    name: "Web & Product Engineering",
+    name: "Web Development",
     href: "/services/web-app-development",
-    desc: "Production web platforms on Next.js, React, Node, and Rails. Built for the team that owns it next year.",
+    desc: "Next.js, React, and Node.js web platforms — SaaS, dashboards, internal tools. Built for the team that owns it next year.",
   },
   {
     Icon: IconDesign,
     name: "Product Design",
     href: "/services/product-design",
-    desc: "UX research, design systems, production UI, and developer handover. Design that ships, not deck art.",
+    desc: "UX, UI, and product discovery for SaaS and AI products. Design systems, prototypes, and developer handover.",
   },
   {
     Icon: Users,
     name: "Staff Augmentation",
     href: "/services/staff-augmentation",
-    desc: "Senior engineers embedded in your team. Match in days, not months. No agency middle layer.",
+    desc: "Pre-vetted senior AI, mobile, and web engineers embedded in your team in 2 weeks. No agency middle layer. No junior bench.",
   },
   {
     Icon: IconIoT,
     name: "IoT & Connected Devices",
     href: "/services/iot-and-connected-devices",
-    desc: "BLE, NFC, wearables, and smart hardware — plus the mobile companion app and AWS telemetry. One team.",
+    desc: "BLE, NFC, wearables, and smart hardware mobile apps + AWS telemetry. Built LuxeLocker IoT storage and WearOpal smart ring SDK.",
   },
   {
     Icon: IconEnterprise,
     name: "Enterprise Platforms & ERP",
     href: "/services/enterprise-platforms-and-erp",
-    desc: "Custom SaaS, ERP, internal tools, and EDI integrations — engineered to take real production load.",
+    desc: "Custom ERP development for manufacturers and enterprises. Built ShiftERP with EDI integration at 99.5% accuracy.",
   },
 ];
 
@@ -148,7 +148,7 @@ export default function ServicesPage() {
                       <h3 className="font-display text-h3 text-neutral-950">AI Integration</h3>
                     </div>
                     <p className="text-base lg:text-lg text-neutral-700 leading-relaxed mb-6 max-w-xl">
-                      Ship AI features that hold up in production. GPT, LLMs, RAG, agents, and the eval pipelines that keep quality measurable.
+                      AI integration services in the UK — LLM features, chatbots, AI agents, and the eval pipelines that keep quality measurable. We built Pakistan&apos;s first AI legal chatbot, Lexa.
                     </p>
                     <div className="flex flex-wrap gap-2 mb-7">
                       {["GPT", "LLMs", "RAG", "Agents", "Eval pipelines"].map((t) => (

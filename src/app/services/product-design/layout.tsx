@@ -1,23 +1,26 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Product Design Agency UK — UX, UI & Design Systems",
+  title: "Product Design Agency UK | SaaS UX/UI Design | Tackxel",
   description:
-    "UK product design agency. UX research, wireframes, design systems and high-fidelity UI by a senior boutique studio. Design that ships, not deck art.",
+    "UK product design agency. UX, UI, and product discovery for SaaS and AI products. We design products that ship and convert. Book a call.",
   keywords: [
     "product design agency UK",
-    "UX design UK",
-    "UI design UK",
+    "SaaS UX design agency",
+    "UX design agency Manchester",
+    "UI design agency UK",
+    "product design Manchester",
+    "AI product design UK",
     "design systems UK",
-    "design agency UK",
-    "boutique design studio UK",
+    "SaaS product designers",
   ],
   alternates: { canonical: "/services/product-design" },
   openGraph: {
-    title: "Product Design Agency UK — Tackxel",
+    title: "Product Design Agency UK — SaaS UX/UI Design | Tackxel",
     description:
-      "UX research, wireframes, design systems and high-fidelity UI. By a senior UK boutique studio.",
+      "UK product design agency. UX, UI, and product discovery for SaaS and AI products by a senior team.",
     url: "/services/product-design",
+    type: "website",
   },
 };
 

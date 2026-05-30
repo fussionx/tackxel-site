@@ -11,6 +11,7 @@ import {
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import ServiceHeroImage from "@/components/ServiceHeroImage";
+import ServiceSeoTail from "@/components/ServiceSeoTail";
 
 const customerTypes = [
   {
@@ -173,12 +174,17 @@ export default function MobileAppDevelopmentPage() {
               </Reveal>
               <Reveal delay={140}>
                 <h1 className="font-display text-h1 lg:text-h1-lg text-neutral-950 tracking-display-tight leading-[1.05]">
-                  Mobile apps your users keep open, and your CFO keeps funding.
+                  Mobile App Development UK <span className="text-brand-600">— iOS, Android, React Native &amp; Flutter</span>
                 </h1>
               </Reveal>
               <Reveal delay={220}>
                 <p className="text-lg text-neutral-700 mt-6 max-w-2xl leading-relaxed">
-                  Production-grade iOS and Android apps for founders and product leaders who need to ship — not just demo. Senior engineers, App Store-ready pipelines, and 90-day post-launch support baked in from day one.
+                  Tackxel is a UK React Native development agency that ships production iOS and Android apps for founders and product teams. Flutter, native Swift, and Kotlin where they&apos;re the right tool. 11+ shipped apps including <Link href="/case-studies/luxelocker" className="text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500 transition-colors">LuxeLocker</Link>, <Link href="/case-studies/yallagrub" className="text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500 transition-colors">YallaGrub</Link>, Sukuk, Guardspur, and WearOpal.
+                </p>
+              </Reveal>
+              <Reveal delay={260}>
+                <p className="text-base text-neutral-600 mt-4 max-w-2xl leading-relaxed">
+                  Senior engineers, App Store + Play Store-ready pipelines, and a delivery cadence that gets your mobile app in users&apos; hands — not stuck in QA.
                 </p>
               </Reveal>
               <Reveal delay={300}>
@@ -433,6 +439,55 @@ export default function MobileAppDevelopmentPage() {
           </Reveal>
         </div>
       </section>
+
+      <ServiceSeoTail
+        serviceName="Mobile App Development"
+        servicePath="/services/mobile-app-development"
+        service={{
+          name: "Mobile App Development",
+          description:
+            "UK mobile app development — iOS, Android, React Native, Flutter. Senior engineers, App Store + Play Store ready, 11+ shipped apps.",
+          serviceType: "Mobile App Development",
+        }}
+        caseStudies={[
+          { href: "/case-studies/luxelocker", title: "LuxeLocker — IoT-enabled luxury storage app", meta: "React Native · BLE · cloud lockers" },
+          { href: "/case-studies/yallagrub", title: "YallaGrub — restaurant ordering app", meta: "React Native · iOS & Android · production" },
+        ]}
+        insights={[
+          { href: "/blog/choosing-tech-stack-for-mobile-app", title: "Choosing the Right Tech Stack for Your Mobile App" },
+          { href: "/blog/mvp-to-scale", title: "MVP to Scale: How to Build Software That Won't Break When You Grow" },
+        ]}
+        faqs={[
+          {
+            q: "Should I build my mobile app in React Native, Flutter, or native?",
+            a: "It depends on the product. React Native is our default for most builds — it shares code with your TypeScript web stack, ships iOS and Android with a small team, and is mature and well-supported. Flutter is right for design-led products with custom animations. Native Swift + Kotlin is right when you need deep platform features (advanced camera/AR, HealthKit, on-device ML) or the platform-native feel is the moat. We give a straight recommendation based on your product, not a framework preference.",
+          },
+          {
+            q: "How long does it take to build a mobile app?",
+            a: "A focused MVP typically goes to the App Store in 10–14 weeks. A more complex app with multiple roles, integrations, and polish is 4–6 months. We can usually have your first internal build (TestFlight / Play internal track) running within 2–3 weeks so progress is visible early.",
+          },
+          {
+            q: "How much does mobile app development cost in the UK?",
+            a: "Rough ranges: a focused mobile MVP is £35k–£80k; a full production app with multiple workflows, integrations, and design polish is £80k–£200k; cross-platform builds (iOS + Android via React Native or Flutter) are usually ~30–50% cheaper than separate native codebases. We scope honestly and give a written range before any commitment.",
+          },
+          {
+            q: "Do you publish apps to the App Store and Play Store?",
+            a: "Yes. We handle the full release pipeline — provisioning, signing, App Store Connect setup, Google Play Console, listings, screenshots, review responses, and the first round of post-submission fixes. We can also publish under your developer accounts or set them up if you don't have them yet.",
+          },
+          {
+            q: "Can you take over an existing mobile app codebase?",
+            a: "Yes — we regularly inherit codebases, including React Native, Flutter, native, and older Cordova/Ionic apps. We start with a short technical audit (codebase, architecture, build pipeline, security) and a written assessment. From there we can stabilise, modernise, or rebuild — whichever the audit shows is the right call.",
+          },
+          {
+            q: "Do you provide ongoing maintenance after launch?",
+            a: "Yes. Post-launch we typically offer a 90-day stabilisation period included in the build, then a small monthly retainer for OS updates, library upgrades, store policy changes, bug fixes, and small enhancements. Larger feature work is scoped separately. You can also bring the maintenance in-house — we hand over cleanly.",
+          },
+          {
+            q: "What's included in your mobile app development service?",
+            a: "Discovery, product design, iOS + Android engineering, store submission, analytics and crash reporting wired in from day one, CI/CD pipelines, technical documentation, and a 90-day post-launch period. We can also lead the back end (Node / Next.js APIs), AI features, or IoT/BLE integrations when the product needs them.",
+          },
+        ]}
+      />
 
       {/* FINAL CTA */}
       <section className="py-20 bg-white">

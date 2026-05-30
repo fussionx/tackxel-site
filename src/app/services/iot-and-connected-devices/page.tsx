@@ -9,25 +9,26 @@ import {
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
+import ServiceSeoTail from "@/components/ServiceSeoTail";
 
 export const metadata: Metadata = {
-  title: "IoT Development UK — BLE, NFC, Wearables & Smart Hardware",
+  title: "IoT App Development UK | BLE, Wearables, Connected Devices | Tackxel",
   description:
-    "UK IoT development agency. BLE, NFC, wearables and smart hardware with mobile companion apps and AWS telemetry. One senior team across hardware, app and cloud.",
+    "UK IoT app development. BLE, NFC, wearables, connected device mobile apps. Built LuxeLocker IoT-powered storage. Book a call.",
   keywords: [
-    "IoT development UK",
-    "connected device development UK",
-    "BLE app development",
+    "IoT app development UK",
+    "BLE app development UK",
     "NFC app development",
-    "wearables development UK",
-    "smart hardware development",
-    "AWS IoT development",
+    "wearable app development UK",
+    "connected device development UK",
+    "smart hardware app UK",
+    "AWS IoT development UK",
   ],
   alternates: { canonical: "/services/iot-and-connected-devices" },
   openGraph: {
-    title: "IoT Development UK — Tackxel",
+    title: "IoT App Development UK — BLE, Wearables, Connected Devices | Tackxel",
     description:
-      "BLE, NFC, wearables and smart hardware paired with mobile companion apps and AWS telemetry. One UK boutique team end to end.",
+      "UK IoT app development. BLE, NFC, wearables, and connected device mobile apps by a senior team. Built LuxeLocker IoT storage and WearOpal smart ring SDK.",
     url: "/services/iot-and-connected-devices",
     type: "website",
   },
@@ -190,12 +191,17 @@ export default function IotPage() {
               </Reveal>
               <Reveal delay={140}>
                 <h1 className="font-display text-h1 lg:text-h1-lg text-neutral-950 tracking-display-tight leading-[1.05]">
-                  Hardware, app, and cloud as one project.
+                  IoT App Development UK <span className="text-brand-600">— BLE, NFC, Wearables &amp; Connected Devices</span>
                 </h1>
               </Reveal>
               <Reveal delay={220}>
                 <p className="text-lg text-neutral-700 mt-6 max-w-2xl leading-relaxed">
-                  One team across the hardware integration, the mobile app, and the AWS-based telemetry pipeline. No vendor handoffs, no blame loops, no system that nobody owns end to end.
+                  Tackxel is a UK IoT app development team that ships BLE, NFC, wearable, and connected-device mobile apps for hardware-led products. We built <Link href="/case-studies/luxelocker" className="text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500 transition-colors">LuxeLocker</Link> (IoT-enabled storage with cloud lockers) and <Link href="/case-studies/wearopal" className="text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500 transition-colors">WearOpal</Link> (smart ring with a custom BLE SDK).
+                </p>
+              </Reveal>
+              <Reveal delay={260}>
+                <p className="text-base text-neutral-600 mt-4 max-w-2xl leading-relaxed">
+                  One senior team across the hardware integration, the mobile app, and the AWS-based telemetry pipeline. No vendor handoffs, no blame loops, no system that nobody owns end to end.
                 </p>
               </Reveal>
               <Reveal delay={300}>
@@ -449,6 +455,52 @@ export default function IotPage() {
           </Reveal>
         </div>
       </section>
+
+      <ServiceSeoTail
+        serviceName="IoT & Connected Devices"
+        servicePath="/services/iot-and-connected-devices"
+        service={{
+          name: "IoT App Development",
+          description:
+            "UK IoT app development. BLE, NFC, wearables, and connected device mobile apps paired with AWS telemetry pipelines. One senior team across hardware, app, and cloud.",
+          serviceType: "IoT App Development",
+        }}
+        caseStudies={[
+          { href: "/case-studies/luxelocker", title: "LuxeLocker — IoT-enabled luxury storage", meta: "BLE locks · cloud lockers · React Native app" },
+          { href: "/case-studies/wearopal", title: "WearOpal — smart ring with custom BLE SDK", meta: "Wearable · BLE protocol · companion app" },
+        ]}
+        insights={[]}
+        faqs={[
+          {
+            q: "What is BLE (Bluetooth Low Energy) app development?",
+            a: "BLE app development is building iOS and Android apps that talk to Bluetooth Low Energy hardware — sensors, wearables, locks, beacons, medical devices. Unlike classic Bluetooth, BLE is designed for short bursts of data at low power, which is why it's the default for almost every modern battery-powered IoT product. A solid BLE app is more than just a connection — it's pairing UX, reconnection logic, characteristic discovery, OTA firmware flows, and a stable protocol between app and device.",
+          },
+          {
+            q: "Can you build apps for custom IoT hardware?",
+            a: "Yes — custom hardware is the case we specialise in. We've built mobile apps for proprietary devices including the WearOpal smart ring (with a custom BLE SDK) and LuxeLocker IoT storage locks. We work directly with your firmware team (or engage one) and design the BLE/NFC/Wi-Fi protocol jointly so the app, device, and cloud all fit cleanly together.",
+          },
+          {
+            q: "Do you build the firmware side too, or just the app?",
+            a: "Primarily the app and cloud side. For firmware we either partner with your hardware team or bring in trusted firmware engineers; we co-design the protocol and ensure the app and device evolve together. If your project is a brand-new product without a hardware team yet, we can introduce vetted partners for the firmware portion.",
+          },
+          {
+            q: "How do you handle real-time data from connected devices?",
+            a: "Two layers: on-device, BLE characteristics or MQTT for low-latency streams to the phone; in the cloud, AWS IoT Core or a tuned WebSocket gateway for fan-out to dashboards and back-end services. For high-volume telemetry we typically use Kinesis or Timestream for ingestion and storage. Real-time UX in the app uses optimistic state and reconnection logic so latency doesn't break the experience.",
+          },
+          {
+            q: "What about offline support and sync?",
+            a: "Offline-first is the default for any serious IoT app. We design a local store that the device can update without a network (BLE works offline), reconcile back to the cloud when connectivity returns, and resolve conflicts predictably. This is how LuxeLocker's app keeps locker control working even when a user is in a basement carpark.",
+          },
+          {
+            q: "How do you handle IoT security?",
+            a: "End-to-end. On the device, encrypted pairing and rotating session keys. On the wire, TLS to the cloud and authenticated BLE characteristics for device commands. In the cloud, AWS IoT policies and per-device certificates. We also design OTA firmware updates with signed payloads so a compromised device can't be left in the field. Security planning starts at the protocol design stage, not retrofitted later.",
+          },
+          {
+            q: "Can you integrate with AWS IoT or similar platforms?",
+            a: "Yes — AWS IoT Core is our default cloud for connected devices, with Lambda + DynamoDB / Timestream behind it. We also work with Azure IoT Hub or Google Cloud IoT when the project's cloud choice dictates it. Whichever platform, the app/cloud split is designed so device control, telemetry, and OTA updates are independent surfaces that can scale (and be debugged) on their own.",
+          },
+        ]}
+      />
 
       {/* FINAL CTA */}
       <section className="py-20 bg-white">

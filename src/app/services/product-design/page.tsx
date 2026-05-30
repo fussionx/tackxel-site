@@ -12,6 +12,7 @@ import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import ServiceHeroImage from "@/components/ServiceHeroImage";
 import Counter from "@/components/Counter";
+import ServiceSeoTail from "@/components/ServiceSeoTail";
 
 const services = [
   {
@@ -112,12 +113,34 @@ const industries = [
 ];
 
 const faqs = [
-  { q: "How quickly can you start a product design engagement?", a: "Most engagements begin within one to two weeks. We run a kickoff workshop, agree on scope and design outcomes, sign the MSA and SOW, and onboard your design lead into stakeholder context. Smaller projects can start in 3–5 days." },
-  { q: "What's included in a product design engagement?", a: "Typical engagements include user research, information architecture, wireframes, high-fidelity UI design, prototypes, usability testing, design system creation, and developer handover documentation. Specific deliverables flex to fit your engagement scope." },
-  { q: "How much does product design typically cost?", a: "Focused design sprints (one feature or flow) range from USD 15K to USD 40K. Full product design engagements range from USD 60K to USD 200K depending on complexity. Dedicated design teams range from USD 12K to USD 25K per month per designer." },
-  { q: "Do you work in Figma or other design tools?", a: "Primarily Figma, with experience across Sketch, Adobe XD, InVision, and Axure RP when projects require it. We deliver editable source files plus complete documentation — no lock-in to our tooling." },
-  { q: "Who owns the design files and IP after the engagement?", a: "You do — from day one. All design files, components, brand assets, and documentation belong to you. We deliberately avoid lock-in patterns — you can take everything in-house at engagement end with zero migration cost." },
-  { q: "Do you handle developer handover?", a: "Yes — handover is a first-class workstream. We provide design specs, component documentation, design tokens, and engineering walkthroughs to ensure smooth implementation. We're available for design QA throughout development." },
+  {
+    q: "What does your product design process look like?",
+    a: "We work in three loose phases: discover (stakeholder interviews, user research, problem framing), design (information architecture, wireframes, high-fidelity UI, prototypes, usability tests), and ship (developer handover, design QA, post-launch iteration). The phases overlap — we don't disappear for six weeks to come back with a deck. Design happens alongside engineering, weekly, with real users in the loop.",
+  },
+  {
+    q: "Do you design AND develop, or just design?",
+    a: "Both. We're a small senior team that designs and engineers, so we can take a product from discovery through to a shipped, running app — or just do the design layer and hand over to your engineers. Product design isn't separated from engineering here; designers and engineers work in the same Figma file and the same standup.",
+  },
+  {
+    q: "How much does product design cost?",
+    a: "Rough ranges: a focused design sprint on one feature or flow is £12k–£35k; a full V1 product design engagement (research, IA, UI, system, handover) is £40k–£120k; embedded design teams are typically £10k–£20k per month per senior designer. We scope honestly after a 30-minute call, with a written range before any commitment.",
+  },
+  {
+    q: "Can you redesign an existing product?",
+    a: "Yes — redesigns are a big part of what we do. We start with a quick design audit: what's working, what's costing conversion or retention, what users actually do versus what the team assumes. From there we plan a redesign that ships in phases without a six-month freeze on the product. Often the right move is a targeted overhaul of two or three flows rather than a full rebuild.",
+  },
+  {
+    q: "Do you create design systems?",
+    a: "Yes — for any product that's beyond V1, a design system pays back in a few sprints. We build right-sized systems (not over-engineered): a tight set of components, tokens, and patterns that match how your team actually works, documented in Figma and ready to map 1:1 to your engineering components (React, React Native, etc.).",
+  },
+  {
+    q: "How do you handle user research?",
+    a: "Pragmatically. For most products that's 6–10 user interviews up front to frame the problem, lightweight prototype tests through the build, and a steady rhythm of 30-minute sessions on the live product after launch. We don't run year-long research phases — research is most useful when it feeds the build that's happening right now.",
+  },
+  {
+    q: "What tools do you use (Figma, etc.)?",
+    a: "Figma is the default — for files, prototyping, design systems, and handover. We also use FigJam for workshops, Maze or Lookback for usability testing, and Linear/Jira inside the team workflow. All files live in your account, with you as the owner — no lock-in.",
+  },
 ];
 
 const awards = [
@@ -175,8 +198,9 @@ export default function ProductDesignPage() {
             <div>
               <Reveal><span className="badge mb-6"><span className="dot-pulse" />UX research · UI · Design systems · Handover</span></Reveal>
               <Reveal delay={80}><div className="text-eyebrow text-brand-600 uppercase font-semibold tracking-widest mb-4">Product Design</div></Reveal>
-              <Reveal delay={140}><h1 className="font-display text-h1 lg:text-h1-lg text-neutral-950 tracking-display-tight leading-[1.05]">Product design that ships. Research to handover.</h1></Reveal>
-              <Reveal delay={220}><p className="text-lg text-neutral-700 mt-6 max-w-2xl leading-relaxed">UX research, design systems, production UI, and developer handover — design decisions that hold up from first concept through scale.</p></Reveal>
+              <Reveal delay={140}><h1 className="font-display text-h1 lg:text-h1-lg text-neutral-950 tracking-display-tight leading-[1.05]">Product Design Agency UK <span className="text-brand-600">— UX, UI &amp; Product Discovery for SaaS</span></h1></Reveal>
+              <Reveal delay={220}><p className="text-lg text-neutral-700 mt-6 max-w-2xl leading-relaxed">Tackxel is a UK product design agency for SaaS and AI products — UX research, UI design, product discovery, and design systems that ship and convert. The product design behind <Link href="/case-studies/propmetrics" className="text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500 transition-colors">PropMetrics</Link>, <Link href="/case-studies/multiunitx" className="text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500 transition-colors">MultiUnitX</Link>, and <Link href="/case-studies/lexa" className="text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500 transition-colors">Lexa</Link>.</p></Reveal>
+              <Reveal delay={260}><p className="text-base text-neutral-600 mt-4 max-w-2xl leading-relaxed">SaaS UX design, UI design, design systems, and developer handover — design decisions that hold up from first concept through scale.</p></Reveal>
               <Reveal delay={300}>
                 <div className="flex flex-col sm:flex-row gap-3 mt-8">
                   <Link href="/contact" className="btn-brand"><Calendar className="w-4 h-4" />Book a discovery call</Link>
@@ -308,6 +332,27 @@ export default function ProductDesignPage() {
           </div>
         </div>
       </section>
+
+      <ServiceSeoTail
+        serviceName="Product Design"
+        servicePath="/services/product-design"
+        renderFaq={false}
+        service={{
+          name: "Product Design",
+          description:
+            "UK product design agency. UX, UI, and product discovery for SaaS and AI products by a senior team that designs and engineers together.",
+          serviceType: "Product Design",
+        }}
+        caseStudies={[
+          { href: "/case-studies/propmetrics", title: "PropMetrics — property analytics platform", meta: "SaaS dashboard · IA · UI · design system" },
+          { href: "/case-studies/lexa", title: "Lexa — Pakistan's first AI legal chatbot", meta: "Conversational UX · trust design · accessibility" },
+        ]}
+        insights={[
+          { href: "/blog/great-product-design-process", title: "What Makes a Great Product Design Process" },
+          { href: "/blog/designing-for-trust-ai-ux", title: "Designing for Trust: UX Principles for AI-Powered Apps" },
+        ]}
+        faqs={faqs}
+      />
 
       {/* FINAL CTA */}
       <section className="py-20 bg-neutral-950 text-white border-t border-neutral-800 relative overflow-hidden">

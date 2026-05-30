@@ -172,36 +172,32 @@ const audience = [
 
 const faqs = [
   {
-    q: "What is AI Integration?",
-    a: "Building AI capabilities directly into your product — LLMs, RAG, agents, conversational and document intelligence — wired into your codebase, data, and workflows so they run in production with real users, not just in a demo.",
+    q: "What is AI integration and how does it work?",
+    a: "AI integration is the work of building AI capabilities — LLMs, RAG, chatbots, agents, document intelligence — directly into your product, wired into your codebase, data, and workflows so they run in production for real users. It's distinct from using ChatGPT in a separate tab: a properly integrated AI feature is grounded in your data, scoped to a specific use case, governed by validation and guardrails, and observable in production.",
   },
   {
-    q: "How is this different from using ChatGPT?",
-    a: "ChatGPT is a general assistant in a separate tab. We build AI into your product: grounded in your data, scoped to your use case, with validation, guardrails, cost controls, and a UX that fits your app. It's the difference between a tool your team opens and a feature your users rely on.",
+    q: "How long does it take to integrate AI into an existing product?",
+    a: "Most first AI features go to production in 4–10 weeks, depending on scope. A focused feature (search, summarisation, a grounded chatbot) on a hosted LLM is typically 4–6 weeks. A broader integration with multiple workflows, retrieval, evaluation, and guardrails is 8–12 weeks. We move fast because we ship this regularly — we built Pakistan's first AI legal chatbot, Lexa, on this same playbook.",
   },
   {
-    q: "How fast can you ship?",
-    a: "Most first AI features go to production in weeks, not quarters. We're senior engineers who've shipped this before, so we skip the research-paper detour and build the version that runs.",
+    q: "Which LLM should I use for my product (GPT, Claude, or Gemini)?",
+    a: "There's no single right answer — we pick per use case on quality, latency, cost, and data residency. GPT (OpenAI) is strongest for general reasoning and tool use; Claude (Anthropic) often wins on long-context, careful, instruction-following tasks; Gemini (Google) is competitive on price and on multi-modal workloads. Production systems frequently use more than one. We build with a provider-agnostic layer so you're not locked in.",
   },
   {
-    q: "Do you only use OpenAI?",
-    a: "No. We work with OpenAI, Anthropic, Google, Mistral, and open-source models like Llama — and pick per use case on quality, latency, cost, and data requirements. No forced lock-in to one provider.",
+    q: "How much does AI integration cost in the UK?",
+    a: "Costs depend on scope. As a rough range: a focused AI feature on a hosted model is typically £25k–£60k; a deeper integration with RAG, evaluation, and guardrails is £60k–£150k; complex multi-feature builds with custom retrieval and agents run £150k+. Ongoing inference cost is usually a separate small operating line. We scope honestly with clear ranges before any commitment.",
   },
   {
-    q: "How do you handle hallucinations and accuracy?",
-    a: "Grounding (RAG) so answers come from your data, output validation and structured formats, evaluation pipelines to measure quality, and safe-refusal behaviour so the system declines rather than guesses. Accuracy is engineered and measured, not assumed.",
+    q: "How do you handle hallucinations and accuracy in production?",
+    a: "Five things: grounding (RAG) so the model answers from retrieved facts rather than memory; structured outputs and schema validation so responses can be checked; an evaluation pipeline that tracks accuracy on representative inputs across every change; safe refusal so the system declines when it shouldn't answer; and observability so you see regressions before users do. Accuracy is engineered and measured — not hoped for.",
   },
   {
-    q: "Who owns the IP and the prompts?",
-    a: "You do. The code, the prompts, the pipelines, and the data are yours. We hand over a system your team can own and maintain — no black boxes, no dependency on us to keep the lights on.",
+    q: "Do you sign NDAs before discussing AI projects?",
+    a: "Yes. We sign mutual NDAs on request before any detailed discussion of your product, data, or roadmap. Standard practice — it's a paragraph of paperwork that takes minutes, and it makes the conversation more useful for both sides.",
   },
   {
-    q: "Do you do staff augmentation for AI?",
-    a: "Yes. We can embed senior AI engineers directly into your team on your sprint cadence — or deliver a feature end to end. Whichever fits how you work.",
-  },
-  {
-    q: "What does it cost?",
-    a: "It depends on scope, but we scope honestly up front with clear ranges before any commitment. A discovery call gets you a written assessment and estimate — no obligation, no sales theatre.",
+    q: "What's the difference between AI integration and AI consulting?",
+    a: "AI consulting is advisory — strategy, opportunity mapping, vendor and architecture recommendations, written assessments. AI integration is the build — the engineering team that takes a chosen direction and ships it to production. Tackxel does both, often together: a discovery engagement that lands a written plan, followed by the team that executes it.",
   },
 ];
 
@@ -262,12 +258,17 @@ export default function AiIntegrationPage() {
               </Reveal>
               <Reveal delay={80}>
                 <h1 className="font-display text-h1 lg:text-h1-lg text-neutral-950 tracking-display-tight leading-[1.05]">
-                  AI features your users <span className="text-brand-600">actually use</span>.
+                  AI Integration Services UK <span className="text-brand-600">— LLM, Chatbot &amp; AI Feature Development</span>
                 </h1>
               </Reveal>
               <Reveal delay={160}>
                 <p className="text-lg text-neutral-700 mt-6 max-w-2xl leading-relaxed">
-                  Most teams ship AI demos. We ship AI products in production. From LLM integration to autonomous agents — built to run, not to impress.
+                  We&apos;re a UK AI integration agency that ships LLM features, AI chatbots, and production AI agents — built into your product, not bolted on. We built <Link href="/case-studies/lexa" className="text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500 transition-colors">Lexa</Link> — Pakistan&apos;s first AI legal chatbot — and have shipped AI integrations across 11+ products.
+                </p>
+              </Reveal>
+              <Reveal delay={200}>
+                <p className="text-base text-neutral-600 mt-4 max-w-2xl leading-relaxed">
+                  LLM integration consultancy, RAG implementation, AI chatbot development, agentic workflows, and the evaluation pipelines that decide whether your AI feature is a demo or a dependable product.
                 </p>
               </Reveal>
               <Reveal delay={240}>
@@ -689,6 +690,57 @@ export default function AiIntegrationPage() {
                 </Reveal>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* RELATED CASE STUDIES + INSIGHTS */}
+      <section className="py-16 lg:py-20 bg-white border-t border-neutral-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14">
+            <div>
+              <div className="text-eyebrow text-brand-600 uppercase mb-5">Related case studies</div>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/case-studies/lexa" className="group flex items-center justify-between gap-4 rounded-2xl border border-neutral-200 bg-white p-5 hover:border-brand-300 hover:shadow-subtle transition-all">
+                    <div>
+                      <div className="font-semibold text-neutral-950 group-hover:text-brand-600 transition-colors">Lexa — Pakistan&apos;s first AI legal chatbot</div>
+                      <div className="text-sm text-neutral-500 mt-0.5">RAG, guardrails, safe refusal — production AI in front of the public.</div>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-brand-600 transition-colors flex-shrink-0" />
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div className="text-eyebrow text-brand-600 uppercase mb-5">Related insights</div>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/blog/rag-vs-fine-tuning" className="group flex items-center justify-between gap-4 rounded-2xl border border-neutral-200 bg-white p-5 hover:border-brand-300 hover:shadow-subtle transition-all">
+                    <div>
+                      <div className="font-semibold text-neutral-950 group-hover:text-brand-600 transition-colors">RAG vs Fine-Tuning: Which One Does Your Product Actually Need?</div>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-brand-600 transition-colors flex-shrink-0" />
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/why-ai-features-fail-in-production" className="group flex items-center justify-between gap-4 rounded-2xl border border-neutral-200 bg-white p-5 hover:border-brand-300 hover:shadow-subtle transition-all">
+                    <div>
+                      <div className="font-semibold text-neutral-950 group-hover:text-brand-600 transition-colors">Why Most AI Features Fail in Production (And How to Ship Ones That Don&apos;t)</div>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-brand-600 transition-colors flex-shrink-0" />
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/add-ai-without-hiring-an-ai-team" className="group flex items-center justify-between gap-4 rounded-2xl border border-neutral-200 bg-white p-5 hover:border-brand-300 hover:shadow-subtle transition-all">
+                    <div>
+                      <div className="font-semibold text-neutral-950 group-hover:text-brand-600 transition-colors">How to Add AI to Your Product Without Hiring an AI Team</div>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-brand-600 transition-colors flex-shrink-0" />
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

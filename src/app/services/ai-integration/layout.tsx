@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AI Integration Agency UK — GPT, LLM & AI Chatbot Development",
+  title: "AI Integration Services UK | LLM & Chatbot Development | Tackxel",
   description:
-    "UK AI integration agency. Production-grade GPT, LLM, RAG, agent and AI chatbot development for founders and product teams. LLM integration services that ship.",
+    "Production AI integration services in the UK. We ship LLM features, chatbots, and AI agents. Built Pakistan's first AI legal chatbot. Book a call.",
   keywords: [
+    "AI integration services UK",
+    "LLM integration consultancy",
     "AI integration agency UK",
-    "AI development company UK",
-    "LLM integration services",
     "AI chatbot development",
-    "RAG implementation",
-    "generative AI development",
+    "RAG implementation UK",
     "GPT integration",
     "AI agent development",
+    "AI development company UK",
   ],
   alternates: { canonical: "/services/ai-integration" },
   openGraph: {
-    title: "AI Integration Agency UK — Tackxel",
+    title: "AI Integration Services UK — Tackxel",
     description:
-      "AI that ships, not AI that demos. GPT, LLM, RAG and AI chatbot development by a senior UK boutique studio.",
+      "Production AI integration services in the UK. LLM features, chatbots, and AI agents — shipped, not demoed.",
     url: "/services/ai-integration",
     type: "website",
   },

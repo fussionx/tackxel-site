@@ -1,22 +1,24 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mobile App Development UK — iOS, Android, React Native & Flutter",
+  title: "Mobile App Development UK | iOS, Android, React Native | Tackxel",
   description:
-    "UK mobile app development. Native iOS, Android, React Native and Flutter apps with App Store-ready pipelines, by a senior boutique studio. 90-day post-launch support.",
+    "UK mobile app development agency. iOS, Android, React Native, Flutter. 11+ shipped apps. Senior engineers, fast delivery. Book a discovery call.",
   keywords: [
+    "React Native development agency UK",
     "mobile app development UK",
-    "React Native development UK",
+    "iOS Android app development UK",
+    "Flutter development agency UK",
+    "mobile app developers UK",
+    "React Native developers UK",
     "iOS app development UK",
     "Android app development UK",
-    "Flutter development UK",
-    "mobile app agency UK",
   ],
   alternates: { canonical: "/services/mobile-app-development" },
   openGraph: {
-    title: "Mobile App Development UK — Tackxel",
+    title: "Mobile App Development UK — iOS, Android, React Native, Flutter | Tackxel",
     description:
-      "Native iOS + Android and cross-platform (React Native / Flutter) mobile apps. App Store-ready, by a senior UK boutique studio.",
+      "UK mobile app development. iOS, Android, React Native, Flutter. 11+ shipped apps. Senior engineers, App Store + Play Store ready.",
     url: "/services/mobile-app-development",
     type: "website",
   },

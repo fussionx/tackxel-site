@@ -10,24 +10,27 @@ import {
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
 import ServiceHeroImage from "@/components/ServiceHeroImage";
+import ServiceSeoTail from "@/components/ServiceSeoTail";
 
 export const metadata: Metadata = {
-  title: "Staff Augmentation UK — Senior Engineers Embedded In Your Team",
+  title: "Staff Augmentation UK | Senior Engineers in 2 Weeks | Tackxel",
   description:
-    "UK staff augmentation. Senior engineers and product designers embedded directly in your team. Skill gaps filled fast. No agency middle layer. No junior bench.",
+    "UK staff augmentation. Pre-vetted senior AI, mobile, and web engineers embedded in your team in 2 weeks. Book a discovery call.",
   keywords: [
+    "senior engineer staff augmentation UK",
+    "fractional CTO UK",
+    "embed senior engineers UK",
     "staff augmentation UK",
     "senior engineers UK",
-    "embedded engineers",
     "engineering team augmentation",
-    "senior engineering teams UK",
-    "boutique software studio UK",
+    "embedded engineers UK",
+    "AI engineer staff aug UK",
   ],
   alternates: { canonical: "/services/staff-augmentation" },
   openGraph: {
-    title: "Staff Augmentation UK — Tackxel",
+    title: "Staff Augmentation UK — Senior Engineers in 2 Weeks | Tackxel",
     description:
-      "Senior engineers embedded in your team. Match in days, not months. No agency middle layer.",
+      "Pre-vetted senior AI, mobile, and web engineers embedded in your team in 2 weeks. No agency middle layer. No junior bench.",
     url: "/services/staff-augmentation",
     type: "website",
   },
@@ -180,12 +183,17 @@ export default function StaffAugmentationPage() {
               </Reveal>
               <Reveal delay={140}>
                 <h1 className="font-display text-h1 lg:text-h1-lg text-neutral-950 tracking-display-tight leading-[1.05]">
-                  Senior engineers. Embedded in your team. This month.
+                  Staff Augmentation UK <span className="text-brand-600">— Senior Engineers, Embedded in 2 Weeks</span>
                 </h1>
               </Reveal>
               <Reveal delay={220}>
                 <p className="text-lg text-neutral-700 mt-6 max-w-2xl leading-relaxed">
-                  Skip the six-month senior hiring cycle. Match a vetted senior to your stack in days, embed them in your team in two weeks. No agency middle layer. No junior bench.
+                  Tackxel offers senior engineer staff augmentation in the UK — pre-vetted AI, mobile, and web engineers embedded directly into your team in two weeks. Skip the six-month senior hiring cycle. The same senior engineers behind <Link href="/case-studies/lexa" className="text-brand-700 underline decoration-brand-200 underline-offset-4 hover:decoration-brand-500 transition-colors">Lexa</Link> and 11+ shipped products.
+                </p>
+              </Reveal>
+              <Reveal delay={260}>
+                <p className="text-base text-neutral-600 mt-4 max-w-2xl leading-relaxed">
+                  Senior-only. No agency middle layer. No junior bench. Match a vetted senior to your stack in days; productive on your sprint cadence in two weeks.
                 </p>
               </Reveal>
               <Reveal delay={300}>
@@ -373,6 +381,52 @@ export default function StaffAugmentationPage() {
           </div>
         </div>
       </section>
+
+      <ServiceSeoTail
+        serviceName="Staff Augmentation"
+        servicePath="/services/staff-augmentation"
+        service={{
+          name: "Staff Augmentation",
+          description:
+            "UK senior engineer staff augmentation. Pre-vetted AI, mobile, and web engineers embedded in your team in 2 weeks. No agency middle layer. No junior bench.",
+          serviceType: "Staff Augmentation",
+        }}
+        caseStudies={[]}
+        insights={[
+          { href: "/blog/staff-augmentation-vs-hiring", title: "Staff Augmentation vs Hiring: When Each Makes Sense" },
+          { href: "/blog/real-cost-of-cheap-development", title: "The Real Cost of Cheap Development (And How to Avoid It)" },
+        ]}
+        faqs={[
+          {
+            q: "How fast can you embed engineers in our team?",
+            a: "Two weeks is the typical timeline from brief to productive in your standups. We can usually shortlist matches in 2–3 days, run technical interviews with you the following week, and have the chosen engineer onboarded into your repos, tooling, and rituals by the end of week two. For urgent gaps we've moved faster — just say so up front.",
+          },
+          {
+            q: "What's the difference between staff augmentation and hiring an agency?",
+            a: "An agency owns the project and delivers an outcome; you describe what you want, they go away and ship it. Staff augmentation embeds engineers into your team — they work on your sprint, your code review, your standup, with your engineering leadership in command. You don't outsource the outcome; you extend the team. Both are valid; staff aug is the right call when you want the work owned in-house, not handed back.",
+          },
+          {
+            q: "What seniority do your engineers have?",
+            a: "Senior only — typically 7+ years of professional experience, with a body of shipped production work. No junior bench, no \"senior\" mislabelled middle-weights. The same calibre of engineer who builds our own products (including Lexa, LuxeLocker, ShiftERP and others). We turn down engagements where senior isn't actually what's needed.",
+          },
+          {
+            q: "Do they work in our timezone?",
+            a: "Yes — we match on time-zone overlap as a first-class criterion. Most engagements have full UK / EU overlap (4+ hours minimum); for clients further afield we set up a clear async rhythm with sufficient overlap for standups, pairing, and code review. We won't propose an engineer whose hours don't actually fit how your team works.",
+          },
+          {
+            q: "What does staff augmentation cost?",
+            a: "Senior engineering staff augmentation in the UK typically runs £8k–£14k per engineer per month depending on seniority, specialism (AI / mobile / web), and engagement length. Shorter and AI-specialist engagements are at the higher end; longer commitments and standard stacks at the lower end. A discovery call gets you a rate sheet for your specific role — no obligation.",
+          },
+          {
+            q: "Can we hire them full-time later?",
+            a: "Yes. If an embedded engineer becomes someone you want full-time, we have a clean conversion path — usually a small conversion fee, no surprise lockouts. We'd rather lose a long-running engagement to a happy permanent hire than create the kind of friction that makes great engineers want to leave the arrangement.",
+          },
+          {
+            q: "Do you sign NDAs and IP agreements?",
+            a: "Yes — standard practice. Mutual NDA before any detailed brief, then a clean IP assignment in the engagement contract: everything our embedded engineer writes is yours, in your repos, under your accounts. No background IP claims, no clawbacks, no lock-in.",
+          },
+        ]}
+      />
 
       {/* FINAL CTA */}
       <section className="py-20 bg-white">
