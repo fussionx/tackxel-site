@@ -38,7 +38,7 @@ export default function ServiceSeoTail({
   service,
   renderFaq = true,
 }: Props) {
-  const url = `https://tackxel.com${servicePath}`;
+  const url = `https://www.tackxel.com${servicePath}`;
 
   const ldData: object[] = [
     {
@@ -54,8 +54,8 @@ export default function ServiceSeoTail({
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://tackxel.com" },
-        { "@type": "ListItem", position: 2, name: "Services", item: "https://tackxel.com/services" },
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.tackxel.com" },
+        { "@type": "ListItem", position: 2, name: "Services", item: "https://www.tackxel.com/services" },
         { "@type": "ListItem", position: 3, name: serviceName, item: url },
       ],
     },
@@ -68,7 +68,7 @@ export default function ServiceSeoTail({
       serviceType: service.serviceType ?? service.name,
       description: service.description,
       url,
-      provider: { "@type": "Organization", name: "Tackxel Ltd", url: "https://tackxel.com" },
+      provider: { "@type": "Organization", name: "Tackxel Ltd", url: "https://www.tackxel.com" },
       areaServed: ["GB", "Worldwide"],
     });
   }

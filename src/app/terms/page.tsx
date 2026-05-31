@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Terms of Service | Tackxel",
     description:
       "The terms governing use of the Tackxel Ltd website, including intellectual property, liability and governing law.",
-    url: "https://tackxel.com/terms",
+    url: "https://www.tackxel.com/terms",
     type: "article",
   },
 };
@@ -33,7 +33,7 @@ export default function TermsPage() {
           <div className="prose max-w-none">
             <p>
               These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and use of the website
-              at <a href="https://tackxel.com">tackxel.com</a> (the &ldquo;Website&rdquo;), operated by
+              at <a href="https://www.tackxel.com">tackxel.com</a> (the &ldquo;Website&rdquo;), operated by
               Tackxel Ltd (&ldquo;Tackxel&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo; or
               &ldquo;our&rdquo;). By accessing or using the Website, you agree to be bound by these
               Terms. If you do not agree, please do not use the Website.

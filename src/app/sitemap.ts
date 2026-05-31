@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllSlugs } from "@/lib/blog";
 
-const BASE = "https://tackxel.com";
+const BASE = "https://www.tackxel.com";
 
 // Keep in sync with Nav.tsx / Footer.tsx and the app/ route tree.
 const staticRoutes = ["", "/about", "/contact", "/services", "/case-studies", "/blog", "/privacy", "/terms"];

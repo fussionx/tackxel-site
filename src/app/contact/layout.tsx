@@ -18,11 +18,11 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   name: "Contact Tackxel",
-  url: "https://tackxel.com/contact",
+  url: "https://www.tackxel.com/contact",
   mainEntity: {
     "@type": "Organization",
     name: "Tackxel Ltd",
-    url: "https://tackxel.com",
+    url: "https://www.tackxel.com",
     email: "contact@tackxel.com",
     telephone: "+44 7862 409351",
     address: {

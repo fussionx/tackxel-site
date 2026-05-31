@@ -57,9 +57,9 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://tackxel.com" },
-            { "@type": "ListItem", position: 2, name: "Case studies", item: "https://tackxel.com/case-studies" },
-            { "@type": "ListItem", position: 3, name: study.name, item: `https://tackxel.com/case-studies/${study.slug}` },
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.tackxel.com" },
+            { "@type": "ListItem", position: 2, name: "Case studies", item: "https://www.tackxel.com/case-studies" },
+            { "@type": "ListItem", position: 3, name: study.name, item: `https://www.tackxel.com/case-studies/${study.slug}` },
           ],
         }}
       />

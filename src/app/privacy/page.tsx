@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy | Tackxel",
     description:
       "How Tackxel Ltd collects, uses and protects your personal data, and your rights under UK GDPR.",
-    url: "https://tackxel.com/privacy",
+    url: "https://www.tackxel.com/privacy",
     type: "article",
   },
 };
@@ -35,7 +35,7 @@ export default function PrivacyPage() {
               This Privacy Policy explains how Tackxel Ltd (&ldquo;Tackxel&rdquo;, &ldquo;we&rdquo;,
               &ldquo;us&rdquo; or &ldquo;our&rdquo;) collects, uses, shares and protects your personal
               data when you visit{" "}
-              <a href="https://tackxel.com">tackxel.com</a> (the &ldquo;Website&rdquo;) or contact us.
+              <a href="https://www.tackxel.com">tackxel.com</a> (the &ldquo;Website&rdquo;) or contact us.
               We are committed to protecting your privacy and handling your data in line with the UK
               General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
             </p>

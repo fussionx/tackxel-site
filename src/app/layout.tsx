@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import StickyCta from "@/components/StickyCta";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tackxel.com"),
+  metadataBase: new URL("https://www.tackxel.com"),
   title: {
     default: "Tackxel — UK boutique software studio · AI, mobile, web, IoT, ERP",
     template: "%s | Tackxel",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Tackxel — UK boutique software studio · AI, mobile, web, IoT, ERP",
     description:
       "UK boutique software studio. A senior team building AI integrations, mobile apps, web platforms, IoT systems and custom ERPs for founders and product teams globally.",
-    url: "https://tackxel.com",
+    url: "https://www.tackxel.com",
     siteName: "Tackxel",
     locale: "en_GB",
     type: "website",
@@ -56,8 +56,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Tackxel Ltd",
-  url: "https://tackxel.com",
-  logo: "https://tackxel.com/logo/tackxel.svg",
+  url: "https://www.tackxel.com",
+  logo: "https://www.tackxel.com/logo/tackxel.svg",
   description:
     "Tackxel Ltd is a UK-based boutique product engineering studio building mobile apps, web platforms, IoT systems, and AI-powered products for founders and product teams globally.",
   foundingDate: "2024",

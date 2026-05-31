@@ -19,7 +19,7 @@ export type ServiceStat = { value: string; suffix?: string; label: string; count
 export type Crumb = { name: string; href?: string };
 export type RelatedItem = { name: string; href: string; desc: string };
 
-const BASE = "https://tackxel.com";
+const BASE = "https://www.tackxel.com";
 
 // Shared detail template for every AI and Cloud Native service page.
 export default function ServiceDetail({

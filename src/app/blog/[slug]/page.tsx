@@ -11,7 +11,7 @@ import ShareButtons from "@/components/ShareButtons";
 import JsonLd from "@/components/JsonLd";
 import { getPostBySlug, getAllSlugs, getRelatedPosts, formatPostDate } from "@/lib/blog";
 
-const BASE = "https://tackxel.com";
+const BASE = "https://www.tackxel.com";
 const AUTHOR = "Tackxel Team";
 
 export const dynamicParams = false;

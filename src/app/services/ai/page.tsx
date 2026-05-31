@@ -14,7 +14,7 @@ import JsonLd from "@/components/JsonLd";
 import { aiServices } from "@/lib/ai-services";
 import { getCaseStudy } from "@/lib/case-studies";
 
-const BASE = "https://tackxel.com";
+const BASE = "https://www.tackxel.com";
 const lexa = getCaseStudy("lexa")!;
 const myFriend = getCaseStudy("my-friend")!;
 

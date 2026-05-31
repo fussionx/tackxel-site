@@ -217,8 +217,8 @@ export default function AiIntegrationPage() {
             name: "AI Integration",
             serviceType: "AI Integration",
             description: "Production-grade AI integration: GPT, LLMs, RAG, agents and eval pipelines built into your product by a senior UK team.",
-            url: "https://tackxel.com/services/ai-integration",
-            provider: { "@type": "Organization", name: "Tackxel Ltd", url: "https://tackxel.com" },
+            url: "https://www.tackxel.com/services/ai-integration",
+            provider: { "@type": "Organization", name: "Tackxel Ltd", url: "https://www.tackxel.com" },
             areaServed: ["GB", "Worldwide"],
           },
           {
@@ -230,9 +230,9 @@ export default function AiIntegrationPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://tackxel.com" },
-              { "@type": "ListItem", position: 2, name: "Services", item: "https://tackxel.com/services" },
-              { "@type": "ListItem", position: 3, name: "AI Integration", item: "https://tackxel.com/services/ai-integration" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.tackxel.com" },
+              { "@type": "ListItem", position: 2, name: "Services", item: "https://www.tackxel.com/services" },
+              { "@type": "ListItem", position: 3, name: "AI Integration", item: "https://www.tackxel.com/services/ai-integration" },
             ],
           },
         ]}
